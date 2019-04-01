@@ -11,7 +11,7 @@ content-type: リファレンス
 discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
 
 ---
 
@@ -388,7 +388,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM は、含まれている要素をラップする装飾タグを制御する明確でシンプルなロジックを提供します。詳しくは、コンポーネントの開発ドキュメントの [「デコレーションタグ](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/decoration-tag) 」を参照してください。
+>AEMは、含まれる要素に含まれる装飾タグを明確かつシンプルに制御します。詳しくは、コンポーネントの開発ドキュメントの [「デコレーションタグ](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) 」を参照してください。
 
 ## include {#include}
 
