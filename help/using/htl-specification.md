@@ -13,8 +13,8 @@ deletedby: alvawb
 discoiquuid: 7fb48e5d-7d8d-4fb3-9f2d-59ce7669dcaf
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 redirecttarget: https://github.com/Adobe-Marketing-Cloud/sightly-spec
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 ---
 
@@ -25,4 +25,4 @@ HTML テンプレート言語（HTL、以前の名称は「Sightly」）は、Ad
 
 これは、言語の構文と動作を定義する HTL の仕様です。
 
-完全なHTL仕様は [、Open Source Gitリポジトリで詳細に説明されています](https://github.com/adobe/htl-spec)
+HTL の仕様全体については、[オープンソース Git リポジトリ](https://github.com/adobe/htl-spec)で詳しく説明します。
