@@ -6,7 +6,7 @@ seo-description: HTL は公式の AEM 用サーバー側テンプレートシス
 uuid: cdfe68f3-d26a-4c1f-a41b-a35f849288b7
 discoiquuid: 5af8b9d6-d776-4b49-be12-6492e0016096
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
