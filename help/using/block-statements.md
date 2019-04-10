@@ -10,8 +10,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
 
 ---
 
@@ -266,7 +266,7 @@ data-sly-repeat を使用すると、指定されているリストに基づい�
 <div data-sly-repeat="${currentPage.listChildren}" data-sly-attribute.class="${item.name}">${item.name}</div>
 ```
 
-## リスト {#list}
+## list {#list}
 
 **`data-sly-list`**：指定されているオブジェクト内の可算プロパティごとに、ホスト要素のコンテンツを繰り返します。
 
@@ -388,7 +388,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEMは、含まれる要素に含まれる装飾タグを明確かつシンプルに制御します。詳しくは、コンポーネントの開発ドキュメントの [「デコレーションタグ](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) 」を参照してください。
+>AEM は、含まれている要素をラップする装飾タグを制御する明確でシンプルなロジックを提供します。詳しくは、コンポーネント開発に関するドキュメントの[装飾タグ](https://helpx.adobe.com/jp/experience-manager/6-4/sites/developing/using/decoration-tag.html)を参照してください。
 
 ## include {#include}
 
@@ -516,7 +516,7 @@ AEM 6.3 では、カスタムコードを記述せずに、数字と日付のネ
 
 >[!NOTE]
 >
->使用できる形式について詳しくは [、HTL仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
+>使用できる形式について詳しくは、[HTL の仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
 
 ### data-sly-use とリソース {#data-sly-use-with-resources}
 
@@ -530,7 +530,7 @@ AEM 6.3 では、カスタムコードを記述せずに、数字と日付のネ
 </div>
 ```
 
-### 要求属性 {#request-attributes}
+### requestAttributes {#request-attributes}
 
 *data-sly-include* と *data-sly-resource* には、受信側の HTL スクリプトで使用するために *requestAttributes* を渡すことができるようになりました。
 
@@ -569,9 +569,9 @@ public class ProductSettings {
 }
 ```
 
-### @extension の修正 {#fix-for-extension}
+### コード「@extension」の修正 {#fix-for-extension}
 
-@extension は、AEM 6.3 のすべてのシナリオで動作します。その後、*www.adobe.com.html* のような結果が得られたら、拡張子を追加するかどうかも確認します。
+コード「@extension」は、AEM 6.3 のすべてのシナリオで動作します。その後、*www.adobe.com.html* のような結果が得られたら、拡張子を追加するかどうかも確認します。
 
 ```xml
 ${ link @ extension = 'html' }
