@@ -11,8 +11,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: fe071a7e-0dae-45c1-9f86-80c558483f87
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: ht
+source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 ---
 
@@ -27,9 +27,9 @@ source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 | 変数名 | 説明 |
 |--- |--- |
-| properties | 現在の Resource のプロパティのリスト。[org. apache. sling. api. resource. ValueMapによってバックアップされます](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| pageProperties | 現在の Page のページプロパティのリスト。[org. apache. sling. api. resource. ValueMapによってバックアップされます](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
-| inheritedPageProperties | 現在の Page の継承されたページプロパティのリスト。[org. apache. sling. api. resource. ValueMapによってバックアップされます](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| properties | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
+| pageProperties | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
+| inheritedPageProperties | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
 
 
 ## Java ベースのオブジェクト {#java-backed-objects}
