@@ -1,10 +1,8 @@
 ---
-title: 概要
-seo-title: 概要
-description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java
-  の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
-seo-description: Adobe Experience Mananger でサポートされている HTML テンプレート言語（HTL）の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの
-  Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
+title: AEM HTLの概要
+seo-title: AEM HTLテクニカルドキュメントの概要を参照してください。
+description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
+seo-description: このドキュメントでは、Adobe Experience ManagerでサポートされるHTMLテンプレート言語- HTLの原則と目的について説明します。HTLはセキュリティを向上させる高度に生産性の高いエンタープライズレベルのWebフレームワークであり、Javaの知識を持たないHTML開発者がAEMプロジェクトにより優れた情報を提供できます。
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -12,8 +10,8 @@ topic-tags: 概要
 content-type: リファレンス
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
 
 ---
 
@@ -46,9 +44,9 @@ HTML テンプレート言語は学習が容易であり、機能が意図的に
 
 上の図は、次の言語が HTL で効率を改善できる可能性があることを示します。
 
-* **HTML／CSS／JS：**HTML 開発者は HTL テンプレートを直接編集できるので、フロントエンドの設計を AEM プロジェクトから別個に実装する必要はなく、実際の AEM のコンポーネントに直接実装できます。これにより、Java のフルスタック開発者による反復作業の負荷が軽減されます。
-* **JSP／HTL：**HTL 自体は Java の知識を必要とせず、記述も簡単であるので、開発者に HTML の専門知識があればテンプレートを編集できます。
-* **Java：**HTL が提供するシンプルな Use-API のおかげで、ビジネスロジックが実装されたインターフェイスが明確になり、Java 開発全体としてもメリットがあります。
+* **HTML／CSS／JS：** HTML 開発者は HTL テンプレートを直接編集できるので、フロントエンドの設計を AEM プロジェクトから別個に実装する必要はなく、実際の AEM のコンポーネントに直接実装できます。これにより、Java のフルスタック開発者による反復作業の負荷が軽減されます。
+* **JSP／HTL：** HTL 自体は Java の知識を必要とせず、記述も簡単であるので、開発者に HTML の専門知識があればテンプレートを編集できます。
+* **Java：** HTL が提供するシンプルな Use-API のおかげで、ビジネスロジックが実装されたインターフェイスが明確になり、Java 開発全体としてもメリットがあります。
 
 **関連項目：**
 
