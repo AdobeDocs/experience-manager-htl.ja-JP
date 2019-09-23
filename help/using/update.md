@@ -1,9 +1,8 @@
 ---
 title: HTL とは
 seo-title: アドビ HTML テンプレート言語（HTL）とは
-description: HTML テンプレート言語（HTL）は、Adobe Experience Manager で推奨される、HTML 用のサーバー側テンプレートシステムです。
-seo-description: HTML テンプレート言語（HTL とも呼ばれます）は、Adobe Experience Manager で推奨される、HTML
-  用のサーバー側テンプレートシステムです。
+description: 'HTML テンプレート言語（HTL）は、Adobe Experience Manager で推奨される、HTML 用のサーバー側テンプレートシステムです。 '
+seo-description: 'HTML テンプレート言語（HTL とも呼ばれます）は、Adobe Experience Manager で推奨される、HTML 用のサーバー側テンプレートシステムです。 '
 uuid: 196e79f4-f9ff-451d-86e5-394feecd2e50
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -13,8 +12,8 @@ discoiquuid: f94c2abc-2752-4922-9369-acb76c3f00e9
 disttype: dist5
 gnavtheme: light
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 41d6afffb2f01def6398c0a17c53b28769b43f4b
 
 ---
 
