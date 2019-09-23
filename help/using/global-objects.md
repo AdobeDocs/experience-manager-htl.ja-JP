@@ -2,8 +2,7 @@
 title: HTL グローバルオブジェクト
 seo-title: HTL グローバルオブジェクト
 description: 何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL で提供されます。
-seo-description: 何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL
-  で提供されます。
+seo-description: '何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL で提供されます。 '
 uuid: e03affbb-a683-4323-8224-53d8ef59caef
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -11,8 +10,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: fe071a7e-0dae-45c1-9f86-80c558483f87
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: c3beb0d02f18483b1b000c1bf70cd59a3dcc2035
 
 ---
 
@@ -27,9 +26,9 @@ source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 | 変数名 | 説明 |
 |--- |--- |
-| properties | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
-| pageProperties | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
-| inheritedPageProperties | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) ベース。 |
+| properties | 現在の Resource のプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| pageProperties | 現在の Page のページプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
+| inheritedPageProperties | 現在の Page の継承されたページプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 
 ## Java ベースのオブジェクト {#java-backed-objects}
