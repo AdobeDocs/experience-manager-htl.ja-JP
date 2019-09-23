@@ -2,7 +2,7 @@
 title: HTL 式言語
 seo-title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
-seo-description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
+seo-description: 'HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。 '
 uuid: 38b4a259-03b5-4847-91c6-e20377600070
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -10,8 +10,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
 
 ---
 
@@ -323,7 +323,7 @@ ${'Page {0} of {1}' @ format=[current, total]}
 
 ### インターナショナライゼーション {#internationalization}
 
-現在の[辞書](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator)を使用して、現在のソースの言語に文字列を変換します（以下を参照）。**翻訳が見つからない場合は、元の文字列を使用します。
+**&#x200B;現在の[辞書](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
 
 ```xml
 ${'Page' @ i18n}
