@@ -2,7 +2,7 @@
 title: HTL ブロックステートメント
 seo-title: HTL ブロックステートメント
 description: HTML テンプレート言語（HTL）ブロックステートメントは、既存の HTML に直接追加されるカスタム data 属性です。
-seo-description: HTML テンプレート言語（HTL）ブロックステートメントは、既存の HTML に直接追加されるカスタム data 属性です。
+seo-description: 'HTML テンプレート言語（HTL）ブロックステートメントは、既存の HTML に直接追加されるカスタム data 属性です。 '
 uuid: 0624fb6e-6989-431b-aabc-1138325393f1
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -10,8 +10,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: 58aa6ea8-1d45-4f6f-a77e-4819f593a19d
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
+translation-type: tm+mt
+source-git-commit: afc29cbad83caeb549097da3fc33fd9147f1157a
 
 ---
 
@@ -22,7 +22,7 @@ HTML テンプレート言語（HTL）ブロックステートメントは、既
 
 ## sly 要素 {#sly-element}
 
-**&lt;sly&gt; 要素**は、生成される HTML には表示されませんが、data-sly-unwrap の代わりに使用できます。&lt;sly&gt; 要素の目的は、その要素が出力されていないことをより明確にすることです。必要に応じて、data-sly-unwrap を引き続き使用することもできます。
+The **&lt;sly&gt; element** does not get displayed in the resulting HTML and can be used instead of the data-sly-unwrap. The goal of the &lt;sly&gt; element is to make it more obvious that the element is not outputted. 必要に応じて、data-sly-unwrap を引き続き使用することもできます。
 
 ```xml
 <sly data-sly-test.varone="${properties.yourProp}"/>
@@ -52,7 +52,7 @@ Java クラスを初期化します。ここで、このクラスは OSGi バン
         <div data-sly-use.nav="org.example.Navigation">${nav.foo}</div>
 ```
 
-パラメーターは、オプションを使用して、初期化に渡すことができます。**通常、この機能は、それ自体が `data-sly-template` ブロック内にある HTL コードでのみ使用する必要があります。
+パラメーターは、オプションを使用して、初期化に渡すことができます。**&#x200B;通常、この機能は、それ自体が `data-sly-template` ブロック内にある HTL コードでのみ使用する必要があります。
 
 ```xml
 <div data-sly-use.nav="${'navigation.js' @parentPage=currentPage}">${nav.foo}</div>
@@ -148,7 +148,7 @@ Hello World
 
 属性は左から右へ解釈されます。属性の右端のインスタンス（リテラル、または **`data-sly-attribute`** で定義）が、同じ属性の、左側に定義されているインスタンス（リテラル、または **`data-sly-attribute`** で定義）より優先されます。
 
-値の評価結果が空の文字列になる属性（**`literal`**、または **`data-sly-attribute`** で設定）は最終的なマークアップでは削除されます。**このルールの 1 つの例外は、リテラルの空文字列に設定されているリテラル属性は保持されるということです。****以下に例を挙げます。  
+値の評価結果が空の文字列になる属性（**`literal`**、または **`data-sly-attribute`** で設定）は最終的なマークアップでは削除されます。**&#x200B;このルールの 1 つの例外は、リテラルの空文字列に設定されているリテラル属性は保持されるということです。****&#x200B;以下に例を挙げます。  
 
 ```xml
 <div class="${''}" data-sly-attribute.id="${''}"></div>
@@ -219,7 +219,7 @@ sup table tbody td tfoot th thead time tr u var wbr
 
 ## test {#test}
 
-**`data-sly-test`：**ホスト要素とそのコンテンツを条件付きで削除します。値を `false` とすると要素が削除され、`true` とすると要素が保持されます。
+**`data-sly-test`：**&#x200B;ホスト要素とそのコンテンツを条件付きで削除します。値を `false` とすると要素が削除され、`true` とすると要素が保持されます。
 
 例えば、`p` 要素とそのコンテンツは、`isShown` が `true` の場合にのみレンダリングされます。
 
@@ -388,11 +388,11 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM は、含まれている要素をラップする装飾タグを制御する明確でシンプルなロジックを提供します。詳しくは、コンポーネント開発に関するドキュメントの[装飾タグ](https://helpx.adobe.com/jp/experience-manager/6-4/sites/developing/using/decoration-tag.html)を参照してください。
+>AEM は、含まれている要素をラップする装飾タグを制御する明確でシンプルなロジックを提供します。For details see [Decoration Tag](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) in the developing components documentation.
 
 ## include {#include}
 
-**`data-sly-include`**：指示された HTML テンプレートファイル（HTL、JSP、ESP など）が対応するテンプレートエンジンによって処理されるときに、ホスト要素のコンテンツを、テンプレートファイルで生成されたマークアップに置き換えます。含まれる側のファイル**のレンダリングコンテキストには、現在の HTL コンテキスト（含む側のファイル**のコンテキスト）は含まれません。その結果、HTL ファイルを含めるには、現在の **`data-sly-use`** を、含まれる側のファイルで繰り返す必要があります（このような場合、通常は、**`data-sly-template`** と `data-sly-call` を使用するほうが便利です）。
+**`data-sly-include`**：指示された HTML テンプレートファイル（HTL、JSP、ESP など）が対応するテンプレートエンジンによって処理されるときに、ホスト要素のコンテンツを、テンプレートファイルで生成されたマークアップに置き換えます。含まれる側のファイル&#x200B;**&#x200B;のレンダリングコンテキストには、現在の HTL コンテキスト（含む側のファイル&#x200B;**&#x200B;のコンテキスト）は含まれません。その結果、HTL ファイルを含めるには、現在の **`data-sly-use`** を、含まれる側のファイルで繰り返す必要があります（このような場合、通常は、**`data-sly-template`** と `data-sly-call` を使用するほうが便利です）。
 
 簡単な include は次のとおりです。
 
@@ -516,7 +516,7 @@ AEM 6.3 では、カスタムコードを記述せずに、数字と日付のネ
 
 >[!NOTE]
 >
->使用できる形式について詳しくは、[HTL の仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
+>For complete details on the format you can use, refer to [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
 
 ### data-sly-use とリソース {#data-sly-use-with-resources}
 
