@@ -13,8 +13,8 @@ mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 index: y
 internal: n
 snippet: y
-translation-type: ht
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+translation-type: tm+mt
+source-git-commit: eb80a5859f86c894dbcb53bbfc9e2841c48a7d98
 
 ---
 
@@ -26,9 +26,9 @@ HTL には次の開発ツールを使用できます。
 * [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
    言語の学習に最適なライブ実行環境。
 
-* [AEM Brackets Extension](https://helpx.adobe.com/jp/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
+* [AEM Brackets 拡張](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
    フロントエンド開発者が AEM コンポーネントを操作するための簡単なツール。
 
-* [AEM Eclipse 拡張](https://helpx.adobe.com/jp/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
+* [AEM Eclipse 拡張](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
    バックエンド開発者が AEM プロジェクトを作成して簡単に編集できるツール。
 
