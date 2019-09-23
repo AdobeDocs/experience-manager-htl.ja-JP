@@ -1,7 +1,7 @@
 ---
 cloud: experience-cloud
-product: Experience Manager
-sub-product: Experience Manager htl
+product: adobe experience manager
+sub-product: experience manager htl
 archetype: admin
 user-guide-title: Experience Manager HTL のヘルプ
 translation-type: tm+mt
