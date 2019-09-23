@@ -2,8 +2,7 @@
 title: HTL JavaScript Use-API
 seo-title: HTL JavaScript Use-API
 description: HTML テンプレート言語（HTL）JavaScript Use-API を使用すると、HTL ファイルから JavaScript で記述されたヘルパーコードへのアクセスが可能になります。
-seo-description: HTML テンプレート言語（HTL）JavaScript Use-API を使用すると、HTL ファイルから JavaScript
-  で記述されたヘルパーコードへのアクセスが可能になります。
+seo-description: HTML テンプレート言語（HTL）JavaScript Use-API を使用すると、HTL ファイルから JavaScript で記述されたヘルパーコードへのアクセスが可能になります。
 uuid: 7ab34b10-30ac-44d6-926b-0234f52e5541
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
@@ -11,8 +10,8 @@ topic-tags: html-template-language
 content-type: リファレンス
 discoiquuid: 18871af8-e44b-4eec-a483-fcc765dae58f
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: bd1962e25d152be4f1608d0a83d8d5b3e728b4aa
 
 ---
 
@@ -100,7 +99,7 @@ use(function () {
 </section>
 ```
 
-対応するロジックは、テンプレートのすぐ横の * ファイルに配置されている次の**サーバー側** JavaScript を使用して記述できます。*`component.js`
+対応するロジックは、テンプレートのすぐ横の *ファイルに配置されている次の&#x200B;**サーバー側**JavaScript を使用して記述できます。*`component.js`
 
 ```
 use(function () {
@@ -180,7 +179,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-対応するロジックは、テンプレートファイルのすぐ横の `template.js` ファイルに配置されている次の***サーバー側*** JavaScript を使用して記述できます。
+対応するロジックは、テンプレートファイルのすぐ横の `template.js` ファイルに配置されている次の&#x200B;***サーバー側*** JavaScript を使用して記述できます。
 
 ```
 use(function () {
