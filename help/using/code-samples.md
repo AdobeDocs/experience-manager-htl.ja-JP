@@ -13,8 +13,8 @@ mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 index: y
 internal: n
 snippet: y
-translation-type: ht
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+translation-type: tm+mt
+source-git-commit: f0473c2d7c2fc22a63232565452558001a9fd99e
 
 ---
 
@@ -23,7 +23,7 @@ source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 
 HTL のコードサンプルを次に示します。
 
-* [We.Retail 参照実装](https://helpx.adobe.com/jp/experience-manager/6-4/sites/developing/using/we-retail.html)\
+* [We.Retail 参照実装](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/we-retail.html)\
    HTL を完全実装した AEM サイト。
 
 * [HTL TodoMVC の例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)\
