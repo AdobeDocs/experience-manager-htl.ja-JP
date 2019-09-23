@@ -1,8 +1,8 @@
 ---
-title: AEM HTLの概要
-seo-title: AEM HTLテクニカルドキュメントの概要を参照してください。
+title: AEM HTL Overview
+seo-title: Overview of AEM HTL technical documentation.
 description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
-seo-description: このドキュメントでは、Adobe Experience ManagerでサポートされるHTMLテンプレート言語- HTLの原則と目的について説明します。HTLはセキュリティを向上させる高度に生産性の高いエンタープライズレベルのWebフレームワークであり、Javaの知識を持たないHTML開発者がAEMプロジェクトにより優れた情報を提供できます。
+seo-description: このドキュメントでは、Adobe Experience ManagerでサポートされるHTMLテンプレート言語HTMLの原則と目的を説明します。 HTLは、セキュリティを強化し、Javaの知識のないHTML開発者がAEMプロジェクトにより適切に参加できる、生産性の高いエンタープライズレベルのWebフレームワークです。
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: ユーザーは、
 products: SG_EXPERIENCEMANAGER/HTL
