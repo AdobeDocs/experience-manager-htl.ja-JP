@@ -1,17 +1,17 @@
 ---
-title: AEM HTLの概要
-seo-title: Overview of AEM HTL technical documentation.
+title: AEM HTL の概要
+seo-title: AEM HTL 技術ドキュメントの概要。
 description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
-seo-description: This document lays out the principles and purpose of HTML Template Language - HTL - supported by Adobe Experience Manager. HTL is a highly productive enterprise-level web framework that increases security, and allows HTML developers without Java knowledge to better participate in AEM projects.
+seo-description: このドキュメントは、Adobe Experience Manager がサポートする HTML テンプレート言語（HTL）の原則および目的を説明します。HTL は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークです。Java の知識のない HTML 開発者が AEM プロジェクトに参加できます。
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
-contentOwner: ユーザーは、
+contentOwner: ユーザー
 products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: 概要
 content-type: リファレンス
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-skyline: testing replication
-translation-type: tm+mt
+skyline: レプリケーションのテスト
+translation-type: ht
 source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 ---
