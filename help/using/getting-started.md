@@ -9,7 +9,7 @@ topic-tags: 概要
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -47,7 +47,7 @@ HTML テンプレート言語について説明する前に、JSP と HTL の比
 サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。
 
 **HTL 機能を AEM プロジェクトで拡張できますか。**
-**サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
+サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
 
 **JSP と比べて HTL の最大のメリットは何ですか。**
 最大のメリットはセキュリティとプロジェクトの効率性です。これらについては、[概要](overview.md)で詳しく説明します。
