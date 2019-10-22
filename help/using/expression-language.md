@@ -11,7 +11,7 @@ content-type: リファレンス
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -45,8 +45,10 @@ HTML テンプレート言語は、式言語を使用して HTML 出力の動的
 
 変数のプロパティにアクセスするには、ドット表記と括弧表記という 2 つの方法があります。
 
-`${currentPage.title}  
-${currentPage['title']} or ${currentPage["title"]}`
+```
+${currentPage.title}  
+${currentPage['title']} or ${currentPage["title"]}
+```
 
 ほとんどのケースでは単純なドット表記をお勧めします。括弧表記は、識別子に無効な文字が含まれるプロパティへのアクセスやプロパティへの動的なアクセスに使用します。この後の 2 つの節でこれら 2 つのケースについて詳しく説明します。
 
@@ -222,7 +224,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTML 属性を条件付きで表示する場合にも使用できます。式によって設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。つまり、次の例で **`properties.jcr:`** タイトルが表示されるのは、存在していて空でない場合のみです。それ以外の場合は、フォールバックとして **`properties.jcr:description`** が表示されます（存在していて空でない場合）。どちらの条件も満たさない場合は、メッセージ「no title or description provided」が表示されます。
+HTML 属性を条件付きで表示する場合にも使用できます。式によって設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to dislaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message "no title or description provided":
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
