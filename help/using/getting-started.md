@@ -1,28 +1,22 @@
 ---
 title: HTL 使用の手引き
-seo-title: HTL 使用の手引き
 description: AEM でサポートされる HTL は、JSP の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
-seo-description: Adobe Experience Manager でサポートされる HTML テンプレート言語（HTL）は、JSP の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
-uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
-content-type: リファレンス
-topic-tags: 概要
-discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
+source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+workflow-type: tm+mt
+source-wordcount: '2490'
+ht-degree: 91%
 
 ---
 
 
 # HTL 使用の手引き {#getting-started-with-htl}
 
-Adobe Experience Manager（AEM）でサポートされる HTML テンプレート言語（HTL）は、JSP（JavaServer Pages）の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
+Adobe Experience Manager(AEM)でサポートされているHTML Template Language(HTL)は、AEMでHTML用のサーバー側テンプレートシステムとして推奨される形式です。 JSP(JavaServer Pages)は、AEMの以前のバージョンで使用されていたJSPに代わって使用されます。
 
 >[!NOTE]
 >
 >このページで示す例の多くを実行するためには、[Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) というライブ実行環境を使用できます。
->
->AEM コミュニティは、HTL の使用に関連した一連の[記事、ビデオ、ウェビナー](related-community-articles.md)を作成しています。
 
 ## JSP と HTL の対比 {#htl-over-jsp}
 
@@ -41,18 +35,15 @@ HTML テンプレート言語には JSP と比較して多数のメリットが�
 
 HTML テンプレート言語について説明する前に、JSP と HTL の比較に関連する重要な質問に回答します。
 
-**HTL には JSP にない制限事項がありますか。** HTL には JSP と比べた場合に制限事項はありません。つまり、JSP で実行できることは HTL でも実行できます。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
+**HTL には JSP にない制限事項がありますか。** - HTLは、JSPと比べて、HTLでもJSPを使って何ができるかを達成できるという意味で、HTLには制限がありません。 ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
 
-**HTL では JSP タグライブラリはサポートされますか。**
-サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。
+**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、「クライアントライブラリの [読み込み](getting-started.md#loading-client-libraries) 」セクションに示すように、 [template &amp; call](block-statements.md#template-call) statementsオファーも同様のパターンです。
 
-**HTL 機能を AEM プロジェクトで拡張できますか。**
-サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
+**HTL 機能を AEM プロジェクトで拡張できますか。**  — いいえ、できません。 HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
 
-**JSP と比べて HTL の最大のメリットは何ですか。**
-最大のメリットはセキュリティとプロジェクトの効率性です。これらについては、[概要](overview.md)で詳しく説明します。
+**JSP と比べて HTL の最大のメリットは何ですか。**  — セキュリティとプロジェクトの効率性が主なメリットで、 [概要に詳しく説明します](overview.md)。
 
-**JSP はいずれ使用されなくなりますか。**&#x200B;現時点ではそうした予定はありません。
+**JSP はいずれ使用されなくなりますか。**  — 現在の日付では、計画はありません。
 
 ## HTL の基本概念 {#fundamental-concepts-of-htl}
 
@@ -70,20 +61,13 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の異なった構文が見られます。
 
-* **[ブロック文](block-statements.md)**&lt;h1&gt;要素を条件付きで表示す **るには** 、 `[data-sly-test](block-statements.md#test)` HTML5データ属性が使用されます。 HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
+* **[ブロックステートメント](block-statements.md)**-**&lt;h1>**要素を条件付きで表示するには、[`data-sly-test`](block-statements.md#test)HTML5データ属性を使用します。 HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には`data-sly`というプレフィックスがついています。
 
-* **[式言語](expression-language.md)**
-HTL の式は、`${` と `}` で区切られます。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
+* **[式の言語](expression-language.md)**- HTL式は、文字`${`とで区切られ`}`ます。 実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
 
 上記の 2 つのリンクページでは、構文で使用できる機能について詳しく説明しています。
 
 ### SLY 要素 {#the-sly-element}
-
->[!NOTE]
->
->SLY 要素は AEM 6.1 すなわち HTL 1.1 で導入されました。
->
->それ以前には、代わりに `[data-sly-unwrap](block-statements.md)` 属性を使用する必要がありました。
 
 HTL の中心となる概念は、既存の HTML 要素を再利用できるようにブロックステートメントを定義することです。これにより、追加の区切り文字を挿入して、ステートメントの開始位置と終了位置を定義する必要がなくなります。このような目立たないマークアップのアノテーションによって、静的な HTML が機能的な動的テンプレートに変換されます。これには、HTML コードの妥当性を損なわず、静的ファイルとしても適切に表示できるというメリットがあります。
 
@@ -98,14 +82,14 @@ HTL の中心となる概念は、既存の HTML 要素を再利用できるよ�
 </sly>
 ```
 
-次のような HTML が出力されるのは、**`jcr:title`** プロパティと **`jcr:decription`** プロパティの両方が定義され、いずれも空でない場合のみです。
+will output something like following HTML, but only if there are both, a **`jcr:title`** and a **`jcr:description`** property defined, and if neither of them are empty:
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-注意する必要があるのは、既存の要素がブロックステートメントで注釈付けできなかったときだけ SLY 要素を使用するということです。なぜなら、言語によって提供される値が、静的な HTML を動的にする際にその HTML を変更しないように、SLY 要素が防ごうとするためです。
+注意すべき点の1つは、ブロック文で注釈を付けることができない既存の要素がない場合にのみTSLAIN要素を使用することです。静的HTMLを動的にするときに静的HTMLが変更されないように、STRILL要素が言語の値を下げるからです。
 
 例えば、前の例が既に DIV 要素にラップされている場合、SLY 要素の追加は正しくありません。
 
@@ -126,6 +110,12 @@ DIV 要素に条件が注釈付けされている可能性もあります。
     <p>${properties.jcr:description}</p>
 </div>
 ```
+
+>[!NOTE]
+>
+>TSLIK要素は、AEM 6.1またはHTL 1.1で導入されました。
+>
+>それ以前には、代わりに [`data-sly-unwrap`](block-statements.md) 属性を使用する必要がありました。
 
 ### HTL コメント {#htl-comments}
 
@@ -223,7 +213,7 @@ HTL はデータ属性を使用してブロックステートメントを定義�
 
 `logic.js` に続けて、サーバー側で実行される JavaScript ファイルが指定されています。
 
-```
+```javascript
 use(function () {
     return {
         title: currentPage.getTitle().substring(0, 10) + "..."
@@ -237,7 +227,7 @@ HTML テンプレート言語では、マークアップ内でコードを混在
 
 次の節ではこれについてさらに詳しく説明します。
 
-* [data-sly-use ステートメント](block-statements.md#use)に関する節では、このステートメントで実行できるすべての処理について説明します。
+* [`data-sly-use` ステートメント](block-statements.md#use)に関する節では、このステートメントで実行できるすべての処理について説明します。
 * [Use-API のページ](use-api.md)では、ロジックを記述するために Java と JavaScript のどちらを選ぶかということについて参考となる情報を説明します。
 * ロジックの記述方法の詳細については、[JavaScript Use-API](use-api-javascript.md) と [Java Use-API](use-api-java.md) のぺージが参考になります。
 
@@ -259,7 +249,7 @@ HTML テンプレート言語では、マークアップ内でコードを混在
 
 次の `logic.js` ファイルがあるとします。
 
-```
+```javascript
 use(function () {
     return {
         link:  "#my link's safe",
@@ -369,7 +359,7 @@ HTL では、クライアントライブラリは AEM 提供のヘルパーテ�
 <div data-sly-use.logic="logic.js" data-json="${logic.json}">...</div>
 ```
 
-```
+```javascript
 /* logic.js file: */
 use(function () {
     var myData = {
@@ -385,7 +375,7 @@ use(function () {
 
 その後、クライアント側の JavaScript がどのようにその属性にアクセスして再び JSON を解析するかは簡単に推測できます。例えば、対応する JavaScript を次に示します。これがクライアントライブラリへの配置を行います。
 
-```
+```javascript
 var elements = document.querySelectorAll("[data-json]");
 for (var i = 0; i < elements.length; i++) {
     var obj = JSON.parse(elements[i].dataset.json);
