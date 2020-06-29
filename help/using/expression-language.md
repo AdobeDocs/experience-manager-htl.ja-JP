@@ -1,17 +1,11 @@
 ---
 title: HTL 式言語
-seo-title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
-seo-description: 'HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。 '
-uuid: 38b4a259-03b5-4847-91c6-e20377600070
-contentOwner: ユーザーは、
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: リファレンス
-discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
+source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+workflow-type: tm+mt
+source-wordcount: '1848'
+ht-degree: 83%
 
 ---
 
@@ -27,7 +21,7 @@ HTML テンプレート言語は、式言語を使用して HTML 出力の動的
 </h1>
 ```
 
-式の前に **`\`** を付けるとエスケープすることができます。例えば、**`\${test}`** は **`${test}`** とレンダリングされます。
+Expressions can be escaped by prepending a `\` character, for instance `\${test}` will render `${test}`.
 
 >[!NOTE]
 >
@@ -45,7 +39,7 @@ HTML テンプレート言語は、式言語を使用して HTML 出力の動的
 
 変数のプロパティにアクセスするには、ドット表記と括弧表記という 2 つの方法があります。
 
-```
+```xml
 ${currentPage.title}  
 ${currentPage['title']} or ${currentPage["title"]}
 ```
@@ -54,13 +48,13 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 アクセス対象のプロパティは関数の場合もありますが、引数を渡すことはできません。したがって、ゲッターのように引数を取らない関数にのみアクセスできます。これは、式に埋め込まれるロジックの量を減らすことを目的とした必要な制約です。必要であれば、[`data-sly-use`](block-statements.md#use) ステートメントを使用してパラメーターをロジックに渡すことができます。
 
-また、前の例に示すように、Java のゲッター関数（`getTitle()` など）は、前に **`get`** を付けずに、後続の文字を小文字にすることでアクセスできます。
+また、前の例に示すように、Java のゲッター関数（`getTitle()` など）は、前に `get` を付けずに、後続の文字を小文字にすることでアクセスできます。
 
-### 識別子の有効な文字 {#valid-indentifier-characters}
+### 有効な識別子文字 {#valid-identifier-characters}
 
-変数の名前すなわち識別子には規則があります。文字（**`A`**-**`Z`** と **`a`**-**`z`**）またはアンダースコア（**`_`**）で始めて、後続の文字には数字（**`0`**-**`9`**）またはコロン（**`:`**）を使用する必要があります。Unicode 文字（**`å`** や **`ü`** など）は識別子では使用できません。
+変数の名前すなわち識別子には規則があります。They must start with a letter (`A`-`Z` and `a`-`z`), or an underscore (`_`), and subsequent characters can also be digits (`0`-`9`) or colon (`:`). Unicode 文字（`å` や `ü` など）は識別子では使用できません。
 
-コロン（**:**）は AEM プロパティ名でよく使用されるため、これが識別子の文字として有効であるのは便利です。
+Given that the colon (`:`) character is common in AEM property names, it should be emphasized that it is conveniently a valid identifier character:
 
 `${properties.jcr:title}`
 
@@ -70,27 +64,11 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 ### メンバーへの動的アクセス {#accessing-members-dynamically}
 
-<!-- 
-
-Comment Type: draft
-
-<p>TODO: add description</p>
-
- -->
-
 ```xml
 ${properties[myVar]}
 ```
 
 ### Null 値の許容処理 {#permissive-handling-of-null-values}
-
-<!-- 
-
-Comment Type: draft
-
-<p>TODO: add description</p>
-
- -->
 
 ```xml
 ${currentPage.lastModified.time.toString}
@@ -102,7 +80,7 @@ ${currentPage.lastModified.time.toString}
 
 ### Boolean {#boolean}
 
-ブール値は論理エンティティを表し、**`true`** と **`false`** の 2 つの値を持つことができます。
+ブール値は論理エンティティを表し、`true` と `false` の 2 つの値を持つことができます。
 
 `${true} ${false}`
 
@@ -114,27 +92,27 @@ ${currentPage.lastModified.time.toString}
 
 ### 文字列 {#strings}
 
-テキストデータを表し、引用符または二重引用符で囲みます。
+文字列は、テキストデータを表し、単一または重複で引用します。
 
 `${'foo'} ${"bar"}`
 
 通常の文字に加えて次の特殊文字を使用できます。
 
-* **`\\`** バックスラッシュ
-* **`\'`** 一重引用符（アポストロフィ）
-* **`\"`** 二重引用符
-* **`\t`** タブ
-* **`\n`** 改行
-* **`\r`** キャリッジリターン
-* **`\f`** フォームフィード
-* **`\b`** Backspace
+* `\\` バックスラッシュ
+* `\'` 一重引用符（アポストロフィ）
+* `\"` 二重引用符
+* `\t` タブ
+* `\n` 改行
+* `\r` キャリッジリターン
+* `\f` フォームフィード
+* `\b` Backspace
 * `\uXXXX` 4 個の 16 進数（XXXX）で指定される Unicode 文字。\
    次の Unicode エスケープシーケンスは便利です。
 
-   * **\u0022**（**"** の代わり）
-   * **\u0027**（**'** の代わり）
+   * `\u0022` の代わりに `"` を使用
+   * `\u0027` の代わりに `'` を使用
 
-ここに記載していない文字の前にバックスラッシュを付けるとエラーになります。
+上記のリストにない文字の場合、バックスラッシュの前にエラーが表示されます。
 
 文字列のエスケープを使用する方法の例を次に示します。
 
@@ -153,14 +131,6 @@ HTL ではコンテキスト固有のエスケープが適用されるので、�
 ### 配列 {#arrays}
 
 配列には、名前またはインデックスで参照できる複数の値が並んでいます。要素の型は混在することができます。
-
-<!-- 
-
-Comment Type: draft
-
-<p>TODO: add description</p>
-
- -->
 
 ```xml
 ${[1,2,3,4]}
@@ -181,11 +151,11 @@ ${myArray[2]}
 
 これらの演算子は通常は Boolean 値と一緒に使用されます。ただし、JavaScript と同様に、指定されたオペランドの 1 つの値が実際に返されます。つまり、非ブール値と一緒に使用すると、非ブール値が返されることがあります。
 
-ある値が **`true`** に変換できる場合、その値は真です。ある値が **`false`** に変換できる場合、その値は偽です。**`false`** に変換できる値は、未定義の変数、null 値、数値の 0、空文字列です。
+ある値が `true` に変換できる場合、その値は真です。ある値が `false` に変換できる場合、その値は偽です。Values that can be converted to `false` are undefined variables, null values, the number zero, and empty strings.
 
 #### 論理否定（NOT） {#logical-not}
 
-**`${!myVar}`** が **`false`** を返すのは、単一のオペランドが `true` に変換される場合です。それ以外の場合は **`true`** が返されます。
+`${!myVar}` は、そ `false` の単一のオペランドを次の値に変換できる場合に返し `true`ます。 それ以外の場合は、を返し `true`ます。
 
 例えば、子ページがない場合のみ要素を表示するなど、テスト条件を逆にするために使用できます。
 
@@ -195,7 +165,7 @@ ${myArray[2]}
 
 #### 論理積（AND） {#logical-and}
 
-**`${varOne && varTwo}`** は偽の場合に `varOne` を返し、それ以外の場合に **varTwo** を返します。
+`${varOne && varTwo}` は、偽物 `varOne` の場合は返します。 それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、2 つのプロパティの存在を確認するなど、2 つの条件を一度にテストできます。
 
@@ -206,7 +176,7 @@ ${myArray[2]}
 </div>
 ```
 
-論理積（AND）演算子は、HTML 属性を条件付きで表示する場合にも使用できます。動的に設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。つまり、次の例では **`class`** 属性が表示されるのは、**`logic.showClass`** が真で、さらに **`logic.className`** が存在し空でない場合のみです。
+論理積（AND）演算子は、HTML 属性を条件付きで表示する場合にも使用できます。動的に設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。つまり、次の例では `class` 属性が表示されるのは、`logic.showClass` が真で、さらに `logic.className` が存在し空でない場合のみです。
 
 ```xml
 <div class="${logic.showClass && logic.className}">...</div>
@@ -214,7 +184,7 @@ ${myArray[2]}
 
 #### 論理和（OR） {#logical-or}
 
-**`${varOne || varTwo}`** は真の場合に **varOne** を返し、それ以外の場合に **varTwo** を返します。
+`${varOne || varTwo}` 真実 `varOne` な場合に返されます。 それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、少なくとも 1 つのプロパティの存在を確認するなど、2 つの条件のいずれか 1 つが該当するかどうかをテストできます。
 
@@ -224,7 +194,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTML 属性を条件付きで表示する場合にも使用できます。式によって設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to dislaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message "no title or description provided":
+HTML 属性を条件付きで表示する場合にも使用できます。式によって設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -232,7 +202,7 @@ HTML 属性を条件付きで表示する場合にも使用できます。式に
 
 ### 条件（三項）演算子 {#conditional-ternary-operator}
 
-**`${varCondition ? varOne : varTwo}`** は **`varCondition`** が真の場合に **`varOne`** を返し、それ以外の場合に **`varTwo`** を返します。
+`${varCondition ? varOne : varTwo}` は `varOne` が真の場合に `varCondition` を返し、それ以外の場合に `varTwo` を返します。
 
 通常、この演算子は、ページのステータスに応じて別のメッセージを表示するなど、式内の条件を定義するために使用できます。
 
@@ -240,7 +210,9 @@ HTML 属性を条件付きで表示する場合にも使用できます。式に
 <p>${currentPage.isLocked ? "page is locked" : "page can be edited"}</p>
 ```
 
-コロンは識別子でも使用できるので、三項演算子を区切る場合には空白を使用してパーサーに明確に指示することをお勧めします。
+>[!TIP]
+>
+>コロン文字は識別子でも使用できるので、パーサに明確にするために、三項演算子を空白で区切ることをお勧めします。
 
 ```xml
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
@@ -252,43 +224,34 @@ HTML 属性を条件付きで表示する場合にも使用できます。式に
 
 * 文字列は、文字が同じ順序で並んでいるときに等しいとみなされます。
 * 数値は、同じ値のときに等しいとみなされます。
-* ブール値は、両方が **`true`** または両方が **`false`** のときに等しいとみなされます。
-
+* ブール値は、両方が `true` または両方が `false` のときに等しいとみなされます。
 * Null または未定義変数は、それぞれおよび互いに等しいとみなされます。
 
-**`${varOne == varTwo}`** が **`true`** を返すのは、**`varOne`** と **`varTwo`** が等しい場合です。
+`${varOne == varTwo}` と `true` が等しい場合 `varOne` に `varTwo` 返します。
 
-**`${varOne != varTwo}`** が **`true`** を返すのは、**`varOne`** と **`varTwo`** が等しくない場合です。
+`${varOne != varTwo}` とが等し `true` くない場合 `varOne` に `varTwo` 返します。
 
 関係演算子では数値であるオペランドしか使用できません。他のすべての型を使用するとエラーが表示されます。
 
-**`${varOne > varTwo}`** が **`true`** を返すのは、**`varOne`** が **`varTwo`** よりも大きい場合です。
+`${varOne > varTwo}` が次よりも大き `true` い `varOne` 場合に返し `varTwo`ます。
 
-**`${varOne < varTwo}`** が **`true`** を返すのは、**`varOne`** が **`varTwo`** よりも小さい場合です。
+`${varOne < varTwo}` より小さ `true` い `varOne` 場合は、を返し `varTwo`ます。
 
-**`${varOne >= varTwo}`** が **`true`** を返すのは、**`varOne`** が **`varTwo`** よりも大きい場合か等しい場合です。
+`${varOne >= varTwo}` が `true` を返すのは、`varOne` が `varTwo` よりも大きい場合か等しい場合です。
 
-**`${varOne <= varTwo}`** が **`true`** を返すのは、**`varOne`** が **`varTwo`** よりも小さい場合か等しい場合です。
+`${varOne <= varTwo}` が `true` を返すのは、`varOne` が `varTwo` よりも小さい場合か等しい場合です。
 
 ### グループ化の括弧 {#grouping-parentheses}
 
-グループ化演算子 **`(`** **`)`** は、式における評価の順序を制御します。
+グループ化演算子 `()`  は、式における評価の順序を制御します。
 
 `${varOne && (varTwo || varThree)}`
 
 ## Options {#options}
 
-<!-- 
-
-Comment Type: draft
-
-<p>TODO: review text below.</p>
-
- -->
-
 式のオプションは、式に作用したり式を変更したりできるほか、ブロックステートメントと共に使用するとパラメーターとしても機能します。
 
-「**`@`**」より後はすべてオプションです。
+「`@`」より後はすべてオプションです。
 
 ```xml
 ${myVar @ optOne}
@@ -323,9 +286,58 @@ ${@ optOne, optTwo=bar}
 ${'Page {0} of {1}' @ format=[current, total]}
 ```
 
+## URL 操作 {#url-manipulation}
+
+一連の URL 操作を使用できます。
+
+その使用方法については、以下の例を参照してください。
+
+html 拡張子をパスに追加します。
+
+```xml
+<a href="${item.path @ extension = 'html'}">${item.name}</a>
+```
+
+html 拡張子とセレクターをパスに追加します。
+
+```xml
+<a href="${item.path @ extension = 'html', selectors='products'}">${item.name}</a>
+```
+
+html 拡張子とフラグメント（#value）をパスに追加します。
+
+```xml
+<a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
+```
+
+は、すべてのシナリオで `@extension` 機能し、拡張機能を追加するかどうかをチェックします。
+
+```xml
+${ link @ extension = 'html' }
+```
+
+### 数値／日付の書式設定 {#number-date-formatting}
+
+HTLを使用すると、カスタムコードを記述することなく、数値や日付をネイティブに書式設定できます。 また、タイムゾーンとロケールもサポートしています。
+
+書式を最初に指定してから、書式設定が必要な値を指定する例を次に示します。
+
+```xml
+<h2>${ 'dd-MMMM-yyyy hh:mm:ss' @
+           format=currentPage.lastModified,
+           timezone='PST',
+           locale='fr'}</h2>
+
+<h2>${ '#.00' @ format=300}</h2>
+```
+
+>[!NOTE]
+>
+>For complete details on the format you can use, refer to [HTL-specification](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md).
+
 ### インターナショナライゼーション {#internationalization}
 
-**&#x200B;現在の[辞書](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
+**&#x200B;現在の[辞書](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
 
 ```xml
 ${'Page' @ i18n}
@@ -337,7 +349,7 @@ hint オプションを使用すると、トランスレーター用にコメン
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-言語のデフォルトのソースは「resource」です。つまり、テキストはコンテンツと同じ言語に翻訳されます。これを「user」に変更すると、ブラウザーのロケール、またはログインしているユーザーのロケールの言語を使用できます。
+The default source for the language is `resource`, meaning that the text gets translated to the same language as the content. This can be changed to `user`, meaning that the language is taken from the browser locale or from the locale of the logged-in user:
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -367,11 +379,17 @@ ${['one', 'two'] @ join='; '}
 
 ### 表示コンテキスト {#display-context}
 
-HTL 式の表示コンテキストは、HTML ページの構造内の場所を表します。例えば、レンダリング時にテキストノードを生成する場所に式が表示される場合、この式は **`text`** コンテキストにあると言えます。属性の値内にある場合は **`attribute`** コンテキストにあると言えます。その他も同様です。
+HTL 式の表示コンテキストは、HTML ページの構造内の場所を表します。例えば、レンダリング時にテキストノードを生成する場所に式が表示される場合、この式は `text` コンテキストにあると言えます。属性の値内にある場合は `attribute` コンテキストにあると言えます。その他も同様です。
 
 スクリプト（JS）コンテキストとスタイル（CSS）コンテキストを除き、HTL は式のコンテキストを自動的に検出し、適宜エスケープして、XSS セキュリティの問題を防ぎます。スクリプトおよび CSS の場合は、必要なコンテキスト動作を明示的に設定する必要があります。また、コンテキスト動作は、自動動作を上書きすることが望ましいその他のケースでも明示的に設定できます。
 
-ここでは、次のように、3 つの異なるコンテキストの 3 つの変数があるとします。**`properties.link`**（`uri` コンテキスト）、**`properties.title`**（**`attribute`** コンテキスト）および **`properties.text`**（**`text`** コンテキスト）。HTL は、それぞれのコンテキストのセキュリティ要件に従って、それぞれを別々の方法でエスケープします。次のような通常のケースでは、明示的なコンテキスト設定は必要ありません。
+ここでは、次のように、3 つの異なるコンテキストの 3 つの変数があるとします。
+
+* `properties.link` ( `uri` コンテキスト)
+* `properties.title` (`attribute` コンテキスト)
+* `properties.text` (`text` コンテキスト)
+
+HTL は、それぞれのコンテキストのセキュリティ要件に従って、それぞれを別々の方法でエスケープします。次のような通常のケースでは、明示的なコンテキスト設定は必要ありません。
 
 ```xml
 <a href="${properties.link}" title="${properties.title}">${properties.text}</a>
@@ -405,18 +423,17 @@ HTL 式の表示コンテキストは、HTML ページの構造内の場所を�
 
 | コンテキスト | 用途 | 動作 |
 |--- |--- |--- |
-| text | 要素内のコンテンツのデフォルト | すべての HTML 特殊文字をエンコードします。 |
-| html | マークアップを安全に出力 | AntiSamy ポリシールールを満たすように HTML をフィルタリングし、ルールに一致しないものを削除します。 |
-| attribute | 属性値のデフォルト | すべての HTML 特殊文字をエンコードします。 |
-| uri | リンクおよびパスを表示  href および src 属性値のデフォルト | href または src 属性値として記述するための URI を検証し、検証が失敗する場合は何も出力しません。 |
-| number | 数値を表示 | 整数を含めるための URI を検証し、検証が失敗する場合はゼロを出力します。 |
-| attributeName | 属性名を設定する際の data-sly-attribute のデフォルト | 属性名を検証し、検証が失敗する場合は何も出力しません。 |
-| elementName | data-sly-element のデフォルト | 要素名を検証し、検証が失敗する場合は何も出力しません。 |
-| scriptToken | JS 識別子、リテラル数またはリテラル文字列 | JavaScript トークンを検証し、検証が失敗する場合は何も出力しません。 |
-| scriptString | JS 文字列内 | 文字列から抜き出される文字をエンコードします。 |
-| scriptComment | JS コメント内 | JavaScript コメントを検証し、検証が失敗する場合は何も出力しません。 |
-| styleToken | CSS 識別子、数値、サイズ、文字列、16 進数の色または機能 | CSS トークンを検証し、検証が失敗する場合は何も出力しません。 |
-| styleString | CSS 文字列内 | 文字列から抜き出される文字をエンコードします。 |
-| styleComment | CSS コメント内 | CSS コメントを検証し、検証が失敗する場合は何も出力しません。 |
-| unsafe | 上記のどれでもジョブが実行されない場合のみ | エスケープと XSS 保護を完全に無効にします。 |
-
+| `text` | 要素内のコンテンツのデフォルト | すべての HTML 特殊文字をエンコードします。 |
+| `html` | マークアップを安全に出力 | AntiSamy ポリシールールを満たすように HTML をフィルタリングし、ルールに一致しないものを削除します。 |
+| `attribute` | 属性値のデフォルト | すべての HTML 特殊文字をエンコードします。 |
+| `uri` | リンクおよびパスを表示  href および src 属性値のデフォルト | href または src 属性値として記述するための URI を検証し、検証が失敗する場合は何も出力しません。 |
+| `number` | 数値を表示 | 整数を含めるための URI を検証し、検証が失敗する場合はゼロを出力します。 |
+| `attributeName` | 属性名を設定する際の data-sly-attribute のデフォルト | 属性名を検証し、検証が失敗する場合は何も出力しません。 |
+| `elementName` | data-sly-element のデフォルト | 要素名を検証し、検証が失敗する場合は何も出力しません。 |
+| `scriptToken` | JS 識別子、リテラル数またはリテラル文字列 | JavaScript トークンを検証し、検証が失敗する場合は何も出力しません。 |
+| `scriptString` | JS 文字列内 | 文字列から抜き出される文字をエンコードします。 |
+| `scriptComment` | JS コメント内 | JavaScript コメントを検証し、検証が失敗する場合は何も出力しません。 |
+| `styleToken` | CSS 識別子、数値、サイズ、文字列、16 進数の色または機能 | CSS トークンを検証し、検証が失敗する場合は何も出力しません。 |
+| `styleString` | CSS 文字列内 | 文字列から抜き出される文字をエンコードします。 |
+| `styleComment` | CSS コメント内 | CSS コメントを検証し、検証が失敗する場合は何も出力しません。 |
+| `unsafe` | 上記のどれでもジョブが実行されない場合のみ | エスケープと XSS 保護を完全に無効にします。 |
