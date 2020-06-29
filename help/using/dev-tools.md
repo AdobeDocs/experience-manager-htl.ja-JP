@@ -1,34 +1,19 @@
 ---
 title: 開発者ツール
-seo-title: 開発者ツール
 description: HTL 開発ツールのリスト
-seo-description: HTL 開発ツールのリスト
-uuid: cfedb0d3-016e-4eca-965d-b5c2d217e919
-contentOwner: ユーザーは、
-products: SG_EXPERIENCEMANAGER/HTL
-content-type: リファレンス
-topic-tags: html-template-language
-discoiquuid: 688d7ae8-bbda-4153-89bb-c51812f0c0a7
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
-index: y
-internal: n
-snippet: y
 translation-type: tm+mt
-source-git-commit: eb80a5859f86c894dbcb53bbfc9e2841c48a7d98
+source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+workflow-type: tm+mt
+source-wordcount: '87'
+ht-degree: 31%
 
 ---
 
 
-# 開発者ツール{#developer-tools}
+# 開発者ツール {#developer-tools}
 
 HTL には次の開発ツールを使用できます。
 
-* [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
-   言語の学習に最適なライブ実行環境。
-
-* [AEM Brackets 拡張](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
-   フロントエンド開発者が AEM コンポーネントを操作するための簡単なツール。
-
-* [AEM Eclipse 拡張](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
-   バックエンド開発者が AEM プロジェクトを作成して簡単に編集できるツール。
-
+* [HTL Read Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) — ライブ実行環境で言語を再生し、学習に最適です。
+* [AEM Brackets Extension](https://docs.adobe.com/content/help/en/experience-manager-65/developing/devtools/aem-brackets.html) — フロントエンド開発者がAEMコンポーネントを操作するのに便利なツールです。
+* [AEM Eclipse拡張機能](https://docs.adobe.com/content/help/ja-JP/experience-manager-65/developing/devtools/aem-eclipse.html) — バックエンド開発者がAEMプロジェクトを作成し、簡単に編集できるツールです。
