@@ -2,10 +2,10 @@
 title: AEM HTL の概要
 description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
 translation-type: tm+mt
-source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '662'
-ht-degree: 95%
+source-wordcount: '665'
+ht-degree: 94%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 95%
 
 Adobe Experience Mananger（AEM）でサポートされている HTML テンプレート言語（HTL）の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
 
-HTMLテンプレート言語はAEM 6.0で導入され、HTML用の推奨および推奨のサーバー側テンプレートシステムとしてJSP(JavaServer Pages)に代わって使用されます。 堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
+AEMのHTMLには、HTMLテンプレート言語が推奨され、サーバー側でテンプレートシステムを推奨します。 AEM 6.0でHTLが導入され、JSP(JavaServer Pages)に代わって使用されます。 堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
 
 ## セキュリティの向上 {#increased-security}
 
