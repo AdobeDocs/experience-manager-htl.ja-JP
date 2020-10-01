@@ -2,9 +2,9 @@
 title: HTL 使用の手引き
 description: AEM でサポートされる HTL は、JSP の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '2490'
+source-wordcount: '2471'
 ht-degree: 91%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 91%
 
 # HTL 使用の手引き {#getting-started-with-htl}
 
-Adobe Experience Manager(AEM)でサポートされているHTML Template Language(HTL)は、AEMでHTML用のサーバー側テンプレートシステムとして推奨される形式です。 JSP(JavaServer Pages)は、AEMの以前のバージョンで使用されていたJSPに代わって使用されます。
+AEMでは、HTMLの場合、Adobe Experience Manager(AEM)でサポートされているHTML Template Language(HTL)が推奨および推奨されるサーバー側テンプレートシステムです。 JSP(JavaServer Pages)は、AEMの以前のバージョンで使用されていたJSPに代わって使用されます。
 
 >[!NOTE]
 >
@@ -61,9 +61,9 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の異なった構文が見られます。
 
-* **[ブロックステートメント](block-statements.md)**-**&lt;h1>**要素を条件付きで表示するには、[`data-sly-test`](block-statements.md#test)HTML5データ属性を使用します。 HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には`data-sly`というプレフィックスがついています。
+* **[ブロックステートメント](block-statements.md)** - **&lt;h1>** 要素を条件付きで表示するには、 [`data-sly-test`](block-statements.md#test) HTML5データ属性を使用します。 HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
 
-* **[式の言語](expression-language.md)**- HTL式は、文字`${`とで区切られ`}`ます。 実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
+* **[式の言語](expression-language.md)** - HTL式は、文字 `${` とで区切られ `}`ます。 実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
 
 上記の 2 つのリンクページでは、構文で使用できる機能について詳しく説明しています。
 
@@ -110,12 +110,6 @@ DIV 要素に条件が注釈付けされている可能性もあります。
     <p>${properties.jcr:description}</p>
 </div>
 ```
-
->[!NOTE]
->
->TSLIK要素は、AEM 6.1またはHTL 1.1で導入されました。
->
->それ以前には、代わりに [`data-sly-unwrap`](block-statements.md) 属性を使用する必要がありました。
 
 ### HTL コメント {#htl-comments}
 
