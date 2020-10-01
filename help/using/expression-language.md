@@ -2,10 +2,10 @@
 title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '1848'
-ht-degree: 83%
+source-wordcount: '1854'
+ht-degree: 81%
 
 ---
 
@@ -112,7 +112,7 @@ ${currentPage.lastModified.time.toString}
    * `\u0022` の代わりに `"` を使用
    * `\u0027` の代わりに `'` を使用
 
-上記のリストにない文字の場合、バックスラッシュの前にエラーが表示されます。
+上記以外の文字の場合は、バックスラッシュ文字の前にエラーが表示されます。
 
 文字列のエスケープを使用する方法の例を次に示します。
 
@@ -155,7 +155,7 @@ ${myArray[2]}
 
 #### 論理否定（NOT） {#logical-not}
 
-`${!myVar}` は、そ `false` の単一のオペランドを次の値に変換できる場合に返し `true`ます。 それ以外の場合は、を返し `true`ます。
+`${!myVar}` は、そ `false` の単一のオペランドを次の値に変換できる場合に返し `true`ます。それ以外の場合は、を返し `true`ます。
 
 例えば、子ページがない場合のみ要素を表示するなど、テスト条件を逆にするために使用できます。
 
@@ -165,7 +165,7 @@ ${myArray[2]}
 
 #### 論理積（AND） {#logical-and}
 
-`${varOne && varTwo}` は、偽物 `varOne` の場合は返します。 それ以外の場合は、を返し `varTwo`ます。
+`${varOne && varTwo}` は、偽物 `varOne` の場合は返します。それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、2 つのプロパティの存在を確認するなど、2 つの条件を一度にテストできます。
 
@@ -184,7 +184,7 @@ ${myArray[2]}
 
 #### 論理和（OR） {#logical-or}
 
-`${varOne || varTwo}` 真実 `varOne` な場合に返されます。 それ以外の場合は、を返し `varTwo`ます。
+`${varOne || varTwo}` 真実 `varOne` な場合に返されます。それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、少なくとも 1 つのプロパティの存在を確認するなど、2 つの条件のいずれか 1 つが該当するかどうかをテストできます。
 
@@ -194,7 +194,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTML 属性を条件付きで表示する場合にも使用できます。式によって設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
+HTLは、falseまたは空の文字列に評価される式ーによって設定された値を持つ属性を削除するので、HTML属性を条件付きで表示する場合にも使用できます。 So the example below will display **`properties.jcr:`** title if it exists and is not empty, else it falls back to displaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message &quot;no title or description provided&quot;:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
