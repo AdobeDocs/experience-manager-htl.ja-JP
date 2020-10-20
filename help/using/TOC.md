@@ -6,8 +6,8 @@ user-guide-description: HTML テンプレート言語（HTL）を使用して、
 translation-type: tm+mt
 source-git-commit: 5d98000895461141ff7601c809b7085f89e6bb8b
 workflow-type: tm+mt
-source-wordcount: '68'
-ht-degree: 100%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
