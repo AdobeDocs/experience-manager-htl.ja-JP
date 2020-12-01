@@ -22,6 +22,6 @@ AEM 6.0 および 6.1 では、HTL は **Sightly** と呼ばれていました�
 
 >[!NOTE]
 >
->この名称変更はコードや API に関わるものではないので、互換性については影響はありません。詳しくは、この発表ビデオを [参照してください。](https://helpx.adobe.com/experience-manager/how-to/announce-htl.html)
+>この名称変更はコードや API に関わるものではないので、互換性については影響はありません。詳細については、[この発表ビデオを参照してください。](https://helpx.adobe.com/experience-manager/how-to/announce-htl.html)
 
 HTL についての詳しい情報を確認して実際に使ってみるには、アドビ公式の [HTML テンプレート言語（HTL）使用の手引き](overview.md)を参照してください。
