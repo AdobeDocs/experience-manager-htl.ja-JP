@@ -20,9 +20,9 @@ ht-degree: 86%
 
 | 変数名 | 説明 |
 |--- |--- |
-| `properties` | 現在の Resource のプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | 現在の Page のページプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。Backed by [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
+| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
+| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
@@ -58,7 +58,7 @@ ht-degree: 86%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-JavaScriptを使用してHTLロジックをバックアップできます。 ただし、推奨または推奨される方法は、 [Slingモデルを使用することです。](https://sling.apache.org/documentation/bundles/models.html)
+JavaScriptを使用してHTLロジックをバックアップできます。 ただし、推奨または推奨される方法は、[Slingモデルを使用することです。](https://sling.apache.org/documentation/bundles/models.html)
 
 <!-- 
 
