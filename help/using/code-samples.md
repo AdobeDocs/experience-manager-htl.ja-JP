@@ -14,8 +14,8 @@ ht-degree: 31%
 
 HTL のコードサンプルを次に示します。
 
-* [WKNDチュートリアル](https://docs.adobe.com/content/help/ja-JP/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) - WKNDの架空のライフスタイルブランドに関するAEMサイトの実装に関する手順を説明し、プロジェクト設定、コアコンポーネント、編集可能なテンプレート、クライアント側Adobe Experience Manager、HTMLで実装されたコンポーネント開発などの基本トピックをカバーします。
-* [HTL TodoMVCの例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) — 有名な演習のAEM + HTL実装。
+* [WKNDチュートリアル](https://docs.adobe.com/content/help/ja-JP/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)  — このチュートリアルでは、WKNDの架空のライフスタイルブランドに対するAEMサイトの実装について説明し、プロジェクトの設定、コアコンポーネント、編集可能なテンプレート、クライアント側ライブラリ、Adobe Experience Manager Sitesのコンポーネント開発などの基本トピックをHTLで説明します。
+* [HTL TodoMVCの例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)  — 有名な演習のAEM + HTL実装。
 
 エキスパートへの質問セッション：
 
