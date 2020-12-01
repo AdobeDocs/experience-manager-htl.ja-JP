@@ -12,7 +12,7 @@ ht-degree: 87%
 
 # HTL JavaScript Use-API {#htl-javascript-use-api}
 
-HTML Template Language(HTL)JavaScript Use-APIを使用すると、HTMLファイルからJavaScriptで記述されたヘルパーコードにアクセスできます。 これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTML Template Language(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードにアクセスできます。 これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
 次の規則を使用します。
 
