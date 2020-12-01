@@ -1,18 +1,18 @@
 ---
 sub-product: Adobe Experience Manager HTL
-user-guide-title: Adobe Experience Manager HTL
+user-guide-title: Adobe Experience ManagerHTL
 breadcrumb-title: HTL ガイド
 user-guide-description: HTML テンプレート言語（HTL）を使用して、エンタープライズレベルの Web フレームワークを作成します。
 translation-type: tm+mt
 source-git-commit: 5d98000895461141ff7601c809b7085f89e6bb8b
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '68'
+ht-degree: 100%
 
 ---
 
 
-# Adobe Experience Manager HTL ヘルプ {#using}
+# Adobe Experience ManagerHTL ヘルプ {#using}
 
 + [概要](overview.md)
 + 概要{#getting-started}
