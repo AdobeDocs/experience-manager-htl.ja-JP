@@ -12,6 +12,6 @@ ht-degree: 14%
 
 # HTL の仕様 {#htl-specification}
 
-HTML Template Language(HTL)( [旧称Sightly)は、Adobe Experience Manager6.0で導入されたもので](update.md) 、JSP(JavaServer Pages)の代わりに、HTML用の推奨および推奨されるサーバーサイトテンプレートシステムです。
+HTML Template Language(HTL)（[旧称Sightly、](update.md)）は、Adobe Experience Manager6.0で導入されたもので、JSP(JavaServer Pages)に代わって、HTML用の推奨および推奨されるサーバーサイトテンプレートシステムです。
 
-言語の構文と動作を定義する完全なHTL仕様は、 [Open Source Gitリポジトリに詳細に記載されています](https://github.com/adobe/htl-spec)
+言語の構文と動作を定義する完全なHTL仕様は、[オープンソースGitリポジトリ](https://github.com/adobe/htl-spec)に詳細に記載されています
