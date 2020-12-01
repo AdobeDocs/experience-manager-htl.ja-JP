@@ -12,7 +12,7 @@ ht-degree: 82%
 
 # HTL Java Use-API {#htl-java-use-api}
 
-The HTML Template Language (HTL) Java Use-API enables an HTL file to access helper methods in a custom Java class through `data-sly-use`. これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTML Template Language(HTL)Java Use-APIを使用すると、HTLファイルは、`data-sly-use`を介してカスタムJavaクラス内のヘルパーメソッドにアクセスできます。 これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
 Java Use-APIオブジェクトは、単純なPOJOで、POJOのデフォルトのコンストラクタを通じて特定の実装によってインスタンス化されます。
 
@@ -27,7 +27,7 @@ Use-API POJOは、次の署名を持つinitと呼ばれるパブリックメソ�
     public void init(javax.script.Bindings bindings);
 ```
 
-この `bindings` マップには、Use-APIオブジェクトが処理に使用できる、現在実行されているHTLスクリプトにコンテキストを提供するオブジェクトを含めることができます。
+`bindings`マップには、現在実行されているHTLスクリプトにコンテキストを提供するオブジェクトを含めることができます。このHTLスクリプトは、Use-APIオブジェクトが処理に使用できます。
 
 ## 簡単な例 {#a-simple-example}
 
@@ -54,7 +54,7 @@ Use-API POJOは、次の署名を持つinitと呼ばれるパブリックメソ�
 }
 ```
 
-このコンテンツにアクセスがあると、HTL ファイルが実行されます。Within the HTL code we use the context object `properties` to access the current resource&#39;s `title` and `description` and display them. 出力される HTML は以下のとおりです。
+このコンテンツにアクセスがあると、HTL ファイルが実行されます。HTLコード内では、コンテキストオブジェクト`properties`を使用して現在のリソースの`title`と`description`にアクセスし、それらを表示します。 出力される HTML は以下のとおりです。
 
 ### `view-source:http://<host>:<port>/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -113,7 +113,7 @@ public class Info extends WCMUsePojo {
 
 以降の節では、コードの様々な部分について順を追って説明します。
 
-### Local vs. Bundle Java Class {#local-vs-bundle-java-class}
+### ローカルとバンドルのJavaクラス{#local-vs-bundle-java-class}
 
 Java use クラスは、**ローカル**&#x200B;または&#x200B;**バンドル**&#x200B;の 2 つの方法でインストールできます。この例ではローカルインストールを使用します。
 
@@ -149,7 +149,7 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->AEM開発では、リポジトリ項目の名前にハイフンを使用することをお勧めします。 ただし、ハイフンは Java パッケージ名では不正です。この理由から、**リポジトリパス内のハイフンはすべて、パッケージ名ではアンダースコアに変換する必要があります**。
+>AEM開発では、リポジトリ項目名にハイフンを使用することをお勧めします。 ただし、ハイフンは Java パッケージ名では不正です。この理由から、**リポジトリパス内のハイフンはすべて、パッケージ名ではアンダースコアに変換する必要があります**。
 
 ### 拡張 `WCMUsePojo` {#extending-wcmusepojo}
 
@@ -170,7 +170,7 @@ public class Info extends WCMUsePojo
 
 ### クラスの初期化 {#initializing-the-class}
 
-When the use-class is extended from `WCMUsePojo`, initialization is performed by overriding the `activate` method:
+use-classを`WCMUsePojo`から拡張すると、初期化は`activate`メソッドをオーバーライドして実行されます。
 
 ### /apps/my-example/component/info/Info.java {#apps-my-example-component-info-info-java-3}
 
@@ -211,7 +211,7 @@ public class Info extends WCMUsePojo {
 | [ページ](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
-| [Designer](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
+| [デザイナー](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
 | [デザイン](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
 | [スタイル](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
 | [コンポーネント](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
@@ -230,7 +230,7 @@ HTL ファイル内からこれらの値へアクセスできるようにする�
 
 * `getXyz` という形式のメソッドを使用すると、HTL ファイル内で `xyz` という名前のオブジェクトプロパティがアクセス可能になります。
 
-In the following example, the methods `getTitle` and `getDescription` result in the object properties `title` and `description` becoming accessible within the context of the HTL file:
+次の例では、メソッド`getTitle`と`getDescription`によって、オブジェクトのプロパティ`title`と`description`がHTLファイルのコンテキスト内でアクセス可能になります。
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-4}
 
@@ -266,7 +266,7 @@ public class Info extends WCMUsePojo {
 
 ### ローカル識別子 {#local-identifier}
 
-The identifier `info` (after the dot in `data-sly-use.info`) is used within the HTL file to identify the class. 宣言された識別子は、ファイル内でグローバルスコープとして認識されます。`data-sly-use` ステートメントを含む要素のみに制限されるわけではありません。
+識別子`info` （`data-sly-use.info`のドットの後）は、HTLファイル内でクラスを識別するために使用されます。 宣言された識別子は、ファイル内でグローバルスコープとして認識されます。`data-sly-use` ステートメントを含む要素のみに制限されるわけではありません。
 
 ### `/apps/my-example/component/info/info.html`{#apps-my-example-component-info-info-html-3}
 
@@ -479,26 +479,26 @@ Java use クラスを作成する最も一般的な方法は、`WCMUsePojo` を�
 
 次の `data-sly-use` ステートメントがあるとします。
 
-**`<div data-sly-use.`** `localName`**`="`** `UseClass`**`">`**
+**`<div data-sly-use.`** `localName`**`="`**`UseClass`**`">`**
 
 このステートメントは以下のように処理されます。
 
 （1）
 
 * ローカルファイル `UseClass.java` が、HTL ファイルと同じディレクトリにある場合は、そのクラスをコンパイルして読み込んでみます。成功した場合は（2）に進みます。
-* Otherwise, interpret `UseClass` as a fully qualified class name and try to load it from the OSGi environment. 成功した場合は（2）に進みます。
+* それ以外の場合は、`UseClass`を完全修飾クラス名として解釈し、OSGi環境から読み込もうとします。 成功した場合は（2）に進みます。
 * 成功しなかった場合は、`UseClass` を HTL ファイルまたは JavaScript ファイルへのパスとして解釈し、そのファイルを読み込みます。成功した場合は（4）に進みます。
 
 (2)
 
-* Try to adapt the current `Resource` to `UseClass`. If successful, go to (3).
+* 現在の`Resource`を`UseClass`に適応させてみます。成功した場合は、(3)に移動します。
 * 成功しなかった場合は、現在の `Request` を `UseClass` に適応させてみます。成功した場合は（3）に進みます。
 * 成功しなかった場合は、引数ゼロのコンストラクターで `UseClass` をインスタンス化してみます。成功した場合は（3）に進みます。
 
 （3）
 
 * HTL 内で、新しく適応または作成したオブジェクトを、名前 `localName` にバインドします。
-* If `UseClass` implements [`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) then call the `init` method, passing the current execution context (in the form of a `javax.scripting.Bindings` object).
+* `UseClass`が[`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html)を実装している場合は、`init`メソッドを呼び出し、現在の実行コンテキストを（`javax.scripting.Bindings`オブジェクトの形式で）渡します。
 
 (4)
 
@@ -521,7 +521,7 @@ use クラスの最も一般的な作成方法は `WCMUsePojo` を拡張する�
 
 `init` メソッドは、クラスの初期化時に、すべてのコンテキストオブジェクトおよび use クラスに渡されるすべてのパラメーターを保持する `Bindings` オブジェクトで呼び出されます。
 
-All additional functionality (such as the equivalent of `WCMUsePojo.getProperties()`) must be implemented explicitly using the [`javax.script.Bindings`](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html) object. 次に例を示します。
+すべての追加機能（`WCMUsePojo.getProperties()`と同等の機能）は、[`javax.script.Bindings`](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html)オブジェクトを使用して明示的に実装する必要があります。 次に例を示します。
 
 ### `Info.java` {#info-java}
 
@@ -603,7 +603,7 @@ DAM アセットの MIME タイプを表示する HTL スクリプトを作成�
 
 ここでは、サンプルプロジェクト geometrixx の一部として AEM のデフォルトインストールに含まれているアセット（JPEG 画像）を表示します。このアセットの名前は `jane_doe.jpg` で、MIME タイプは `image/jpeg` です。
 
-To access the asset from within HTL, you can declare [`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html) as the class in the `data-sly-use` statement and then use a get method of `Asset` to retrieve the desired information. 次に例を示します。
+HTL内からアセットにアクセスするには、[`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html)を`data-sly-use`ステートメントのクラスとして宣言し、`Asset`のgetメソッドを使用して必要な情報を取得します。 次に例を示します。
 
 ### `mimetype.html` {#mimetype-html}
 
@@ -617,6 +617,6 @@ To access the asset from within HTL, you can declare [`com.day.cq.dam.api.Asset`
 
 ### リクエストから適応可能 {#adaptable-from-request}
 
-It is also possible to employ as a use-class any class that is adaptable from [`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)
+また、[`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)から適応可能なクラスはどれでも、use-classとして使用できます
 
-As with the above case of a use-class adaptable from `Resource`, a use-class adaptable from [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) can be specified in the `data-sly-use` statement. 実行時に、現在のリクエストが与えられたクラスに適応され、結果のオブジェクトが HTL 内で使用可能になります。
+上記の`Resource`から適応可能な使用クラスの場合と同様に、[`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)から適応可能な使用クラスを`data-sly-use`文に指定することができる。 実行時に、現在のリクエストが与えられたクラスに適応され、結果のオブジェクトが HTL 内で使用可能になります。
