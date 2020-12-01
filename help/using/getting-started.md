@@ -35,11 +35,11 @@ HTML テンプレート言語には JSP と比較して多数のメリットが�
 
 HTML テンプレート言語について説明する前に、JSP と HTL の比較に関連する重要な質問に回答します。
 
-**HTL には JSP にない制限事項がありますか。** - HTLは、JSPと比べて、HTLでもJSPを使って何ができるかを達成できるという意味で、HTLには制限がありません。 ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
+**HTL には JSP にない制限事項がありますか。** - HTLは、JSPと比べて、HTLでもJSPを使って何ができるかを達成できるという意味で、HTLには制限がありません。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
 
-**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、「クライアントライブラリの [読み込み](getting-started.md#loading-client-libraries) 」セクションに示すように、 [template &amp; call](block-statements.md#template-call) statementsオファーも同様のパターンです。
+**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、「クライアントライブラリの [読み込み」に示すように、](getting-started.md#loading-client-libraries) templateと [](block-statements.md#template-call) callstatementsのオファーは同様のパターンです。
 
-**HTL 機能を AEM プロジェクトで拡張できますか。**  — いいえ、できません。 HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
+**HTL 機能を AEM プロジェクトで拡張できますか。**  — いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
 
 **JSP と比べて HTL の最大のメリットは何ですか。**  — セキュリティとプロジェクトの効率性が主なメリットで、 [概要に詳しく説明します](overview.md)。
 
@@ -61,9 +61,9 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の異なった構文が見られます。
 
-* **[ブロックステートメント](block-statements.md)** - **&lt;h1>** 要素を条件付きで表示するには、 [`data-sly-test`](block-statements.md#test) HTML5データ属性を使用します。 HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
+* **[ブロック文](block-statements.md)**  — 条件付きで  **&lt;h1>** 要素内で定義されている場合、 [`data-sly-test`](block-statements.md#test) HTML5データ属性が使用されます。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
 
-* **[式の言語](expression-language.md)** - HTL式は、文字 `${` とで区切られ `}`ます。 実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
+* **[式の言語](expression-language.md)** - HTL式は、文字 `${` とで区切られ `}`ます。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
 
 上記の 2 つのリンクページでは、構文で使用できる機能について詳しく説明しています。
 
@@ -82,7 +82,7 @@ HTL の中心となる概念は、既存の HTML 要素を再利用できるよ�
 </sly>
 ```
 
-will output something like following HTML, but only if there are both, a **`jcr:title`** and a **`jcr:description`** property defined, and if neither of them are empty:
+は、次のようなHTMLを出力しますが、両方が存在し、**`jcr:title`**&#x200B;と&#x200B;**`jcr:description`**&#x200B;プロパティが定義され、どちらも空でない場合にのみ出力します。
 
 ```xml
 <h1>MY TITLE</h1>
