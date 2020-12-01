@@ -14,5 +14,5 @@ ht-degree: 35%
 
 HTL 標準を次に示します。
 
-* [HTL仕様](https://github.com/adobe/htl-spec) — 言語弁護士の場合、正式な構文と機能の説明。
-* [HTL TCK](https://github.com/adobe/htl-tck) — 言語の互換性を認証するためのテストスイート。
+* [HTL仕様](https://github.com/adobe/htl-spec)  — 言語弁護士の場合、正式な構文と機能の説明。
+* [HTL TCK](https://github.com/adobe/htl-tck)  — 言語の互換性を証明する一連のテストです。
