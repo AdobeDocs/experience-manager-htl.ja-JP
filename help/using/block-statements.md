@@ -2,7 +2,7 @@
 title: HTL ブロックステートメント
 description: HTML テンプレート言語（HTL）ブロックステートメントは、既存の HTML に直接追加されるカスタム data 属性です。
 translation-type: tm+mt
-source-git-commit: 2336ce8860056f5bc6470b23ee4cda135f7107d8
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 58%
@@ -67,7 +67,7 @@ HTLブロックプラグインは、HTML要素に設定された`data-sly-*`属�
 
 2つのブロック文の優先順位が同じ場合、評価順序は左から右です。
 
-### use {#use}
+### {#use} を使用します
 
 `data-sly-use` ヘルパーオブジェクト（JavaScriptまたはJavaで定義）を初期化し、変数を介して公開します。
 
