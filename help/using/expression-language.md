@@ -2,7 +2,7 @@
 title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 81%
@@ -194,7 +194,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTLは、falseまたは空の文字列に評価される式ーによって設定された値を持つ属性を削除するので、HTML属性を条件付きで表示する場合にも使用できます。 次の例では、**`properties.jcr:`**&#x200B;タイトルが存在し、空でない場合は&lt;a0/>タイトルが表示され、存在し、空でない場合は&#x200B;**`properties.jcr:description`**&#x200B;が表示されます。そうでない場合は、「タイトルまたは説明が指定されていません」というメッセージが表示されます。
+HTLは、falseまたは空の文字列に評価される式ーによって設定された値を持つ属性を削除するので、HTML属性を条件付きで表示する場合にも使用できます。 次の例では、**`properties.jcr:`**&#x200B;タイトルが存在し、空でない場合はタイトルが表示され、存在し、空でない場合は&#x200B;**`properties.jcr:description`**&#x200B;が表示されます。そうでない場合は、「タイトルまたは説明が指定されていません」というメッセージが表示されます。
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
