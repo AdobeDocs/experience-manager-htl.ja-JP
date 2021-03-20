@@ -1,17 +1,13 @@
 ---
-product: Adobe Experience Manager
+solution: Experience Manager
+type: ドキュメント
+product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.ja-JP
 index: y
-solution-title: HTLの学習とサポート
-solution-hub-url: https://docs.adobe.com/content/help/ja-JP/experience-manager-cloud-service/sites/home.html
-getting-started-title: AEM 向け開発の手引き
-getting-started-url: https://docs.adobe.com/content/help/ja-JP/experience-manager-cloud-service/core-concepts/home.html
-tutorials-title: AEM チュートリアル
-tutorials-url: https://docs.adobe.com/content/help/ja-JP/experience-manager-learn/cloud-service/overview.html
 translation-type: tm+mt
-source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '108'
 ht-degree: 97%
 
 ---
@@ -34,6 +30,9 @@ metadata.md
 * `product`
 * `git-repo`
 * `index: y`
+
+使用終了：
+
 * `solution-title`
 * `solution-hub-url`
 * `getting-started-title`
@@ -52,4 +51,4 @@ metadata.md
 * `description`
 * `index: n`（以前のバージョンのコンポーネントのみ）
 
-メタデータに関する追加情報は、[内部オーサリングガイド](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)を参照してください。
+メタデータに関する追加情報は、[内部オーサリングガイド](https://docs.adobe.com/help/ja-JP/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)を参照してください。
