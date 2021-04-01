@@ -1,11 +1,11 @@
 ---
 title: コードサンプル
-description: We.Retail 参照実装を含むコードサンプル
-translation-type: tm+mt
+description: We.Retail  リファレンス実装を含むコードサンプル
+translation-type: ht
 source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '107'
-ht-degree: 31%
+ht-degree: 100%
 
 ---
 
@@ -14,10 +14,10 @@ ht-degree: 31%
 
 HTL のコードサンプルを次に示します。
 
-* [WKNDチュートリアル](https://docs.adobe.com/content/help/ja-JP/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html)  — このチュートリアルでは、WKNDの架空のライフスタイルブランドに対するAEMサイトの実装について説明し、プロジェクトの設定、コアコンポーネント、編集可能なテンプレート、クライアント側ライブラリ、Adobe Experience Manager Sitesのコンポーネント開発などの基本トピックをHTLで説明します。
-* [HTL TodoMVCの例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc)  — 有名な演習のAEM + HTL実装。
+* [WKND チュートリアル](https://docs.adobe.com/content/help/ja-JP/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) - このチュートリアルでは、架空のライフスタイルブランドである WKND に関する AEM サイトの実装手順について説明します。プロジェクトの設定、コアコンポーネント、編集可能なテンプレート、クライアント側ライブラリ、Adobe Experience Manager Sites を使用してすべて HTL で実装されたコンポーネント開発などの、基本的なトピックが含まれます。
+* [HTL TodoMVC の例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) - AEM + HTL 実装に関する有名な演習例。
 
 エキスパートへの質問セッション：
 
-* [2015年1月のHTLセッション（HTLの概要）](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
-* [2016年3月のHTLセッション（高度なコンポーネントの開発）](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
+* [2015 年 1 月の HTL セッション（HTL 入門）](http://scottsdigitalcommunity.blogspot.ca/2015/01/upcoming-sessions-of-ask-aem-community.html)
+* [2016 年 3 月の HTL セッション（高度なコンポーネント開発）](http://scottsdigitalcommunity.blogspot.ca/2016/03/ask-aem-community-experts-deep-dive.html)
