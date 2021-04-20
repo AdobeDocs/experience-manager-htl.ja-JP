@@ -4,8 +4,8 @@ user-guide-title: Adobe Experience ManagerHTL
 breadcrumb-title: HTL ガイド
 user-guide-description: HTML テンプレート言語（HTL）を使用して、エンタープライズレベルの Web フレームワークを作成します。
 feature-set: Experience Manager
-feature: 開発者ツール
-role: デベロッパー
+feature: Developer Tools
+role: Developer
 translation-type: tm+mt
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
