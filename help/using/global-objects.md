@@ -1,14 +1,13 @@
 ---
 title: HTL グローバルオブジェクト
 description: 何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL で提供されます。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 86%
 
 ---
-
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
@@ -20,9 +19,9 @@ ht-degree: 86%
 
 | 変数名 | 説明 |
 |--- |--- |
-| `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
-| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
-| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)に支援 |
+| `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
+| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
+| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
@@ -58,7 +57,7 @@ ht-degree: 86%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-JavaScriptを使用してHTLロジックをバックアップできます。 ただし、推奨または推奨される方法は、[Slingモデルを使用することです。](https://sling.apache.org/documentation/bundles/models.html)
+HTLロジックをJavaScriptでバックアップできます。 ただし、[Sling Models.](https://sling.apache.org/documentation/bundles/models.html)を使用する方法を推奨または推奨します。
 
 <!-- 
 
