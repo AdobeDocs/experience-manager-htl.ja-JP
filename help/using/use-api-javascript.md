@@ -1,20 +1,19 @@
 ---
 title: HTL JavaScript Use-API
-description: HTMLテンプレート言語 — HTL - JavaScript Use-APIを使用すると、HTMLファイルからJavaScriptで記述されたヘルパーコードにアクセスできます。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+description: HTMLテンプレート言語(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードへのアクセスが可能になります。
+exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '324'
 ht-degree: 87%
 
 ---
 
-
 # HTL JavaScript Use-API {#htl-javascript-use-api}
 
-HTML Template Language(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードにアクセスできます。 これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTMLテンプレート言語(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードへのアクセスが可能になります。 これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
-次の規則を使用します。
+次の規則が使用されます。
 
 ```javascript
 /**
