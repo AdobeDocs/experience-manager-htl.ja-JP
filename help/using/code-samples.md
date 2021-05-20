@@ -1,14 +1,13 @@
 ---
 title: コードサンプル
 description: We.Retail  リファレンス実装を含むコードサンプル
-translation-type: ht
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
-workflow-type: ht
+exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 100%
 
 ---
-
 
 # コードサンプル {#code-samples}
 
