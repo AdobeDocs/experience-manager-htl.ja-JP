@@ -1,20 +1,19 @@
 ---
-title: Adobe Experience ManagerHTLの概要
+title: Adobe Experience Manager HTLの概要
 description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '667'
 ht-degree: 94%
 
 ---
 
-
 # 概要 {#overview}
 
 Adobe Experience Mananger（AEM）でサポートされている HTML テンプレート言語（HTL）の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識のない HTML 開発者が AEM プロジェクトに参加できるようにすることです。
 
-AEMのHTMLには、HTMLテンプレート言語が推奨され、サーバー側でテンプレートシステムを推奨します。 AEM 6.0でHTLが導入され、JSP(JavaServer Pages)に代わって使用されます。 堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
+HTMLテンプレート言語は、AEMのHTML用に、サーバー側で推奨される推奨テンプレートシステムです。 HTLはAEM 6.0で導入され、JSP(JavaServer Pages)の代わりに使用されます。 堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
 
 ## セキュリティの向上 {#increased-security}
 
@@ -34,7 +33,7 @@ HTML テンプレート言語は学習が容易であり、機能が意図的に
 
 具体的には、Adobe.com のサイトを HTML テンプレート言語で再実装すると、プロジェクトのコストと期間を約 25％削減できることがわかっています。
 
-![大幅な増加とコストの削減](assets/chlimage_1.png)
+![大幅な増加とコスト削減](assets/chlimage_1.png)
 
 上の図は、次の言語が HTL で効率を改善できる可能性があることを示します。
 
