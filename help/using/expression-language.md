@@ -1,14 +1,13 @@
 ---
 title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 81%
 
 ---
-
 
 # HTL 式言語 {#htl-expression-language}
 
@@ -21,7 +20,7 @@ HTML テンプレート言語は、式言語を使用して HTML 出力の動的
 </h1>
 ```
 
-式は、`\`文字の前に付加されている場合にエスケープできます。例えば、`\${test}`は`${test}`をレンダリングします。
+式の前に`\`文字を付けるとエスケープできます。例えば、`\${test}`は`${test}`をレンダリングします。
 
 >[!NOTE]
 >
@@ -50,11 +49,11 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 また、前の例に示すように、Java のゲッター関数（`getTitle()` など）は、前に `get` を付けずに、後続の文字を小文字にすることでアクセスできます。
 
-### 有効な識別子文字{#valid-identifier-characters}
+### 識別子の有効な文字{#valid-identifier-characters}
 
-変数の名前すなわち識別子には規則があります。開始には文字（`A`-`Z`と`a`-`z`）、またはアンダースコア(`_`)を使用する必要があり、それ以降の文字には数字(`0`-`9`)またはコロン(`:`)を使用できます。 Unicode 文字（`å` や `ü` など）は識別子では使用できません。
+変数の名前すなわち識別子には規則があります。文字（`A`-`Z`と`a`-`z`）またはアンダースコア(`_`)で始め、後続の文字には数字(`0`-`9`)またはコロン(`:`)を使用する必要があります。 Unicode 文字（`å` や `ü` など）は識別子では使用できません。
 
-コロン(`:`)文字はAEMのプロパティ名で共通であるため、有効な識別子文字であることを強調する必要があります。
+コロン(`:`)はAEMプロパティ名でよく使用されるので、識別子の文字として有効な場合は次の点を強調する必要があります。
 
 `${properties.jcr:title}`
 
@@ -78,7 +77,7 @@ ${currentPage.lastModified.time.toString}
 
 リテラルは固定値を示す表記です。
 
-### Boolean {#boolean}
+### ブール値 {#boolean}
 
 ブール値は論理エンティティを表し、`true` と `false` の 2 つの値を持つことができます。
 
@@ -92,7 +91,7 @@ ${currentPage.lastModified.time.toString}
 
 ### 文字列 {#strings}
 
-文字列は、テキストデータを表し、単一または重複で引用します。
+文字列は、テキストデータを表し、引用符または二重引用符で囲みます。
 
 `${'foo'} ${"bar"}`
 
@@ -112,7 +111,7 @@ ${currentPage.lastModified.time.toString}
    * `\u0022` の代わりに `"` を使用
    * `\u0027` の代わりに `'` を使用
 
-上記以外の文字の場合は、バックスラッシュ文字の前にエラーが表示されます。
+上記の文字以外の文字の前にバックスラッシュを付けるとエラーが発生します。
 
 文字列のエスケープを使用する方法の例を次に示します。
 
@@ -151,11 +150,11 @@ ${myArray[2]}
 
 これらの演算子は通常は Boolean 値と一緒に使用されます。ただし、JavaScript と同様に、指定されたオペランドの 1 つの値が実際に返されます。つまり、非ブール値と一緒に使用すると、非ブール値が返されることがあります。
 
-ある値が `true` に変換できる場合、その値は真です。ある値が `false` に変換できる場合、その値は偽です。`false`に変換できる値は、未定義の変数、null値、数値の0、および空の文字列です。
+ある値が `true` に変換できる場合、その値は真です。ある値が `false` に変換できる場合、その値は偽です。`false`に変換できる値は、未定義の変数、null値、数値の0、空文字列です。
 
 #### 論理否定（NOT） {#logical-not}
 
-`${!myVar}` は、その1つ `false` のオペランドを次の値に変換できる場合に返し `true`ます。それ以外の場合は、を返し `true`ます。
+`${!myVar}` が返すの `false` は、単一のオペランドがに変換できる場合 `true`です。それ以外の場合は、を返し `true`ます。
 
 例えば、子ページがない場合のみ要素を表示するなど、テスト条件を逆にするために使用できます。
 
@@ -165,7 +164,7 @@ ${myArray[2]}
 
 #### 論理積（AND） {#logical-and}
 
-`${varOne && varTwo}` は、偽 `varOne` の場合に返します。それ以外の場合は、を返し `varTwo`ます。
+`${varOne && varTwo}` は偽の `varOne` 場合にを返します。それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、2 つのプロパティの存在を確認するなど、2 つの条件を一度にテストできます。
 
@@ -184,7 +183,7 @@ ${myArray[2]}
 
 #### 論理和（OR） {#logical-or}
 
-`${varOne || varTwo}` 真 `varOne` の場合は返します。それ以外の場合は、を返し `varTwo`ます。
+`${varOne || varTwo}` は真の `varOne` 場合にを返します。それ以外の場合は、を返し `varTwo`ます。
 
 この演算子を使用すると、少なくとも 1 つのプロパティの存在を確認するなど、2 つの条件のいずれか 1 つが該当するかどうかをテストできます。
 
@@ -194,7 +193,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTLは、falseまたは空の文字列に評価される式ーによって設定された値を持つ属性を削除するので、HTML属性を条件付きで表示する場合にも使用できます。 次の例では、**`properties.jcr:`**&#x200B;タイトルが存在し、空でない場合はタイトルが表示され、存在し、空でない場合は&#x200B;**`properties.jcr:description`**&#x200B;が表示されます。そうでない場合は、「タイトルまたは説明が指定されていません」というメッセージが表示されます。
+また、HTML属性を条件付きで表示する場合にも使用できます。式によって設定された値がfalseまたは空文字列に評価されると、その値を含む属性がHTLによって削除されるからです。 次の例では、「**`properties.jcr:`**」と表示されます（存在し空でない場合）。空でない場合は「**`properties.jcr:description`**」と表示され、存在しない場合は「タイトルや説明が指定されていません」と表示されます。
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -212,7 +211,7 @@ HTLは、falseまたは空の文字列に評価される式ーによって設定
 
 >[!TIP]
 >
->コロン文字は識別子でも使用できるので、パーサに明確にするために、三項演算子を空白で区切ることをお勧めします。
+>コロンは識別子でも使用できるので、三項演算子を区切る際には空白を使用してパーサーに明確に指示することをお勧めします。
 
 ```xml
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
@@ -227,15 +226,15 @@ HTLは、falseまたは空の文字列に評価される式ーによって設定
 * ブール値は、両方が `true` または両方が `false` のときに等しいとみなされます。
 * Null または未定義変数は、それぞれおよび互いに等しいとみなされます。
 
-`${varOne == varTwo}` とが等し `true` い `varOne` 場合 `varTwo` に返します。
+`${varOne == varTwo}` とが等し `true` い場合 `varOne` はを `varTwo` 返します。
 
-`${varOne != varTwo}` とが等し `true` くない `varOne` 場合 `varTwo` に返します。
+`${varOne != varTwo}` とが等し `true` くない `varOne` 場合 `varTwo` はを返します。
 
 関係演算子では数値であるオペランドしか使用できません。他のすべての型を使用するとエラーが表示されます。
 
-`${varOne > varTwo}` が次の値より大き `true` い `varOne` 場合に返し `varTwo`ます。
+`${varOne > varTwo}` がを返 `true` すのは、 `varOne` がより大きい場合で `varTwo`す。
 
-`${varOne < varTwo}` より小さ `true` い `varOne` 場合は、を返し `varTwo`ます。
+`${varOne < varTwo}` がを返すの `true` は、 `varOne` がより小さい場合で `varTwo`す。
 
 `${varOne >= varTwo}` が `true` を返すのは、`varOne` が `varTwo` よりも大きい場合か等しい場合です。
 
@@ -247,7 +246,7 @@ HTLは、falseまたは空の文字列に評価される式ーによって設定
 
 `${varOne && (varTwo || varThree)}`
 
-## Options {#options}
+## オプション {#options}
 
 式のオプションは、式に作用したり式を変更したりできるほか、ブロックステートメントと共に使用するとパラメーターとしても機能します。
 
@@ -310,7 +309,7 @@ html 拡張子とフラグメント（#value）をパスに追加します。
 <a href="${item.path @ extension = 'html', fragment=item.name}">${item.name}</a>
 ```
 
-`@extension`は、すべてのシナリオで機能し、拡張子を追加するかどうかをチェックします。
+`@extension`は、すべてのシナリオで機能し、拡張機能を追加するかどうかを確認します。
 
 ```xml
 ${ link @ extension = 'html' }
@@ -318,7 +317,7 @@ ${ link @ extension = 'html' }
 
 ### 数値／日付の書式設定 {#number-date-formatting}
 
-HTLを使用すると、カスタムコードを記述することなく、数値や日付をネイティブに書式設定できます。 また、タイムゾーンとロケールもサポートしています。
+HTLでは、カスタムコードを記述することなく、数値や日付のネイティブ形式を使用できます。 また、タイムゾーンとロケールもサポートしています。
 
 書式を最初に指定してから、書式設定が必要な値を指定する例を次に示します。
 
@@ -333,7 +332,7 @@ HTLを使用すると、カスタムコードを記述することなく、数�
 
 >[!NOTE]
 >
->使用できる形式の詳細については、[HTL仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
+>使用できる形式について詳しくは、[HTLの仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
 
 ### インターナショナライゼーション {#internationalization}
 
@@ -349,7 +348,7 @@ hint オプションを使用すると、トランスレーター用にコメン
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-言語のデフォルトのソースは`resource`です。つまり、テキストはコンテンツと同じ言語に翻訳されます。 これは`user`に変更できます。つまり、言語はブラウザーのロケールまたはログインユーザーのロケールから取得されます。
+言語のデフォルトのソースは`resource`です。つまり、テキストはコンテンツと同じ言語に翻訳されます。 これは`user`に変更できます。つまり、言語はブラウザーのロケールまたはログインしているユーザーのロケールから取得されます。
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -385,9 +384,9 @@ HTL 式の表示コンテキストは、HTML ページの構造内の場所を�
 
 ここでは、次のように、3 つの異なるコンテキストの 3 つの変数があるとします。
 
-* `properties.link` ( `uri` コンテキスト)
-* `properties.title` (`attribute` コンテキスト)
-* `properties.text` (`text` コンテキスト)
+* `properties.link` (コン `uri` テキスト)
+* `properties.title` (コン`attribute` テキスト)
+* `properties.text` (コン`text` テキスト)
 
 HTL は、それぞれのコンテキストのセキュリティ要件に従って、それぞれを別々の方法でエスケープします。次のような通常のケースでは、明示的なコンテキスト設定は必要ありません。
 
