@@ -1,18 +1,17 @@
 ---
 title: HTL 使用の手引き
 description: AEM でサポートされる HTL は、JSP の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '2471'
 ht-degree: 91%
 
 ---
 
-
 # HTL 使用の手引き {#getting-started-with-htl}
 
-AEMでは、HTMLの場合、Adobe Experience Manager(AEM)でサポートされているHTML Template Language(HTL)が推奨および推奨されるサーバー側テンプレートシステムです。 JSP(JavaServer Pages)は、AEMの以前のバージョンで使用されていたJSPに代わって使用されます。
+Adobe Experience Manager(AEM)でサポートされているHTMLテンプレート言語(HTL)は、AEMのHTML用に、サーバー側で推奨される推奨テンプレートシステムです。 以前のバージョンのAEMで使用されていたJSP(JavaServer Pages)の代わりに使用されます。
 
 >[!NOTE]
 >
@@ -35,15 +34,15 @@ HTML テンプレート言語には JSP と比較して多数のメリットが�
 
 HTML テンプレート言語について説明する前に、JSP と HTL の比較に関連する重要な質問に回答します。
 
-**HTL には JSP にない制限事項がありますか。** - HTLは、JSPと比べて、HTLでもJSPを使って何ができるかを達成できるという意味で、HTLには制限がありません。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
+**HTL には JSP にない制限事項がありますか。** - HTLにはJSPと比べた場合に制限はありません。つまり、JSPで実行できる操作はHTLでも実行できます。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
 
-**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、「クライアントライブラリの [読み込み」に示すように、](getting-started.md#loading-client-libraries) templateと [](block-statements.md#template-call) callstatementsのオファーは同様のパターンです。
+**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、クライアントライブラリの読み込み [で示すよう](getting-started.md#loading-client-libraries) に、 templateおよびcallstatements [は同じ](block-statements.md#template-call) パターンを提供します。
 
 **HTL 機能を AEM プロジェクトで拡張できますか。**  — いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
 
-**JSP と比べて HTL の最大のメリットは何ですか。**  — セキュリティとプロジェクトの効率性が主なメリットで、 [概要に詳しく説明します](overview.md)。
+**JSP と比べて HTL の最大のメリットは何ですか。** ：主なメリットはセキュリティとプロジェクトの効率性です。詳しくは、 [概要](overview.md)を参照してください。
 
-**JSP はいずれ使用されなくなりますか。**  — 現在の日付では、計画はありません。
+**JSP はいずれ使用されなくなりますか。** ・現時点では、これらの予定はありません。
 
 ## HTL の基本概念 {#fundamental-concepts-of-htl}
 
@@ -61,9 +60,9 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の異なった構文が見られます。
 
-* **[ブロック文](block-statements.md)**  — 条件付きで  **&lt;h1>** 要素内で定義されている場合、 [`data-sly-test`](block-statements.md#test) HTML5データ属性が使用されます。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
+* **[ブロックステートメント](block-statements.md)**  — 条件付きで  **&lt;h1>** 要素の場合、 [`data-sly-test`](block-statements.md#test) HTML5データ属性が使用されます。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
 
-* **[式の言語](expression-language.md)** - HTL式は、文字 `${` とで区切られ `}`ます。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
+* **[式言語](expression-language.md)**  - HTL式はとで区切ら `${` れま `}`す。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
 
 上記の 2 つのリンクページでは、構文で使用できる機能について詳しく説明しています。
 
@@ -82,14 +81,14 @@ HTL の中心となる概念は、既存の HTML 要素を再利用できるよ�
 </sly>
 ```
 
-は、次のようなHTMLを出力しますが、両方が存在し、**`jcr:title`**&#x200B;と&#x200B;**`jcr:description`**&#x200B;プロパティが定義され、どちらも空でない場合にのみ出力します。
+次のようなHTMLが出力されるのは、**`jcr:title`**&#x200B;プロパティと&#x200B;**`jcr:description`**&#x200B;プロパティの両方が定義され、いずれも空でない場合のみです。
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-注意すべき点の1つは、ブロック文で注釈を付けることができない既存の要素がない場合にのみTSLAIN要素を使用することです。静的HTMLを動的にするときに静的HTMLが変更されないように、STRILL要素が言語の値を下げるからです。
+念のため、SLY要素は、ブロックステートメントで注釈を付けた既存の要素がない場合にのみ使用します。SLY要素は、動的にする際に静的HTMLを変更しないように、言語が提供する値を遅らせるからです。
 
 例えば、前の例が既に DIV 要素にラップされている場合、SLY 要素の追加は正しくありません。
 
