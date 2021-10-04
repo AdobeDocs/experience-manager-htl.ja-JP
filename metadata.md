@@ -4,11 +4,10 @@ type: Documentation
 product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.ja-JP
 index: y
-translation-type: tm+mt
-source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
-source-wordcount: '108'
-ht-degree: 97%
+source-wordcount: '107'
+ht-degree: 88%
 
 ---
 
@@ -31,7 +30,7 @@ metadata.md
 * `git-repo`
 * `index: y`
 
-使用終了：
+廃止：
 
 * `solution-title`
 * `solution-hub-url`
@@ -51,4 +50,4 @@ metadata.md
 * `description`
 * `index: n`（以前のバージョンのコンポーネントのみ）
 
-メタデータに関する追加情報は、[内部オーサリングガイド](https://docs.adobe.com/help/ja-JP/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)を参照してください。
+メタデータに関する追加情報は、[内部オーサリングガイド](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/authoring/features/metadata.html#solution)を参照してください。
