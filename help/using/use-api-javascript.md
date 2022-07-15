@@ -1,17 +1,17 @@
 ---
 title: HTL JavaScript Use-API
-description: HTMLテンプレート言語(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードへのアクセスが可能になります。
+description: HTML テンプレート言語（HTL）- JavaScript Use-API を使用すると、HTL ファイルから JavaScript で記述されたヘルパーコードへのアクセスが可能になります。
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '324'
-ht-degree: 87%
+ht-degree: 100%
 
 ---
 
 # HTL JavaScript Use-API {#htl-javascript-use-api}
 
-HTMLテンプレート言語(HTL)JavaScript Use-APIを使用すると、HTLファイルからJavaScriptで記述されたヘルパーコードへのアクセスが可能になります。 これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTML テンプレート言語（HTL）- JavaScript Use-API を使用すると、HTL ファイルから JavaScript で記述されたヘルパーコードへのアクセスが可能になります。これにより、複雑なビジネスロジックをすべて JavaScript コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
 次の規則が使用されます。
 
@@ -114,7 +114,7 @@ use(function () {
 </section>
 ```
 
-対応するロジックは、テンプレートのすぐ横の  ファイルに配置されている次のサーバー側 JavaScript を使用して記述できます。`component.js`
+対応するロジックは、テンプレートのすぐ横の `component.js` ファイルに配置されている次のサーバー側 JavaScript を使用して記述できます。
 
 ```javascript
 use(function () {
@@ -133,7 +133,7 @@ use(function () {
 });
 ```
 
-このコードは、別のソースから `title` の取得を行い、記述を 50 文字に切り詰めます。
+このコードは、別のソースから `title` を取得し、説明を 50 文字に切り詰めます。
 
 ## 依存関係 {#dependencies}
 
