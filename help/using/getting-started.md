@@ -3,15 +3,15 @@ title: HTL 使用の手引き
 description: AEM でサポートされる HTL は、JSP の代わりに、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2471'
-ht-degree: 91%
+ht-degree: 100%
 
 ---
 
 # HTL 使用の手引き {#getting-started-with-htl}
 
-Adobe Experience Manager(AEM)でサポートされているHTMLテンプレート言語(HTL)は、AEMのHTML用に、サーバー側で推奨される推奨テンプレートシステムです。 以前のバージョンのAEMで使用されていたJSP(JavaServer Pages)の代わりに使用されます。
+Adobe Experience Manager（AEM）でサポートされる HTML テンプレート言語（HTL）は、AEM における HTML 用のサーバー側テンプレートシステムとして優先かつ推奨されています。以前のバージョンの AEM で使用されていた JSP（JavaServer Pages）の代わりに使用されます。
 
 >[!NOTE]
 >
@@ -34,15 +34,15 @@ HTML テンプレート言語には JSP と比較して多数のメリットが�
 
 HTML テンプレート言語について説明する前に、JSP と HTL の比較に関連する重要な質問に回答します。
 
-**HTL には JSP にない制限事項がありますか。** - HTLにはJSPと比べた場合に制限はありません。つまり、JSPで実行できる操作はHTLでも実行できます。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
+**HTL には JSP にない制限事項がありますか。** - HTL には JSP と比べた場合に制限事項はありません。つまり、JSP で実行できることは HTL でも実行できます。ただし、HTL はいくつかの面で JSP に比べて厳密に設計されています。つまり、場合によっては、1 つの JSP ファイルですべて実行できる処理を、HTL で実行するためには Java クラスまたは JavaScript ファイルに分割する必要があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
 
-**HTL では JSP タグライブラリはサポートされますか。**  — いいえ。ただし、クライアントライブラリの読み込み [で示すよう](getting-started.md#loading-client-libraries) に、 templateおよびcallstatements [は同じ](block-statements.md#template-call) パターンを提供します。
+**HTL では JSP タグライブラリはサポートされますか。** - サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)の節で説明するように、[template および call](block-statements.md#template-call) ステートメントによって同様のパターンが提供されます。
 
-**HTL 機能を AEM プロジェクトで拡張できますか。**  — いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
+**HTL 機能を AEM プロジェクトで拡張できますか。** - いいえ、できません。HTL は、ロジック（[Use-API](getting-started.md#use-api-for-accessing-logic)）とマークアップ（[template および call](block-statements.md#template-call) ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化することができます。
 
-**JSP と比べて HTL の最大のメリットは何ですか。** ：主なメリットはセキュリティとプロジェクトの効率性です。詳しくは、 [概要](overview.md)を参照してください。
+**JSP と比べて HTL の最大のメリットは何ですか。** - 最大のメリットはセキュリティとプロジェクトの効率性です。これらについては、[概要](overview.md)で詳しく説明します。
 
-**JSP はいずれ使用されなくなりますか。** ・現時点では、これらの予定はありません。
+**JSP はいずれ使用されなくなりますか。** - 現時点ではそうした予定はありません。
 
 ## HTL の基本概念 {#fundamental-concepts-of-htl}
 
@@ -60,9 +60,9 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の異なった構文が見られます。
 
-* **[ブロックステートメント](block-statements.md)**  — 条件付きで  **&lt;h1>** 要素の場合、 [`data-sly-test`](block-statements.md#test) HTML5データ属性が使用されます。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスがついています。
+* **[ブロックステートメント](block-statements.md)** - **&lt;h1>** 要素を条件付きで表示するには、[`data-sly-test`](block-statements.md#test) HTML5 データ属性を使用します。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスが付きます。
 
-* **[式言語](expression-language.md)**  - HTL式はとで区切ら `${` れま `}`す。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
+* **[式言語](expression-language.md)** - HTL の式は、`${` と `}` で区切られます。実行時にこれらの式が評価され、出力 HTML ストリームに値がインジェクションされます。
 
 上記の 2 つのリンクページでは、構文で使用できる機能について詳しく説明しています。
 
@@ -81,14 +81,14 @@ HTL の中心となる概念は、既存の HTML 要素を再利用できるよ�
 </sly>
 ```
 
-次のようなHTMLが出力されるのは、**`jcr:title`**&#x200B;プロパティと&#x200B;**`jcr:description`**&#x200B;プロパティの両方が定義され、いずれも空でない場合のみです。
+次のような HTML が出力されるのは、**`jcr:title`** プロパティと **`jcr:description`** プロパティの両方が定義され、いずれも空でない場合のみです。
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-念のため、SLY要素は、ブロックステートメントで注釈を付けた既存の要素がない場合にのみ使用します。SLY要素は、動的にする際に静的HTMLを変更しないように、言語が提供する値を遅らせるからです。
+注意する必要があるのは、既存の要素がブロックステートメントで注釈付けできなかったときだけ SLY 要素を使用するということです。なぜなら、言語によって提供される値が、静的な HTML を動的にする際にその HTML を変更しないように、SLY 要素が防ごうとするためです。
 
 例えば、前の例が既に DIV 要素にラップされている場合、SLY 要素の追加は正しくありません。
 
@@ -167,7 +167,7 @@ HTL はデータ属性を使用してブロックステートメントを定義�
 -->
 ```
 
-### 明示的なコンテキストの必要性 {#explicit-contexts-required}
+### 明示的なコンテキストが必要 {#explicit-contexts-required}
 
 この後の[自動コンテキスト認識エスケープ](getting-started.md#automatic-context-aware-escaping)で説明するように、HTL の目的の 1 つは、コンテキスト認識エスケープをすべての式に自動的に適用して、クロスサイトスクリプティング（XSS）によって脆弱性がもたらされるリスクを低減することです。HTL は、HTML マークアップ内部に配置された式のコンテキストを自動的に検出できますが、インライン JavaScript または CSS の構文の分析は行いません。したがって、そのような式に適用する必要がある正確なコンテキストを明示的に指定するのは開発者の責任です。
 
@@ -220,7 +220,7 @@ HTML テンプレート言語では、マークアップ内でコードを混在
 
 次の節ではこれについてさらに詳しく説明します。
 
-* [`data-sly-use` ステートメント](block-statements.md#use)に関する節では、このステートメントで実行できるすべての処理について説明します。
+* [`data-sly-use`ステートメント](block-statements.md#use)に関する節では、このステートメントで実行できるすべての処理について説明します。
 * [Use-API のページ](use-api.md)では、ロジックを記述するために Java と JavaScript のどちらを選ぶかということについて参考となる情報を説明します。
 * ロジックの記述方法の詳細については、[JavaScript Use-API](use-api-javascript.md) と [Java Use-API](use-api-java.md) のぺージが参考になります。
 
