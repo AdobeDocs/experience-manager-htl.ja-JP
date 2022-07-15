@@ -3,9 +3,9 @@ title: HTL 式言語
 description: HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1852'
-ht-degree: 81%
+ht-degree: 100%
 
 ---
 
@@ -20,7 +20,7 @@ HTML テンプレート言語は、式言語を使用して HTML 出力の動的
 </h1>
 ```
 
-式の前に `\` 文字を付けるとエスケープできます。例えば、`\${test}` は `${test}` をレンダリングします。
+式の前に `\` 文字を付けるとエスケープすることができます。例えば、`\${test}` は `${test}` とレンダリングされます。
 
 >[!NOTE]
 >
@@ -47,13 +47,13 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 アクセス対象のプロパティは関数の場合もありますが、引数を渡すことはできません。したがって、ゲッターのように引数を取らない関数にのみアクセスできます。これは、式に埋め込まれるロジックの量を減らすことを目的とした必要な制約です。必要であれば、[`data-sly-use`](block-statements.md#use) ステートメントを使用してパラメーターをロジックに渡すことができます。
 
-また、前の例に示すように、Java のゲッター関数（`getTitle()` など）は、前に `get` を付けずに、後続の文字を小文字にすることでアクセスできます。
+また、前の例に示すように、Java のゲッター関数（`getTitle()` など）は、先頭に `get` を付けずに、後続の文字を小文字にすることでアクセスできます。
 
-### 識別子の有効な文字 {#valid-identifier-characters}
+### 有効な識別子文字 {#valid-identifier-characters}
 
-変数の名前すなわち識別子には規則があります。文字（`A`-`Z` と `a`-`z`）またはアンダースコア (`_`) で始め、後続の文字には数字 (`0`-`9`) またはコロン (`:`) を使用する必要があります。 Unicode 文字（`å` や `ü` など）は識別子では使用できません。
+変数の名前すなわち識別子には規則があります。文字（`A`-`Z` と `a`-`z`）またはアンダースコア（`_`）で始めて、後続の文字には数字（`0`-`9`）またはコロン（`:`）を使用する必要があります。識別子では Unicode 文字（`å` や `ü` など）は使用できません。
 
-コロン (`:`) はAEMのプロパティ名でよく使用されるので、識別子の文字として有効なのは便利なことです。
+コロン（`:`）文字は AEM プロパティ名でよく使用されるため、利便性のある有効な識別子文字であることを強調する必要があります。
 
 `${properties.jcr:title}`
 
@@ -91,7 +91,7 @@ ${currentPage.lastModified.time.toString}
 
 ### 文字列 {#strings}
 
-文字列は、テキストデータを表し、引用符または二重引用符で囲みます。
+文字列はテキストデータを表し、一重引用符または二重引用符で囲みます。
 
 `${'foo'} ${"bar"}`
 
@@ -111,7 +111,7 @@ ${currentPage.lastModified.time.toString}
    * `\u0022` の代わりに `"` を使用
    * `\u0027` の代わりに `'` を使用
 
-上記以外の文字の場合、前にバックスラッシュを付けるとエラーが発生します。
+上記以外の文字の前にバックスラッシュを付けるとエラーになります。
 
 文字列のエスケープを使用する方法の例を次に示します。
 
@@ -148,13 +148,13 @@ ${myArray[2]}
 
 ### 論理演算子 {#logical-operators}
 
-これらの演算子は通常は Boolean 値と一緒に使用されます。ただし、JavaScript と同様に、指定されたオペランドの 1 つの値が実際に返されます。つまり、非ブール値と一緒に使用すると、非ブール値が返されることがあります。
+これらの演算子は通常はブール値と一緒に使用されます。ただし、JavaScript と同様に、指定されたオペランドの 1 つの値が実際に返されます。つまり、非ブール値と一緒に使用すると、非ブール値が返されることがあります。
 
-ある値が `true` に変換できる場合、その値は真です。ある値が `false` に変換できる場合、その値は偽です。`false` に変換できる値は、未定義の変数、null 値、数値の 0、空の文字列です。
+ある値が `true` に変換できる場合、その値は真です。ある値が `false` に変換できる場合、その値は偽です。`false` に変換できる値は、未定義の変数、null 値、数値の 0、空文字列です。
 
 #### 論理否定（NOT） {#logical-not}
 
-`${!myVar}` が返すの `false` は、単一のオペランドがに変換できる場合 `true`です。それ以外の場合は、を返し `true`ます。
+`${!myVar}` が `false` を返すのは、単一のオペランドが `true` に変換される場合です。それ以外の場合は `true` が返されます。
 
 例えば、子ページがない場合のみ要素を表示するなど、テスト条件を逆にするために使用できます。
 
@@ -164,7 +164,7 @@ ${myArray[2]}
 
 #### 論理積（AND） {#logical-and}
 
-`${varOne && varTwo}` 偽の `varOne` 場合はを返し、それ以外の場合は、を返し `varTwo`ます。
+`${varOne && varTwo}` は偽の場合には `varOne`、それ以外の場合には `varTwo` を返します。
 
 この演算子を使用すると、2 つのプロパティの存在を確認するなど、2 つの条件を一度にテストできます。
 
@@ -175,7 +175,7 @@ ${myArray[2]}
 </div>
 ```
 
-論理積（AND）演算子は、HTML 属性を条件付きで表示する場合にも使用できます。動的に設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。つまり、次の例では `class` 属性が表示されるのは、`logic.showClass` が真で、さらに `logic.className` が存在し空でない場合のみです。
+論理積（AND）演算子は、HTML 属性を条件付きで表示する場合にも使用できます。動的に設定された値が false または空文字列に評価されると、そのような値を含む属性が HTL によって削除されるためです。つまり、次の例で `class` 属性が表示されるのは、`logic.showClass` が真で、かつ `logic.className` が存在し空でない場合のみです。
 
 ```xml
 <div class="${logic.showClass && logic.className}">...</div>
@@ -183,7 +183,7 @@ ${myArray[2]}
 
 #### 論理和（OR） {#logical-or}
 
-`${varOne || varTwo}` 真の `varOne` 場合はを返します。それ以外の場合は、を返し `varTwo`ます。
+`${varOne || varTwo}` は真の場合には `varOne`、それ以外の場合には `varTwo` を返します。
 
 この演算子を使用すると、少なくとも 1 つのプロパティの存在を確認するなど、2 つの条件のいずれか 1 つが該当するかどうかをテストできます。
 
@@ -193,7 +193,7 @@ ${myArray[2]}
 
 論理和（OR）演算子は、真である最初の変数を返します。また、フォールバック値を設定するために使用すると非常に便利です。
 
-HTL では、false または空の文字列に評価される式によって設定された値を含む属性が削除されるので、HTML 属性を条件付きで表示する場合にも使用できます。 次の例は、存在し空でない場合は **`properties.jcr:`** タイトルを表示し、存在し空でない場合は **`properties.jcr:description`** の表示に戻ります。そうでない場合は、「タイトルや説明が指定されていません」というメッセージが表示されます。
+また、HTL は false または空文字列と評価される式で設定された値を持つ属性を削除するため、HTML の属性を条件付きで表示するのにも使用することができます。つまり、次の例で **`properties.jcr:`** タイトルが表示されるのは、存在し、かつ空でない場合のみです。それ以外の場合は、フォールバックとして **`properties.jcr:description`** が表示されます（存在し、かつ空でない場合）。どちらの条件も満たさない場合は、メッセージ「no title or description provided（タイトルまたは説明が入力されていません）」が表示されます。
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -201,7 +201,7 @@ HTL では、false または空の文字列に評価される式によって設�
 
 ### 条件（三項）演算子 {#conditional-ternary-operator}
 
-`${varCondition ? varOne : varTwo}` は `varOne` が真の場合に `varCondition` を返し、それ以外の場合に `varTwo` を返します。
+`${varCondition ? varOne : varTwo}` は `varCondition` が真の場合には `varOne`、それ以外の場合には `varTwo` を返します。
 
 通常、この演算子は、ページのステータスに応じて別のメッセージを表示するなど、式内の条件を定義するために使用できます。
 
@@ -211,7 +211,7 @@ HTL では、false または空の文字列に評価される式によって設�
 
 >[!TIP]
 >
->コロンは識別子でも使用できるので、三項演算子を区切る際には空白を使用してパーサーにわかりやすくします。
+>コロンは識別子でも使用できるので、三項演算子を区切る場合には空白を使用してパーサーに明確に指示することをお勧めします。
 
 ```xml
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
@@ -223,22 +223,22 @@ HTL では、false または空の文字列に評価される式によって設�
 
 * 文字列は、文字が同じ順序で並んでいるときに等しいとみなされます。
 * 数値は、同じ値のときに等しいとみなされます。
-* ブール値は、両方が `true` または両方が `false` のときに等しいとみなされます。
+* ブール値は、両方が `true` または `false` のときに等しいとみなされます。
 * Null または未定義変数は、それぞれおよび互いに等しいとみなされます。
 
-`${varOne == varTwo}` がを返すの `true` は、と `varOne` が等 `varTwo` しい場合です。
+`${varOne == varTwo}` は、`varOne` と `varTwo` が等しい場合、`true` を返します。
 
-`${varOne != varTwo}` とが等し `true` くない `varOne` 場合 `varTwo` はを返します。
+`${varOne != varTwo}` は、`varOne` と `varTwo` が等しくない場合、`true` を返します。
 
 関係演算子では数値であるオペランドしか使用できません。他のすべての型を使用するとエラーが表示されます。
 
-`${varOne > varTwo}` がを返す `true` のは、 `varOne` がより大きい場合で `varTwo`す。
+`${varOne > varTwo}` は、`varOne` が `varTwo` よりも大きい場合、`true` を返します。
 
-`${varOne < varTwo}` がを返すの `true` は、が `varOne` より小さい場合で `varTwo`す。
+`${varOne < varTwo}` は、`varOne` が `varTwo` よりも小さい場合、`true` を返します。
 
-`${varOne >= varTwo}` が `true` を返すのは、`varOne` が `varTwo` よりも大きい場合か等しい場合です。
+`${varOne >= varTwo}` は、`varOne` が `varTwo` よりも大きい場合か等し、`true` を返します。
 
-`${varOne <= varTwo}` が `true` を返すのは、`varOne` が `varTwo` よりも小さい場合か等しい場合です。
+`${varOne <= varTwo}` は、`varOne` が `varTwo` よりも小さい場合か等しい場合、`true` を返します。
 
 ### グループ化の括弧 {#grouping-parentheses}
 
@@ -317,7 +317,7 @@ ${ link @ extension = 'html' }
 
 ### 数値／日付の書式設定 {#number-date-formatting}
 
-HTL では、カスタムコードを記述せずに、数値や日付をネイティブ形式に設定できます。 また、タイムゾーンとロケールもサポートしています。
+HTL では、カスタムコードを記述することなく、数字と日付をネイティブにフォーマットすることができます。また、タイムゾーンとロケールもサポートしています。
 
 書式を最初に指定してから、書式設定が必要な値を指定する例を次に示します。
 
@@ -332,11 +332,11 @@ HTL では、カスタムコードを記述せずに、数値や日付をネイ�
 
 >[!NOTE]
 >
->使用できる形式について詳しくは、[HTL 仕様 ](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md) を参照してください。
+>使用できるすべての形式について詳しくは、[HTL の仕様](https://github.com/Adobe-Marketing-Cloud/htl-spec/blob/master/SPECIFICATION.md)を参照してください。
 
-### インターナショナライゼーション {#internationalization}
+### 国際化 {#internationalization}
 
-**&#x200B;現在の[辞書](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
+**&#x200B;現在の[辞書](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html?lang=ja)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
 
 ```xml
 ${'Page' @ i18n}
@@ -348,7 +348,7 @@ hint オプションを使用すると、トランスレーター用にコメン
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-言語のデフォルトのソースは `resource` です。つまり、テキストはコンテンツと同じ言語に翻訳されます。 これは `user` に変更できます。つまり、言語はブラウザーのロケールまたはログインしているユーザーのロケールから取得されます。
+言語のデフォルトのソースは `resource` です。つまり、テキストはコンテンツと同じ言語に翻訳されます。これを `user` に変更すると、ブラウザーのロケール、またはログインしているユーザーのロケールの言語を使用できます。
 
 ```xml
 ${'Page' @ i18n, source='user'}
@@ -384,9 +384,9 @@ HTL 式の表示コンテキストは、HTML ページの構造内の場所を�
 
 ここでは、次のように、3 つの異なるコンテキストの 3 つの変数があるとします。
 
-* `properties.link` ( コン `uri` テキスト )
-* `properties.title` ( コン`attribute` テキスト )
-* `properties.text` ( コン`text` テキスト )
+* `properties.link`（`uri` コンテキスト）
+* `properties.title`（`attribute` コンテキスト）
+* `properties.text`（`text` コンテキスト）
 
 HTL は、それぞれのコンテキストのセキュリティ要件に従って、それぞれを別々の方法でエスケープします。次のような通常のケースでは、明示的なコンテキスト設定は必要ありません。
 
