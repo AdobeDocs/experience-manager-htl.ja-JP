@@ -9,7 +9,7 @@ role: Developer
 source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
 source-wordcount: '64'
-ht-degree: 100%
+ht-degree: 92%
 
 ---
 
@@ -17,11 +17,11 @@ ht-degree: 100%
 # Adobe Experience Manager HTL ヘルプ {#using}
 
 + [概要](overview.md)
-+ 概要{#getting-started}
-   + [HTL とは?](update.md)
-   + [HTL 使用の手引き](getting-started.md)
++ はじめに {#getting-started}
+   + [HTL について](update.md)
+   + [HTL の基本を学ぶ](getting-started.md)
    + [HTL の仕様](htl-specification.md)
-+ HTML テンプレート言語{#htl}
++ HTML テンプレート言語 {#htl}
    + [HTL グローバルオブジェクト](global-objects.md)
    + [HTL Java Use-API](use-api-java.md)
    + [HTL JavaScript Use-API](use-api-javascript.md)
