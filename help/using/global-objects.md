@@ -3,9 +3,9 @@ title: HTL グローバルオブジェクト
 description: 何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL で提供されます。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '220'
-ht-degree: 86%
+ht-degree: 100%
 
 ---
 
@@ -19,9 +19,9 @@ ht-degree: 86%
 
 | 変数名 | 説明 |
 |--- |--- |
-| `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
-| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
-| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)ベース。 |
+| `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
+| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
+| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
@@ -57,7 +57,7 @@ ht-degree: 86%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-HTLロジックをJavaScriptでバックアップできます。 ただし、[Sling Models.](https://sling.apache.org/documentation/bundles/models.html)を使用する方法を推奨または推奨します。
+HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。
 
 <!-- 
 
