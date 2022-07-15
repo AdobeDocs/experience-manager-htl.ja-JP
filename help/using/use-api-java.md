@@ -3,19 +3,19 @@ title: HTL Java Use-API
 description: HTML テンプレート言語（HTL）Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2558'
-ht-degree: 82%
+ht-degree: 100%
 
 ---
 
 # HTL Java Use-API {#htl-java-use-api}
 
-HTMLテンプレート言語(HTL)Java Use-APIを使用すると、HTLファイルから`data-sly-use`を介してカスタムJavaクラスのヘルパーメソッドにアクセスできます。 これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTML テンプレート言語（HTL）Java Use-API を使用すると、HTL ファイルから `data-sly-use` を介してカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
-Java Use-APIオブジェクトは、POJOのデフォルトのコンストラクターを通じて、特定の実装でインスタンス化された、単純なPOJOにすることができます。
+Java Use-API オブジェクトは、POJO のデフォルトのコンストラクタを通じて、特定の実装でインスタンス化された単純な POJO にすることができます。
 
-Use-API POJOは、次のシグネチャを使用して、initと呼ばれるパブリックメソッドを公開することもできます。
+Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリックメソッドも公開できます。
 
 ```java
     /**
@@ -26,7 +26,7 @@ Use-API POJOは、次のシグネチャを使用して、initと呼ばれるパ�
     public void init(javax.script.Bindings bindings);
 ```
 
-`bindings`マップには、現在実行されているHTLスクリプトにコンテキストを提供するオブジェクトを含めることができます。このスクリプトは、Use-APIオブジェクトがその処理に使用できます。
+`bindings` マップには、Use-API オブジェクトが処理に使用できる、現在実行されている HTL スクリプトにコンテキストを提供するオブジェクトを含めることができます。
 
 ## 簡単な例 {#a-simple-example}
 
@@ -53,7 +53,7 @@ Use-API POJOは、次のシグネチャを使用して、initと呼ばれるパ�
 }
 ```
 
-このコンテンツにアクセスがあると、HTL ファイルが実行されます。HTLコード内で、コンテキストオブジェクト`properties`を使用して、現在のリソースの`title`と`description`にアクセスし、それらを表示します。 出力される HTML は以下のとおりです。
+このコンテンツにアクセスがあると、HTL ファイルが実行されます。HTL コード内で、コンテキストオブジェクト `properties` を使用して、現在のリソースの `title` および `description` にアクセスし、それらを表示します。出力される HTML は以下のとおりです。
 
 ### `view-source:http://<host>:<port>/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -112,7 +112,7 @@ public class Info extends WCMUsePojo {
 
 以降の節では、コードの様々な部分について順を追って説明します。
 
-### ローカルとバンドルのJavaクラス{#local-vs-bundle-java-class}
+### ローカルとバンドルの Java クラス {#local-vs-bundle-java-class}
 
 Java use クラスは、**ローカル**&#x200B;または&#x200B;**バンドル**&#x200B;の 2 つの方法でインストールできます。この例ではローカルインストールを使用します。
 
@@ -148,9 +148,9 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->AEM開発では、リポジトリ項目の名前にハイフンを使用することをお勧めします。 ただし、ハイフンは Java パッケージ名では不正です。この理由から、**リポジトリパス内のハイフンはすべて、パッケージ名ではアンダースコアに変換する必要があります**。
+>AEM の開発では、リポジトリ項目の名前にハイフンを使用することが推奨されています。ただし、ハイフンは Java パッケージ名では不正です。この理由から、**リポジトリパス内のハイフンはすべて、パッケージ名ではアンダースコアに変換する必要があります**。
 
-### 拡張 `WCMUsePojo` {#extending-wcmusepojo}
+### `WCMUsePojo` の拡張 {#extending-wcmusepojo}
 
 Java クラスを HTL に組み込むには多数の方法がありますが（「`WCMUsePojo` の代替策」を参照）、最も簡単な方法は `WCMUsePojo` クラスを拡張することです。
 
@@ -169,7 +169,7 @@ public class Info extends WCMUsePojo
 
 ### クラスの初期化 {#initializing-the-class}
 
-useクラスが`WCMUsePojo`から拡張されると、`activate`メソッドを上書きして初期化が実行されます。
+`WCMUsePojo` から use クラスが拡張されると、`activate` メソッドを上書きすることによって初期化が実行されます。
 
 ### /apps/my-example/component/info/Info.java {#apps-my-example-component-info-info-java-3}
 
@@ -193,33 +193,33 @@ public class Info extends WCMUsePojo {
 
 ### コンテキスト {#context}
 
-[Activate](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) メソッドの通常の用途は、現在のコンテキスト（現在の要求やリソースなど）に基づいて HTL コードに必要な値を事前に計算し、（メンバー変数に）格納することです。
+[アクティベート](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)メソッドの通常の用途は、現在のコンテキスト（現在の要求やリソースなど）に基づいて HTL コードに必要な値を事前に計算し、（メンバー変数に）格納することです。
 
 `WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（[グローバルオブジェクト](global-objects.md)を参照）。
 
 `WCMUsePojo` を拡張するクラスでは、名前を基準として、以下のコードを使用してコンテキストオブジェクトにアクセスできます。
 
-[`<T> T get(String name, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
+[`<T> T get(String name, Class<T> type)`](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
 また、以下のような適切で&#x200B;**便利なメソッド**&#x200B;によって、よく使用されるコンテキストオブジェクトに直接アクセスできます。
 
 |  |  |
 |---|---|
-| [PageManager](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
-| [ページ](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
-| [ページ](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
-| [デザイナー](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
-| [デザイン](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
-| [スタイル](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
-| [コンポーネント](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getInheritedProperties) |
-| [Resource](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
-| [ResourceResolver](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
-| [SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
-| [SlingHttpServletResponse](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
-| [SlingScriptHelper](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [getSlingScriptHelper()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getSlingScriptHelper()) |
+| [PageManager](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
+| [Page](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
+| [Page](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
+| [ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
+| [ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
+| [Designer](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
+| [Design](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
+| [Style](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
+| [Component](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
+| [ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getInheritedProperties) |
+| [Resource](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
+| [ResourceResolver](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
+| [SlingHttpServletRequest](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
+| [SlingHttpServletResponse](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
+| [SlingScriptHelper](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [getSlingScriptHelper()](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getSlingScriptHelper()) |
 
 ### ゲッターメソッド {#getter-methods}
 
@@ -229,7 +229,7 @@ HTL ファイル内からこれらの値へアクセスできるようにする�
 
 * `getXyz` という形式のメソッドを使用すると、HTL ファイル内で `xyz` という名前のオブジェクトプロパティがアクセス可能になります。
 
-次の例では、メソッド`getTitle`と`getDescription`を使用すると、HTLファイルのコンテキスト内のオブジェクトプロパティ`title`と`description`にアクセスできるようになります。
+例えば、次の例では、`getTitle` メソッドおよび `getDescription` メソッドを使用すると、HTL ファイルのコンテキスト内のオブジェクトプロパティ `title` および `description` がアクセス可能になります。
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-4}
 
@@ -265,7 +265,7 @@ public class Info extends WCMUsePojo {
 
 ### ローカル識別子 {#local-identifier}
 
-識別子`info`（`data-sly-use.info`のドットの後）は、HTLファイル内でクラスを識別するために使用されます。 宣言された識別子は、ファイル内でグローバルスコープとして認識されます。`data-sly-use` ステートメントを含む要素のみに制限されるわけではありません。
+識別子 `info`（`data-sly-use.info` のドットの後）は、HTL ファイル内で、クラスを識別するために使用します。宣言された識別子は、ファイル内でグローバルスコープとして認識されます。`data-sly-use` ステートメントを含む要素のみに制限されるわけではありません。
 
 ### `/apps/my-example/component/info/info.html`{#apps-my-example-component-info-info-html-3}
 
@@ -304,7 +304,7 @@ public class Info extends WCMUsePojo {
 
 ## 応用 {#beyond-the-basics}
 
-この節では、上記の簡単な例を超える機能をいくつか紹介します。
+ここでは、上記の簡単な例よりも高度な機能をいくつか紹介します。
 
 * use クラスにパラメーターを渡す
 * バンドルされた Java use クラス
@@ -357,13 +357,13 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-パラメーターへのアクセスには `WCMUsePojo` メソッドを使用します。 [`<T> T get(String paramName, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
+パラメーターへのアクセスには `WCMUsePojo` メソッドを使用します。[`<T> T get(String paramName, Class<T> type)`](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
 
-この例では、次のステートメントが使用されます。
+ここでは、次のステートメントです。
 
 `get("text", String.class)`
 
-次に、メソッドを使用して文字列が反転および表示されます。
+その後、次のメソッドで文字列が反転され、表示されます。
 
 `getReverseText()`
 
@@ -472,7 +472,7 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-### `WCMUsePojo` {#alternatives-to-wcmusepojo} の代替策
+### `WCMUsePojo` の代替策 {#alternatives-to-wcmusepojo}
 
 Java use クラスを作成する最も一般的な方法は、`WCMUsePojo` を拡張することです。ただし、これ以外にもいくつかのオプションがあります。他の方法について理解するには、HTL の `data-sly-use` ステートメントが内部でどのように機能するかを理解することが役立ちます。
 
@@ -485,42 +485,42 @@ Java use クラスを作成する最も一般的な方法は、`WCMUsePojo` を�
 （1）
 
 * ローカルファイル `UseClass.java` が、HTL ファイルと同じディレクトリにある場合は、そのクラスをコンパイルして読み込んでみます。成功した場合は（2）に進みます。
-* それ以外の場合は、`UseClass`を完全修飾クラス名として解釈し、OSGi環境から読み込んでみます。 成功した場合は（2）に進みます。
-* 成功しなかった場合は、`UseClass` を HTL ファイルまたは JavaScript ファイルへのパスとして解釈し、そのファイルを読み込みます。成功した場合は（4）に進みます。
+* 失敗した場合は、`UseClass` を完全修飾クラス名として解釈し、OSGi 環境から読み込みます。成功した場合は（2）に進みます。
+* 失敗した場合は、`UseClass` を HTL ファイルまたは JavaScript ファイルへのパスとして解釈し、そのファイルを読み込みます。成功した場合は（4）に進みます。
 
 (2)
 
-* 現在の`Resource`を`UseClass`に適応させてみます。成功した場合は(3)に進みます。
-* 成功しなかった場合は、現在の `Request` を `UseClass` に適応させてみます。成功した場合は（3）に進みます。
-* 成功しなかった場合は、引数ゼロのコンストラクターで `UseClass` をインスタンス化してみます。成功した場合は（3）に進みます。
+* 現在の `Resource` を `UseClass` に適応させます。成功した場合は（3）に進みます。
+* 失敗した場合は、現在の `Request` を `UseClass` に適応させてみます。成功した場合は（3）に進みます。
+* 失敗した場合は、引数ゼロのコンストラクターで `UseClass` をインスタンス化してみます。成功した場合は（3）に進みます。
 
 （3）
 
 * HTL 内で、新しく適応または作成したオブジェクトを、名前 `localName` にバインドします。
-* `UseClass`が[`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html)を実装する場合は、`init`メソッドを呼び出し、現在の実行コンテキストを（`javax.scripting.Bindings`オブジェクトの形式で）渡します。
+* `UseClass` が [`io.sightly.java.api.Use`](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) を実装する場合は、`init` メソッドを呼び出して、現在の実行コンテキスト（`javax.scripting.Bindings` オブジェクトの形式）を渡します。
 
 (4)
 
 * `UseClass` が、`data-sly-template` を含む HTL ファイルへのパスである場合は、テンプレートを用意します。
-* `UseClass` が JavaScript use クラスへのパスである場合は、use クラスを用意します（[JavaScript Use-API](use-api-javascript.md) を参照）。
+* そうでない場合、`UseClass` が JavaScript use クラスへのパスである場合は、use クラスを用意します（[JavaScript Use-API](use-api-javascript.md) を参照）。
 
 上記の説明に関する重要な点を以下に示します。
 
 * `Resource` から適応可能なクラス、`Request` から適応可能なクラス、引数ゼロのコンストラクターを持つクラスはどれも use クラスになることができます。`WCMUsePojo` を拡張することも、`Use` を実装することも、必須ではありません。
-* ただし、use クラスが実際に *を*&#x200B;実装する`Use`場合は、その `init` メソッドが現在のコンテキストで自動的に呼び出され、そのコンテキストに依存する初期化コードを配置できます。
+* ただし、use クラスが&#x200B;*実際に* `Use` を実装する場合は、その `init` メソッドが現在のコンテキストで自動的に呼び出され、そのコンテキストに依存する初期化コードを配置できます。
 * `WCMUsePojo` を拡張する use クラスは、`Use` 実装の特殊ケースです。これは便利なコンテキストメソッドを提供し、`activate` メソッドは `Use.init` から自動的に呼び出されます。
 
 ### Use インターフェイスの直接実装 {#directly-implement-interface-use}
 
-use クラスの最も一般的な作成方法は `WCMUsePojo` を拡張することですが、[`io.sightly.java.api.Use` インターフェイス自体を直接実装することもできます。](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html)
+use クラスの最も一般的な作成方法は `WCMUsePojo` を拡張することですが、[`io.sightly.java.api.Use`](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) インターフェイス自体を直接実装することもできます。
 
 `Use` インターフェイスで定義されるのは次の 1 つのメソッドのみです。
 
-[`public void init(javax.script.Bindings bindings)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use#init(javax.script.Bindings))
+[`public void init(javax.script.Bindings bindings)`](https://helpx.adobe.com/jp/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use#init(javax.script.Bindings))
 
 `init` メソッドは、クラスの初期化時に、すべてのコンテキストオブジェクトおよび use クラスに渡されるすべてのパラメーターを保持する `Bindings` オブジェクトで呼び出されます。
 
-すべての追加機能（`WCMUsePojo.getProperties()`と同等の機能など）は、[`javax.script.Bindings`](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html)オブジェクトを使用して明示的に実装する必要があります。 次に例を示します。
+すべての追加機能（`WCMUsePojo.getProperties()` と同等の機能など）を、[`javax.script.Bindings`](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html) オブジェクトを使用して明示的に実装する必要があります。次に例を示します。
 
 ### `Info.java` {#info-java}
 
@@ -550,7 +550,7 @@ public class MyComponent implements Use {
 
 もう 1 つのオプションは、`org.apache.sling.api.resource.Resource` から適応可能なヘルパークラスを使用することです。
 
-DAM アセットの MIME タイプを表示する HTL スクリプトを作成する必要があるとします。この場合、HTL スクリプトが呼び出されるのは、JCR `Resource` をノードタイプ `Node` でラップする `dam:Asset` のコンテキスト内です。
+DAM アセットの MIME タイプを表示する HTL スクリプトを作成する必要があるとします。この場合、HTL スクリプトが呼び出されるのは、JCR `Node` をノードタイプ  `dam:Asset` でラップする `Resource` のコンテキスト内です。
 
 `dam:Asset` ノードは次のような構造になっています。
 
@@ -600,9 +600,9 @@ DAM アセットの MIME タイプを表示する HTL スクリプトを作成�
 }
 ```
 
-ここでは、サンプルプロジェクト geometrixx の一部として AEM のデフォルトインストールに含まれているアセット（JPEG 画像）を表示します。このアセットの名前は `jane_doe.jpg` で、MIME タイプは `image/jpeg` です。
+ここでは、サンプルプロジェクト geometrixx の一部として AEM のデフォルトインストールに含まれているアセット（JPEG 画像）を表示します。このアセットの名前は `jane_doe.jpg`、MIME タイプは `image/jpeg` です。
 
-HTL内からアセットにアクセスするには、[`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html)を`data-sly-use`ステートメント内でクラスとして宣言し、`Asset`のgetメソッドを使用して必要な情報を取得します。 以下に例を示します。
+HTL 内からアセットにアクセスするには、`data-sly-use` ステートメント内で [`com.day.cq.dam.api.Asset`](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html) アセットをクラスとして宣言し、`Asset` の GET メソッドを使用して必要な情報を取得します。次に例を示します。
 
 ### `mimetype.html` {#mimetype-html}
 
@@ -612,10 +612,10 @@ HTL内からアセットにアクセスするには、[`com.day.cq.dam.api.Asset
 </div>
 ```
 
-`data-sly-use` ステートメントは、現在の `Resource` を `Asset` に適応し、`asset` というローカル名を付けるように、HTL に指示します。次に、HTL ゲッターの短縮形の `getMimeType` を使用して、`Asset` の `asset.mimeType` メソッドを呼び出します。
+`data-sly-use` ステートメントは、現在の `Resource` を `Asset` に適応し、`asset` というローカル名を付けるように、HTL に指示します。次に、HTL ゲッターの短縮形である `asset.mimeType` を使用して、`Asset` の  `getMimeType` メソッドを呼び出します。
 
 ### リクエストから適応可能 {#adaptable-from-request}
 
-[`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)から適応可能な任意のクラスをuseクラスとして使用することもできます
+[`org.apache.sling.api.SlingHttpServletRequest`](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) から適応可能な任意のクラスを use クラスとして採用することもできます
 
-上記の`Resource`から適応可能なuseクラスの場合と同様に、[`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)から適応可能なuseクラスを`data-sly-use`ステートメントで指定できます。 実行時に、現在のリクエストが与えられたクラスに適応され、結果のオブジェクトが HTL 内で使用可能になります。
+上記の `Resource` から適応可能な use クラスの場合と同様に、[`SlingHttpServletRequest`](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) から適応可能な use クラスも `data-sly-use` ステートメントで指定できます。実行時に、現在のリクエストが与えられたクラスに適応され、結果のオブジェクトが HTL 内で使用可能になります。
