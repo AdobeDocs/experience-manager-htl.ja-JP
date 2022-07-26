@@ -1,11 +1,11 @@
 ---
-title: 'Adobe Experience Manager HTL '
-description: AEM でサポートされている HTL の目的は、セキュリティの向上につながる高度に生産的なエンタープライズレベルの Web フレームワークを提供し、Java の知識を持たない HTML 開発者でも AEM プロジェクトに参加できるようにすることです。
+title: HTL の概要
+description: AEMがHTMLテンプレート言語 (HTL) をサポートして、生産的なエンタープライズレベルの Web フレームワークを提供する方法を説明します。 HTL により、セキュリティが強化され、Java の知識を持たないHTML開発者がAEMプロジェクトに参加できるようになります。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '667'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '663'
+ht-degree: 95%
 
 ---
 

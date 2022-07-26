@@ -1,11 +1,11 @@
 ---
 title: HTL グローバルオブジェクト
-description: 何も指定しなくても、global.jsp をインクルードすると、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが HTL で提供されます。
+description: 可算オブジェクト、Java ベースのオブジェクト、および JavaScript ベースのオブジェクトについて説明します。 AEMで使用されるこれらの HTL グローバルオブジェクトの変数名と説明を確認します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '220'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '223'
+ht-degree: 88%
 
 ---
 
@@ -20,8 +20,8 @@ ht-degree: 100%
 | 変数名 | 説明 |
 |--- |--- |
 | `properties` | 現在の Resource のプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
-| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
-| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/jp/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
+| `pageProperties` | 現在の Page のページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
+| `inheritedPageProperties` | 現在の Page の継承されたページプロパティのリスト。[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) によるバックアップ |
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
