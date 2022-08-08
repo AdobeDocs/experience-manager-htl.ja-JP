@@ -1,11 +1,11 @@
 ---
 title: HTL 式言語
-description: AEMでの HTL 式言語の使用について説明します。 HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
+description: AEM での HTL 式言語の使用について説明します。 HTML テンプレート言語は、式言語を使用して HTML 出力の動的要素を提供するデータ構造にアクセスします。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1860'
-ht-degree: 99%
+ht-degree: 100%
 
 ---
 
@@ -242,7 +242,7 @@ ${myArray[2]}
 
 ### グループ化の括弧 {#grouping-parentheses}
 
-グループ化演算子 `()`  は、式における評価の順序を制御します。
+グループ化演算子 `()` は、式における評価の順序を制御します。
 
 `${varOne && (varTwo || varThree)}`
 
@@ -336,7 +336,7 @@ HTL では、カスタムコードを記述することなく、数字と日付�
 
 ### 国際化 {#internationalization}
 
-**&#x200B;現在の[辞書](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html?lang=ja)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）。翻訳が見つからない場合は、元の文字列を使用します。
+現在の[辞書](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html?lang=ja)を使用して、現在のソースの言語に文字列を翻訳します（以下を参照）*。*&#x200B;翻訳が見つからない場合は、元の文字列を使用します。
 
 ```xml
 ${'Page' @ i18n}
@@ -425,7 +425,7 @@ HTL は、それぞれのコンテキストのセキュリティ要件に従っ�
 | `text` | 要素内のコンテンツのデフォルト | すべての HTML 特殊文字をエンコードします。 |
 | `html` | マークアップを安全に出力 | AntiSamy ポリシールールを満たすように HTML をフィルタリングし、ルールに一致しないものを削除します。 |
 | `attribute` | 属性値のデフォルト | すべての HTML 特殊文字をエンコードします。 |
-| `uri` | リンクおよびパスを表示  href および src 属性値のデフォルト | href または src 属性値として記述するための URI を検証し、検証が失敗する場合は何も出力しません。 |
+| `uri` | リンクおよびパスを表示 href および src 属性値のデフォルト | href または src 属性値として記述するための URI を検証し、検証が失敗する場合は何も出力しません。 |
 | `number` | 数値を表示 | 整数を含めるための URI を検証し、検証が失敗する場合はゼロを出力します。 |
 | `attributeName` | 属性名を設定する際の data-sly-attribute のデフォルト | 属性名を検証し、検証が失敗する場合は何も出力しません。 |
 | `elementName` | data-sly-element のデフォルト | 要素名を検証し、検証が失敗する場合は何も出力しません。 |
