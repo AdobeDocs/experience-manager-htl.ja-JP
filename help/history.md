@@ -1,22 +1,22 @@
 ---
 title: HTL の履歴
-description: AEMの長い期間のユーザーに対しては、このドキュメントでは、HTL の背景、JSP の置き換え方法、Sightly からの名前の変更方法を示します。
+description: AEM を長年使用しているユーザー向けに、このドキュメントでは HTL の背景、HTL を JSP に置き換える方法、Sightly からの名前の変更について説明します。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '542'
-ht-degree: 50%
+ht-degree: 100%
 
 ---
 
 
 # HTL の履歴 {#history-of-htl}
 
-AEMの長い期間のユーザーに対しては、このドキュメントでは、HTL の背景、JSP の置き換え方法、Sightly からの名前の変更方法を示します。
+AEM を長年使用しているユーザー向けに、このドキュメントでは HTL の背景、HTL を JSP に置き換える方法、Sightly からの名前の変更について説明します。
 
 ## 以前の名称：Sightly {#sightly}
 
-HTMLテンプレート言語 (HTL) は、Adobe Experience ManagerでのHTML用に、サーバー側で推奨される推奨テンプレートシステムです。 以前のバージョンの AEM で使用されていた JSP（JavaServer Pages）の代わりに使用されます。
+HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML 用に、サーバーサイドで優先かつ推奨されるテンプレートシステムです。 以前のバージョンの AEM で使用されていた JSP（JavaServer Pages）の代わりに使用されます。
 
 ## JSP と HTL の対比 {#htl-over-jsp}
 
@@ -33,34 +33,34 @@ HTML テンプレート言語には JSP と比較して多数のメリットが�
 
 ## よくある質問 {#frequently-asked-questions}
 
-これらは、経験豊富なAEM開発者が HTL を初めて使用する場合によく寄せられる質問です。
+これらは、HTL を初めて使用する経験豊富な AEM 開発者からよく寄せられる質問です。
 
 ### HTL には JSP にない制限事項がありますか。 {#limitations}
 
-HTL には JSP と比べた場合に制限事項はありません。つまり、JSP で実行できることは HTL でも実行できます。ただし、HTL はいくつかの点で JSP よりも厳密に設計されています。1 つの JSP ファイルですべて実行できる処理は、HTL で実行するには、Java クラスまたは JavaScript ファイルに分割する必要がある場合があります。 これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
+HTL には JSP と比べた場合に制限事項はありません。つまり、JSP で実行できることは HTL でも実行できます。ただし、HTL は設計上、いくつかの点で JSP よりも厳密です。単一の JSP ファイルで実現できることは、HTL で実現できるように Java クラスまたは JavaScript ファイルに分割する必要がある場合があります。これは、ロジックとマークアップの問題点を適切に分離できるように一般的にも必要とされています。
 
 ### HTL では JSP タグライブラリはサポートされますか。 {#tag-libraries}
 
-いいえ。ただし、 [クライアントライブラリを読み込み中](getting-started.md#loading-client-libraries) 「はじめに」ドキュメントの節では、 template および call ステートメントによって同様のパターンが提供されています。
+サポートされませんが、[クライアントライブラリの読み込み](getting-started.md#loading-client-libraries)の節で説明するように、template および call ステートメントが同様のパターンを提供します。
 
 ### HTL 機能を AEM プロジェクトで拡張できますか。 {#extended}
 
-いいえ、できません。HTL は、ロジック ( [Use-API](#use-api-for-accessing-logic)) および（ template および call ステートメント）の両方を使用します。これらは、プロジェクトのコードをモジュール化するために使用できます。
+いいえ、できません。HTL は、ロジック（[Use-API](#use-api-for-accessing-logic)）とマークアップ（template および call ステートメント）の再利用のために強力な拡張メカニズムを備えています。これを使用して、プロジェクトのコードをモジュール化できます。
 
 ### JSP と比べて HTL の最大のメリットは何ですか。 {#benefits}
 
-主なメリットはセキュリティとプロジェクトの効率性です。これらについては、 [概要。](overview.md)
+最大のメリットはセキュリティとプロジェクトの効率性です。これらについては、[概要](overview.md)で詳しく説明します。
 
 ### JSP はいずれ使用されなくなりますか。 {#go-away}
 
-この線に沿っては予定がありません。
+そうした計画はありません。
 
-## 名前は？ {#what-is-in-a-name}
+## 名前にはどのような意味がありますか？ {#what-is-in-a-name}
 
-AEM 6.0 および 6.1 では、HTL は **Sightly**. Adobe名をに変更しました。 **HTMLテンプレート言語** または **HTL** の仕様を明確にし、Adobeの命名ガイドラインに従って調整する。 この名前の変更は 2016年8月（PT）から有効で、AEM バージョン 6.0 以降に適用されます。
+AEM 6.0 および 6.1 では、HTL は **Sightly** と呼ばれていました。アドビは、この仕様の目的を明確にし、アドビの一般的な命名ガイドラインに合わせるために、名称を **HTML テンプレート言語**&#x200B;または **HTL** に変更しました。この名前の変更は 2016年8月（PT）から有効で、AEM バージョン 6.0 以降に適用されます。
 
 >[!NOTE]
 >
->この名称変更はコードや API に関わるものではないので、互換性については影響はありません。詳しくは、 [このお知らせビデオを参照してください。](https://helpx.adobe.com/jp/experience-manager/how-to/announce-htl.html)
+>この名称変更はコードや API に関わるものではないので、互換性については影響はありません。詳しくは、[このお知らせビデオを参照してください。](https://helpx.adobe.com/jp/experience-manager/how-to/announce-htl.html)
 
-HTL の詳細を確認して、最初に重要な場所を見つけるには、アドビの公式 [HTMLテンプレート言語 (HTL) 使用の手引き](overview.md)
+HTL についての詳しい情報を確認して実際に使ってみるには、アドビ公式の [HTML テンプレート言語（HTL）使用の手引き](overview.md)を参照してください。
