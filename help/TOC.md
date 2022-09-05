@@ -7,9 +7,9 @@ feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
 source-git-commit: f9b59d5fcc380413f2727b06f41ecacca6518227
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '46'
-ht-degree: 78%
+ht-degree: 100%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 78%
 + [HTL の仕様](specification.md)
 + [HTL グローバルオブジェクト](global-objects.md)
 + [HTL Java Use-API](java-use-api.md)
-+ [AEM Extensions](aem-extensions.md)
++ [AEM 拡張機能](aem-extensions.md)
 + [開発者ツール](developer-tools.md)
 + [コードサンプル](code-samples.md)
 + [HTL の履歴](history.md)
