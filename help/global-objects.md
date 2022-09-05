@@ -1,32 +1,32 @@
 ---
 title: HTL グローバルオブジェクト
-description: 可算オブジェクト、Java ベースのオブジェクト、HTL での JavaScript ベースのオブジェクトについて説明します。
+description: HTL での可算オブジェクト、Java ベースのオブジェクト、JavaScript ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '200'
-ht-degree: 32%
+ht-degree: 100%
 
 ---
 
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
-何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトへのアクセスが提供されます。 これらのオブジェクトは、 [Use-API を使用します。](java-use-api.md)
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を通じて導入される可能性のあるオブジェクトに追加して提供されます。
 
 >[!NOTE]
 >
->AEMでの JSP の開発に詳しい開発者向けに、をインクルードすると、HTL では、通常 JSP で使用可能なすべてのオブジェクトへのアクセスが提供されます `global.jsp`.
+>AEM での JSP 開発に詳しい開発者は、`global.jsp` を含めると、 HTL を使用して JSP で一般的に使用できるすべてのオブジェクトにアクセスできます。
 
 ## 可算オブジェクト {#enumerable-objects}
 
-これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。そのコンテンツにはドット表記を使用してアクセスでき、 `data-sly-list` または `data-sly-repeat`.
+これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。コンテンツにはドット表記でアクセスでき、`data-sly-list` または `data-sly-repeat` を使用して反復処理できます。
 
-| 変数名 | 説明 | バックアップ元 |
+| 変数名 | 説明 | ベース |
 |--- |--- |--- |
-| `properties` | 現在のリソースのプロパティのリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | 現在のページのページプロパティのリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | 現在のページの継承されたページプロパティのリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | 現在のリソースのプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | 現在のページのページプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | 現在のページの継承されたページプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
