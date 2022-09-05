@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: da2375a2390f0254dba9745d9f4970e88788e5d5
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1518'
-ht-degree: 40%
+ht-degree: 100%
 
 ---
 
@@ -16,7 +16,7 @@ HTL Java Use-API を使用すると、HTL ファイルからカスタム Java �
 
 ## ユースケース {#use-case}
 
-HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセス ( `data-sly-use`. これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
+HTL Java Use-API を使用すると、HTL ファイルは `data-sly-use` を通してカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。これにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
 Java Use-API オブジェクトは、POJO のデフォルトのコンストラクタを通じて、特定の実装でインスタンス化された単純な POJO にすることができます。
 
@@ -35,13 +35,13 @@ Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリ�
 
 ## 簡単な例 {#a-simple-example}
 
-この例では、Use-API の使用方法を示します。
+この例では、Use-API の使用方法を説明します。
 
 >[!NOTE]
 >
->この例は、使い方を簡単に説明するために簡略化されています。 実稼動環境では、 [Sling モデル。](https://sling.apache.org/documentation/bundles/models.html)
+>この例は、その使用方法を簡単に説明するために簡略化しています。実稼動環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用を推奨します。
 
-まず、HTL コンポーネント ( `info`に設定され、use クラスを持ちません。 これは単一のファイル、`/apps/my-example/components/info.html` で構成されています。
+まず、use クラスを持たない `info` と呼ばれる HTL コンポーネントから始めます。これは単一のファイル、`/apps/my-example/components/info.html` で構成されています。
 
 ```xml
 <div>
@@ -60,7 +60,7 @@ Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリ�
 }
 ```
 
-このコンテンツにアクセスがあると、HTL ファイルが実行されます。HTL コード内では、コンテキストオブジェクトを使用します。 `properties` 現在のリソースの `title` および `description` 表示します。 出力ファイル `/content/my-example.html` は次のようになります。
+このコンテンツにアクセスがあると、HTL ファイルが実行されます。HTL コード内で、コンテキストオブジェクト `properties` を使用して、現在のリソースの `title` および `description` にアクセスし、それらを表示します。出力されるファイル `/content/my-example.html` は以下のとおりです。
 
 ```html
 <div>
@@ -71,13 +71,13 @@ Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリ�
 
 ### use クラスの追加 {#adding-a-use-class}
 
-この `info` コンポーネントは、現状では、use クラスを使用してそのシンプルな関数を実行する必要はありません。 ただし、場合によっては、HTL ではできないことを実行する必要があるので、use クラスは必要です。ただし、以下のことに留意してください。
+現状の `info` コンポーネントは、その単純な機能を実行するために use クラスを必要としません。ただし、場合によっては、HTL ではできないことを実行する必要があるので、use クラスは必要です。ただし、以下のことに留意してください。
 
 >[!NOTE]
 >
 >use クラスは、HTL だけでは実行できない場合にのみ使用してください。
 
-例えば、`info` コンポーネントで、リソースの `title` と `description` プロパティを、すべて小文字で表示するとします。HTL には文字列を小文字にするためのメソッドがないので、use クラスが必要になります。これをおこなうには、Java use クラスを追加し、 `/apps/my-example/component/info/info.html` 次のように指定します。
+例えば、`info` コンポーネントで、リソースの `title` と `description` プロパティを、すべて小文字で表示するとします。HTL には文字列を小文字にするためのメソッドがないので、use クラスが必要になります。これを行うには、以下のように、Java use クラスを追加して `/apps/my-example/component/info/info.html` を変更します。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -86,7 +86,7 @@ Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリ�
 </div>
 ```
 
-さらに、 `/apps/my-example/component/info/Info.java`.
+さらに、`/apps/my-example/component/info/Info.java` を作成します。
 
 ```java
 package apps.my_example.components.info;
@@ -113,7 +113,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-詳しくは、 [の JavaDoc `com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) を参照してください。
+詳しくは、[`com.adobe.cq.sightly.WCMUsePojo` の Javadocs](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) を参照してください。
 
 次に、コードの様々な部分について説明します。
 
@@ -121,17 +121,17 @@ public class Info extends WCMUsePojo {
 
 Java use クラスは 2 つの方法でインストールできます。
 
-* **ローカル**  — ローカルインストールでは、Java ソースファイルは HTL ファイルと一緒に、同じリポジトリフォルダーに配置されます。 ソースは、オンデマンドで自動でコンパイルされます。コンパイルやパッケージを別途行う必要はありません。
-* **バンドル**  — バンドルインストールでは、Java クラスは、標準のAEMバンドルデプロイメントメカニズムを使用してコンパイルし、OSGi バンドル内にデプロイする必要があります（の節を参照） [バンドルされた Java クラス](#bundled-java-class)) をクリックします。
+* **ローカル** - ローカルインストールでは、Java ソースファイルは HTL ファイルと並んで、同じリポジトリーフォルダーに配置されます。ソースは、オンデマンドで自動でコンパイルされます。コンパイルやパッケージを別途行う必要はありません。
+* **バンドル** - バンドルインストールでは、Java クラスは標準の AEM バンドルデプロイメントメカニズムを使用してコンパイルし、OSGi バンドル内にデプロイする必要があります（[バンドルされた Java クラス](#bundled-java-class)の節を参照）。
 
-どの方法を使用するかを把握するには、次の 2 つの点に注意してください。
+どの方法をいつ使用するかを把握するには、次の 2 つの点に注意してください。
 
 * **ローカル Java use クラス**&#x200B;は、use クラスが対象コンポーネントに特有の場合にお勧めします。
 * **バンドル Java use クラス**&#x200B;は、複数の HTL コンポーネントからアクセスがあるサービスを Java コードで実装する場合にお勧めします。
 
 この例ではローカルインストールを使用します。
 
-### Java パッケージはリポジトリパス {#java-package-is-repository-path}
+### Java パッケージはリポジトリーパス {#java-package-is-repository-path}
 
 ローカルインストールを使用するとき、use クラスのパッケージ名は、リポジトリフォルダーの場所と一致する必要があります。ただし、パス内のハイフンは、パッケージ名ではアンダースコアに置き換えられます。
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### `WCMUsePojo` の拡張 {#extending-wcmusepojo}
 
-Java クラスを HTL に組み込むには多数の方法がありますが ( [の代替策 `WCMUsePojo`](#alternatives-to-wcmusepojo))、最も簡単な方法は、 `WCMUsePojo` クラス。 例 `/apps/my-example/component/info/Info.java`:
+Java クラスを HTL に組み込む方法はいくつかありますが（[`WCMUsePojo`](#alternatives-to-wcmusepojo) の代替方法の節を参照）、最も簡単な方法は `WCMUsePojo` クラスを拡張することです。この例では `/apps/my-example/component/info/Info.java` です。
 
 ```java
 package apps.my_example.components.info;
@@ -170,7 +170,7 @@ public class Info extends WCMUsePojo
 
 ### クラスの初期化 {#initializing-the-class}
 
-use クラスが `WCMUsePojo`に設定されている場合、初期化は `activate` メソッド、この場合は `/apps/my-example/component/info/Info.java`
+`WCMUsePojo` から use クラスが拡張されると、`activate` メソッド（この場合は `/apps/my-example/component/info/Info.java` 内）を上書きすることによって初期化が実行されます。
 
 ```java
 ...
@@ -194,15 +194,15 @@ public class Info extends WCMUsePojo {
 
 [アクティベート](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)メソッドの通常の用途は、現在のコンテキスト（現在の要求やリソースなど）に基づいて HTL コードに必要な値を事前に計算し、（メンバー変数に）格納することです。
 
-この `WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なのと同じコンテキストオブジェクトにアクセスできます ( ドキュメント [グローバルオブジェクト。](global-objects.md))
+`WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（ドキュメント[グローバルオブジェクト](global-objects.md)を参照）。
 
 `WCMUsePojo` を拡張するクラスでは、名前を基準として、以下のコードを使用してコンテキストオブジェクトにアクセスできます。
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-また、一般的に使用されるコンテキストオブジェクトには、次の表に示す適切な便利な方法で直接アクセスできます。
+また、一般的に使用されるコンテキストオブジェクトには、このテーブルに示す適切で便利なメソッドによって直接アクセスできます。
 
-| オブジェクト | 便利な方法 |
+| オブジェクト | 便利なメソッド |
 |---|---|
 | [`PageManager`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/wcm/api/PageManager.html) | [`getPageManager()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getPageManager--) |
 | [`Page`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/wcm/api/Page.html) | [`getCurrentPage()`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html#getCurrentPage--) |
@@ -224,11 +224,11 @@ public class Info extends WCMUsePojo {
 
 use クラスが初期化されると、HTL ファイルが実行されます。この段階で、HTL は通常、use クラスの様々なメンバー変数の状態を引っ張ってきて、プレゼンテーション用にレンダリングします。
 
-HTL ファイル内からこれらの値へのアクセスを提供するには、以下の命名規則に従って、use クラスでカスタムのゲッターメソッドを定義する必要があります。
+HTL ファイル内からこれらの値へアクセスできるようにするには、以下の命名規則に従って、use クラスでカスタムのゲッターメソッドを定義する必要があります。
 
 * `getXyz` という形式のメソッドを使用すると、HTL ファイル内で `xyz` という名前のオブジェクトプロパティがアクセス可能になります。
 
-次のサンプルファイルでは、 `/apps/my-example/component/info/Info.java`，メソッド `getTitle` および `getDescription` 結果として、オブジェクトプロパティが生成されます。 `title` および `description` が HTL ファイルのコンテキスト内でアクセス可能になる問題を修正しました。
+次のサンプルファイル `/apps/my-example/component/info/Info.java` では、メソッド `getTitle` および `getDescription` により、オブジェクトプロパティ `title` および `description` が HTL ファイルのコンテキスト内でアクセス可能になります。
 
 ```java
 ...
@@ -251,7 +251,7 @@ public class Info extends WCMUsePojo {
 
 `data-sly-use` 属性は、HTL コード内で use クラスを初期化する際に使用します。ここに示す例では、`data-sly-use` 属性によって、`Info` クラスを使用することを宣言しています。ここではローカルインストールを使用している（Java ソースファイルを HTL ファイルと同じフォルダーに配置している）ので、クラスのローカル名だけを使用できます。バンドルインストールを使用していた場合は、完全修飾クラス名を指定する必要があります。
 
-この `/apps/my-example/component/info/info.html` 例：
+この `/apps/my-example/component/info/info.html` の例での使い方に注意してください。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -264,7 +264,7 @@ public class Info extends WCMUsePojo {
 
 識別子 `info`（`data-sly-use.info` のドットの後）は、HTL ファイル内で、クラスを識別するために使用します。宣言された識別子は、ファイル内でグローバルスコープとして認識されます。`data-sly-use` ステートメントを含む要素のみに制限されるわけではありません。
 
-この `/apps/my-example/component/info/info.html` 例：
+この `/apps/my-example/component/info/info.html` の例での使い方に注意してください。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -277,7 +277,7 @@ public class Info extends WCMUsePojo {
 
 識別子 `info` はその後、ゲッターメソッド `title` および `description` によってアクセス可能になったオブジェクトプロパティ `Info.getTitle` および `Info.getDescription` へのアクセスに使用されます。
 
-この `/apps/my-example/component/info/info.html` 例：
+この `/apps/my-example/component/info/info.html` の例での使い方に注意してください。
 
 ```xml
 <div data-sly-use.info="Info">
@@ -288,7 +288,7 @@ public class Info extends WCMUsePojo {
 
 ### 出力 {#output}
 
-次に、 `/content/my-example.html` 次の値が返されます。 `/content/my-example.html` ファイル。
+ここで、`/content/my-example.html` にアクセスすると、以下の `/content/my-example.html` ファイルが返されます。
 
 ```xml
 <div>
@@ -299,11 +299,11 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->この例は、簡単に説明できるように簡略化されています。 実稼動環境では、 [Sling モデル。](https://sling.apache.org/documentation/bundles/models.html)
+>この例は、その使い方を簡単に説明するために簡略化されています。実稼動環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用を推奨します。
 
-## 基本を超えて {#beyond-the-basics}
+## 応用 {#beyond-the-basics}
 
-この節では、前述の簡単な例を超える機能をいくつか紹介します。
+この節では、上記の簡単な例よりも高度な機能をいくつか紹介します。
 
 * use クラスにパラメーターを渡す
 * バンドルされた Java use クラス
@@ -312,11 +312,11 @@ public class Info extends WCMUsePojo {
 
 初期化時に、use クラスにパラメーターを渡すことができます。例えば、次のようなことが可能です。
 
-詳しくは、Sling を参照してください。 [HTL スクリプティングエンジンのドキュメント。](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)
+詳しくは、Sling [HTL スクリプティングエンジンのドキュメント](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)を参照してください。
 
 ### バンドルされた Java クラス {#bundled-java-class}
 
-バンドルされた use クラスでは、クラスは、標準の OSGi バンドルデプロイメントメカニズムを使用して、コンパイル、パッケージ化、AEMでデプロイする必要があります。 ローカルインストールとは異なり、use クラスのパッケージ宣言には、次のように通常どおりに名前を付ける必要があります `/apps/my-example/component/info/Info.java` 例：
+バンドル use クラスの場合、クラスは、AEM で標準の OSGi バンドルデプロイメントメカニズムを使用してコンパイル、パッケージおよびデプロイされる必要があります。ローカルインストールとは異なり、use クラスのパッケージ宣言には、`/apps/my-example/component/info/Info.java` の例のように通常どおりに名前を付ける必要があります。
 
 ```java
 package org.example.app.components;
@@ -328,7 +328,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-また、 `data-sly-use` ステートメントは、このようにローカルクラス名だけではなく、完全修飾クラス名を参照する必要があります `/apps/my-example/component/info/info.html` 例：
+また、`data-sly-use` ステートメントは、この `/apps/my-example/component/info/info.html` の例のように、ローカルクラス名のみではなく、完全修飾クラス名を参照する必要があります。
 
 ```xml
 <div data-sly-use.info="org.example.app.components.info.Info">
