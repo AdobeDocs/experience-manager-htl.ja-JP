@@ -1,0 +1,65 @@
+---
+title: HTL グローバルオブジェクト
+description: HTL での可算オブジェクト、Java ベースのオブジェクト、JavaScript ベースのオブジェクトについて説明します。
+exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
+source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+workflow-type: ht
+source-wordcount: '200'
+ht-degree: 100%
+
+---
+
+
+# HTL グローバルオブジェクト {#htl-global-objects}
+
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を通じて導入される可能性のあるオブジェクトに追加して提供されます。
+
+>[!NOTE]
+>
+>AEM での JSP 開発に詳しい開発者は、`global.jsp` を含めると、 HTL を使用して JSP で一般的に使用できるすべてのオブジェクトにアクセスできます。
+
+## 可算オブジェクト {#enumerable-objects}
+
+これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。コンテンツにはドット表記でアクセスでき、`data-sly-list` または `data-sly-repeat` を使用して反復処理できます。
+
+| 変数名 | 説明 | ベース |
+|--- |--- |--- |
+| `properties` | 現在のリソースのプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | 現在のページのページプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | 現在のページの継承されたページプロパティリスト | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+
+## Java ベースのオブジェクト {#java-backed-objects}
+
+次に示す各オブジェクトは、対応する Java オブジェクトをベースとします。
+
+| 変数名 | 説明 |
+|---|---|
+| `component` | `com.day.cq.wcm.api.components.Component` |
+| `componentContext` | `com.day.cq.wcm.api.components.ComponentContext` |
+| `currentContentPolicy` | `com.day.cq.wcm.api.policies.ContentPolicy` |
+| `currentContentPolicyProperties` | `com.day.cq.wcm.api.policies.ContentPolicy` |
+| `currentDesign` | `com.day.cq.wcm.api.designer.Design` |
+| `currentNode` | `javax.jcr.Node` |
+| `currentPage` | `com.day.cq.wcm.api.Page` |
+| `currentSession` | `javax.servlet.http.HttpSession` |
+| `currentStyle` | `com.day.cq.wcm.api.designer.Style` |
+| `designer` | `com.day.cq.wcm.api.designer.Designer` |
+| `editContext` | `com.day.cq.wcm.api.components.EditContext` |
+| `log` | `org.slf4j.Logger` |
+| `out` | `java.io.PrintWriter` |
+| `pageManager` | `com.day.cq.wcm.api.PageManager` |
+| `reader` | `java.io.BufferedReader` |
+| `request` | `org.apache.sling.api.SlingHttpServletRequest` |
+| `resolver` | `org.apache.sling.api.resource.ResourceResolver` |
+| `resource` | `org.apache.sling.api.resource.Resource` |
+| `resourceDesign` | `com.day.cq.wcm.api.designer.Design` |
+| `resourcePage` | `com.day.cq.wcm.api.Page` |
+| `response` | `org.apache.sling.api.SlingHttpServletResponse` |
+| `sling` | `org.apache.sling.api.scripting.SlingScriptHelper` |
+| `slyWcmHelper` | `com.adobe.cq.sightly.WCMScriptHelper` |
+| `wcmmode` | `com.adobe.cq.sightly.SightlyWCMMode` |
+| `xssAPI` | `com.adobe.granite.xss.XSSAPI` |
+
+## JavaScript ベースのオブジェクト {#javascript-backed-objects}
+
+HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。
