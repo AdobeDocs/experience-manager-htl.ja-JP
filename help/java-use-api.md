@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 83f07cab5e2f4604701708f6a1a4bc19e3b54107
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1505'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### `WCMUsePojo` の拡張 {#extending-wcmusepojo}
 
-Java クラスを HTL に組み込むには多数の方法がありますが、最も簡単な方法は `WCMUsePojo` クラス。 この例では `/apps/my-example/component/info/Info.java` です。
+Java クラスを HTL に組み込むには多数の方法がありますが、最も簡単な方法は `WCMUsePojo` クラスを拡張することです。この例では `/apps/my-example/component/info/Info.java` です。
 
 ```java
 package apps.my_example.components.info;
