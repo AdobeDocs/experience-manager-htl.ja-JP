@@ -4,7 +4,7 @@ description: HTL Java Use-API を使用すると、HTL ファイルからカス�
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
 workflow-type: ht
-source-wordcount: '1510'
+source-wordcount: '1167'
 ht-degree: 100%
 
 ---

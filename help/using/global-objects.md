@@ -3,8 +3,8 @@ title: HTL グローバルオブジェクト
 description: HTL での可算オブジェクト、Java ベースのオブジェクト、JavaScript ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
-source-wordcount: '200'
+workflow-type: ht
+source-wordcount: '166'
 ht-degree: 100%
 
 ---
