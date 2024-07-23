@@ -2,10 +2,10 @@
 title: HTL 使用の手引き
 description: AEM の HTML に適した、推奨されるサーバーサイドテンプレートシステムである HTL について学び、言語の主要概念とその基本構成を理解します。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '2050'
-ht-degree: 62%
+ht-degree: 61%
 
 ---
 
@@ -18,7 +18,7 @@ HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML
 
 >[!TIP]
 >
->このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定構文の疑問については、[HTL の仕様](specification.md)を参照してください。
+>このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定構文の疑問については、[HTL の仕様 ](specification.md) を参照してください。
 
 ## HTL レイヤー {#layers}
 

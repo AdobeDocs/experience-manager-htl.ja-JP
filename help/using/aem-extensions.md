@@ -2,16 +2,16 @@
 title: AEM 拡張機能
 description: AEMでは、開発者の利便性を考慮して、AEMに対して HTL 仕様の拡張機能を提供します。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '228'
-ht-degree: 64%
+ht-degree: 41%
 
 ---
 
 # AEM 拡張機能 {#aem-extensions}
 
-[HTL 仕様の Apache Sling 拡張機能](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1)と同様に、AEM には、AEM の概念を HTL スクリプトで直接操作しやすくする、複数の追加の式オプションが用意されています。
+[HTL 仕様の Apache Sling 拡張機能 ](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1) と同様に、AEMには、AEMの概念を HTL スクリプトで直接操作しやすくする、複数の追加の式オプションが用意されています。
 
 ## i18n {#i18n}
 
@@ -29,7 +29,7 @@ AEM では、`data-sly-include` は追加の `wcmmode` オプションを使用�
 
 ## `data-sly-resource` {#data-sly-resource}
 
-パスと `Resources` に加えて、`data-sly-resource` ブロック要素は、[`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) または [`Records` とも動作することができます。](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 両方のアプローチで、`resourceName` 文字列プロパティを指定する必要があります。この値は、レンダリングコンテキストに含まれる [ 合成リソース ](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) の作成に使用されます。 `data-sly-resource` に渡された `Record` または `Map` の残りのプロパティは、通常の `Resource` プロパティとして使用されます。 このマップに `sling:resourceType` プロパティが見つからない場合、リソースタイプは `resourceType` [ 式オプション ](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource) の値またはレンダリングを駆動する現在のリソースのリソースタイプのどちらかと見なされます。
+パスと `Resources` に加えて、`data-sly-resource` ブロック要素は、[`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) または [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) とも動作することができます。 両方のアプローチで、`resourceName` 文字列プロパティを指定する必要があります。 この値は、レンダリングコンテキストに含まれる [ 合成リソース ](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) の作成に使用されます。 `data-sly-resource` に渡された `Record` または `Map` の残りのプロパティは、通常の `Resource` プロパティとして使用されます。 このマップに `sling:resourceType` プロパティが見つからない場合、リソースタイプは `resourceType` [ 式オプション ](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource) の値またはレンダリングを駆動する現在のリソースのリソースタイプのどちらかと見なされます。
 
 スクリプトスコープに、`map` として次のマップ／レコードのプロパティが使用可能であるとします。
 

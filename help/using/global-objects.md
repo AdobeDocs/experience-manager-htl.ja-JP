@@ -2,17 +2,17 @@
 title: HTL グローバルオブジェクト
 description: HTL での可算オブジェクト、Java ベースのオブジェクト、JavaScript ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 100%
+source-wordcount: '164'
+ht-degree: 87%
 
 ---
 
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
-何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を通じて導入される可能性のあるオブジェクトに追加して提供されます。
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を利用した際に一緒に提供されます。
 
 >[!NOTE]
 >
@@ -30,7 +30,7 @@ ht-degree: 100%
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
-次に示す各オブジェクトは、対応する Java オブジェクトをベースとします。
+対応する Java オブジェクトは、次の各オブジェクトを戻します。
 
 | 変数名 | 説明 |
 |---|---|
@@ -62,4 +62,4 @@ ht-degree: 100%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。
+HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル ](https://sling.apache.org/documentation/bundles/models.html) を使用することです。

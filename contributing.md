@@ -1,5 +1,5 @@
 ---
-source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 96%
@@ -30,7 +30,7 @@ Adobe Experience Manager Cloud Service ドキュメントへの貢献にご協�
 
 >[!NOTE]
 >
->お客様が提出する投稿は、[アドビ利用条件](https://www.adobe.com/jp/legal/terms.html)の適用を受けます。
+>お客様が提出する投稿には、[アドビ利用条件](https://www.adobe.com/jp/legal/terms.html)が適用されます。
 
 ### イシューの作成 {#create-an-issue}
 
