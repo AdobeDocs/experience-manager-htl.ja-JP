@@ -3,9 +3,9 @@ title: HTL グローバルオブジェクト
 description: HTL での可算オブジェクト、Java ベースのオブジェクト、JavaScript ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '164'
-ht-degree: 87%
+ht-degree: 100%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 87%
 
 ## Java ベースのオブジェクト {#java-backed-objects}
 
-対応する Java オブジェクトは、次の各オブジェクトを戻します。
+対応する Java オブジェクトは、次の各オブジェクトをサポートします。
 
 | 変数名 | 説明 |
 |---|---|
@@ -62,4 +62,4 @@ ht-degree: 87%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル ](https://sling.apache.org/documentation/bundles/models.html) を使用することです。
+HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。

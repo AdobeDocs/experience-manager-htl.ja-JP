@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1137'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 
@@ -194,7 +194,7 @@ public class Info extends WCMUsePojo {
 
 [アクティベート](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)メソッドの通常の用途は、現在のコンテキスト（現在の要求やリソースなど）に基づいて HTL コードに必要な値を事前に計算し、（メンバー変数に）格納することです。
 
-`WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（ドキュメント [ グローバルオブジェクト ](global-objects.md) を参照）。
+`WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（ドキュメント[グローバルオブジェクト](global-objects.md)を参照）。
 
 `WCMUsePojo` を拡張するクラスでは、以下の名前を使用してコンテキストオブジェクトにアクセスできます。
 
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 初期化時に、use クラスにパラメーターを渡すことができます。
 
-詳しくは、Sling[HTL スクリプティングエンジンのドキュメント ](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects) を参照してください。
+詳しくは、Sling [HTL スクリプティングエンジンのドキュメント](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)を参照してください。
 
 ### バンドルされた Java クラス {#bundled-java-class}
 
