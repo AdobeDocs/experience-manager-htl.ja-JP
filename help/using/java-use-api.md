@@ -3,7 +3,7 @@ title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 5e1dce693dc61300530837c996f45d793c0b07e6
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1135'
 ht-degree: 100%
 
