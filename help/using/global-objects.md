@@ -3,9 +3,9 @@ title: HTL グローバルオブジェクト
 description: HTL での可算オブジェクトと Java ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '205'
-ht-degree: 74%
+ht-degree: 100%
 
 ---
 
@@ -66,6 +66,6 @@ HTL ロジックを JavaScript でバックアップすることもできます�
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) は、AEM as a Cloud Serviceでの使用が非推奨（廃止予定）になりました。 代わりに [Java Use API](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/java-use-ap) を使用してください。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) は、AEM as a Cloud Service での使用が廃止されました。代わりに [Java Use API](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/java-use-ap) を使用してください。
 >
->非推奨（廃止予定）の機能と削除された機能について詳しくは ](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)AEM as a Cloud Service リリースノートを参照してください [。
+>廃止された機能と削除された機能について詳しくは、[AEM as a Cloud Service リリースノートを参照してください](https://experienceleague.adobe.com/ja/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。
