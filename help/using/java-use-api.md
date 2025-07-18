@@ -2,10 +2,10 @@
 title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-source-git-commit: 5e1dce693dc61300530837c996f45d793c0b07e6
-workflow-type: ht
-source-wordcount: '1135'
-ht-degree: 100%
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
+workflow-type: tm+mt
+source-wordcount: '1132'
+ht-degree: 99%
 
 ---
 
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 初期化時に、use クラスにパラメーターを渡すことができます。
 
-詳しくは、Sling [HTL スクリプティングエンジンのドキュメント](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)を参照してください。
+詳しくは、`Sling` [HTL スクリプティングエンジンのドキュメント ](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects) を参照してください。
 
 ### バンドルされた Java クラス {#bundled-java-class}
 

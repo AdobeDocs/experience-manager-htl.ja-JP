@@ -2,10 +2,10 @@
 title: HTL 使用の手引き
 description: AEM の HTML に適した、推奨されるサーバーサイドテンプレートシステムである HTL について学び、言語の主要概念とその基本構成を理解します。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '2050'
-ht-degree: 100%
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
+workflow-type: tm+mt
+source-wordcount: '2045'
+ht-degree: 97%
 
 ---
 
@@ -18,15 +18,15 @@ HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML
 
 >[!TIP]
 >
->このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定の構文の疑問について詳しくは、[HTL の仕様](specification.md)を参照してください。
+>このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定構文の疑問については、[HTL の仕様 ](specification.md) を参照してください。
 
 ## HTL レイヤー {#layers}
 
 AEM では、複数のレイヤーによって HTL が定義されます。
 
 1. **[HTL の仕様](specification.md)** - HTL は、プラットフォームに依存しないオープンソースの仕様で、誰でも自由に実装できます。
-1. **[Sling HTL スクリプティングエンジン](specification.md)** - Sling プロジェクトは、AEM で使用される HTL の参照実装を作成しました。
-1. **[AEM 拡張機能](specification.md)** - AEM は Sling HTL スクリプティングエンジン上に構築され、AEM に固有の便利な機能を開発者に提供します。
+1. **[`Sling`HTL スクリプティングエンジン](specification.md)** - `Sling` プロジェクトは、AEMが使用する HTL の参照実装を作成しました。
+1. **[AEM Extensions](specification.md)** - AEMは `Sling` HTL スクリプティングエンジン上に構築され、AEM固有の便利な機能を開発者に提供します。
 
 この HTL ドキュメントでは、HTL を使用した AEM ソリューションの開発に焦点を当てています。そのため、必要に応じて外部リソースをリンクし、3 つのレイヤーすべてに接触します。
 
@@ -50,7 +50,7 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 
 2 種類の構文は次のように区別できます。
 
-* **ブロックステートメント** - `<h1>` 要素を条件付きで表示する場合は、`data-sly-test` HTML5 データ属性を使用します。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` というプレフィックスが付きます。
+* **ブロックステートメント** - `<h1>` 要素を条件付きで表示する場合は、`data-sly-test` HTML5 データ属性を使用します。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` という接頭辞が付きます。
 * **式言語** - `${` と `}` 文字は HTL 式を区切ります。実行時にこれらの式が評価され、出力 HTML ストリームに値が挿入されます。
 
 両方の構文について詳しくは、[HTL の仕様](specification.md)を参照してください。
