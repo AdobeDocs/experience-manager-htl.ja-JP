@@ -2,9 +2,9 @@
 title: HTL 使用の手引き
 description: AEM の HTML に適した、推奨されるサーバーサイドテンプレートシステムである HTL について学び、言語の主要概念とその基本構成を理解します。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: ht
-source-wordcount: '2045'
+source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
+workflow-type: tm+mt
+source-wordcount: '2077'
 ht-degree: 100%
 
 ---
@@ -15,6 +15,12 @@ ht-degree: 100%
 HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML 用に、サーバーサイドで優先かつ推奨されるテンプレートシステムです。 すべての HTML サーバーサイドテンプレートシステムと同じように、HTL ファイルでも、HTML 本体、基本的なプレゼンテーションロジックおよび実行時に評価される変数を指定することで、ブラウザーに送信される出力を定義します。
 
 このドキュメントでは、HTL の目的の概要と、言語の基本的な概念および構造について説明します。
+
+>[!TIP]
+>
+>**AEM 向け Edge Delivery Services について検討したことはありますか？**
+>
+>既存のプロジェクトでは、このドキュメントで説明されている方法を引き続き使用できます。ただし、新規プロジェクトの場合は、[Edge Delivery Services](https://experienceleague.adobe.com/ja/docs/experience-manager-cloud-service/content/edge-delivery/overview) を利用することをお勧めします。
 
 >[!TIP]
 >
