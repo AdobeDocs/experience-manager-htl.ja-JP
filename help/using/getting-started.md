@@ -3,7 +3,7 @@ title: HTL 使用の手引き
 description: AEM の HTML に適した、推奨されるサーバーサイドテンプレートシステムである HTL について学び、言語の主要概念とその基本構成を理解します。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2077'
 ht-degree: 100%
 

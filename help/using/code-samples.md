@@ -4,7 +4,7 @@ description: WKND リファレンス実装やコアコンポーネントのよ�
 exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
 index: false
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '112'
 ht-degree: 100%
 
