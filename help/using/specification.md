@@ -21,6 +21,6 @@ AEM では、レイヤーの数によって HTL を定義できます。
 
 1. **[HTL の仕様](https://github.com/adobe/htl-spec)** - HTL は、オープンソースの、プラットフォームに依存しない仕様で、誰でも自由に実装できます。仕様は GitHub リポジトリで管理されています。
 1. **[Sling HTL スクリプトエンジン](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html)** - `Sling` プロジェクトは、AEM で使用される HTL の参照実装を作成しました。 `Sling` プロジェクトは、ドキュメントを保持しています。
-1. **[AEM Extensions](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/aem-extensions)** - AEMは `Sling` HTL スクリプティングエンジン上に構築され、AEM固有の便利な機能を開発者に提供します。 これらの拡張機能は、このドキュメントセットの一部としてドキュメントに記載されています。
+1. **[AEM Extensions](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/aem-extensions)** - AEMは `Sling` HTL スクリプティングエンジン上に構築され、AEM固有の便利な機能を開発者に提供します。 これらの拡張機能は、このドキュメントセットの一部としてドキュメントに記載されています。
 
 上記のリンクから、AEM で使用する HTL のすべてのレイヤーに関する専用ドキュメントへ移動します。
