@@ -34,8 +34,8 @@ specification.md
 
 AEM では、複数のレイヤーによって HTL が定義されます。
 
-1. **[HTL の仕様 ](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL は、プラットフォームに依存しないオープンソースの仕様で、誰でも自由に実装できます。
-1. **[`Sling`HTL スクリプティングエンジン ](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - `Sling` プロジェクトは、AEMが使用する HTL の参照実装を作成しました。
+1. **[HTL の仕様 &#x200B;](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL は、プラットフォームに依存しないオープンソースの仕様で、誰でも自由に実装できます。
+1. **[`Sling`HTL スクリプティングエンジン &#x200B;](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - `Sling` プロジェクトは、AEMが使用する HTL の参照実装を作成しました。
 1. **[AEM Extensions](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - AEMは `Sling` HTL スクリプティングエンジン上に構築され、AEM固有の便利な機能を開発者に提供します。
 
 この HTL ドキュメントでは、HTL を使用した AEM ソリューションの開発に焦点を当てています。そのため、必要に応じて外部リソースをリンクし、3 つのレイヤーすべてに接触します。
