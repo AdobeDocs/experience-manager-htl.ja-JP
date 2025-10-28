@@ -1,11 +1,11 @@
 ---
 title: HTL グローバルオブジェクト
-description: HTL での可算オブジェクトと Java ベースのオブジェクトについて説明します。
+description: HTL での列挙可能オブジェクトと Java ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '203'
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '204'
 ht-degree: 100%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 100%
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
-何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を利用した際に一緒に提供されます。
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/java-use-api) を利用した際に一緒に提供されます。
 
 >[!NOTE]
 >
 >AEM での JSP 開発に詳しい開発者は、`global.jsp` を含めると、 HTL を使用して JSP で一般的に使用できるすべてのオブジェクトにアクセスできます。
 
-## 可算オブジェクト {#enumerable-objects}
+## 列挙可能オブジェクト {#enumerable-objects}
 
 これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。コンテンツにはドット表記でアクセスでき、`data-sly-list` または `data-sly-repeat` を使用して反復処理できます。
 

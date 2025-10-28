@@ -2,10 +2,10 @@
 title: HTL の概要
 description: AEM が HTL（HTML テンプレート言語）をサポートして、セキュリティを強化する生産的なエンタープライズレベルの web フレームワークを提供する方法について説明します。このフレームワークにより、Java の知識を持たない HTML 開発者が AEM プロジェクトに参加しやすくなります。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 3c7afd180151f35db74e105b23ae7e0ed50c7e4e
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
 workflow-type: tm+mt
-source-wordcount: '677'
-ht-degree: 100%
+source-wordcount: '680'
+ht-degree: 99%
 
 ---
 
@@ -20,7 +20,11 @@ ht-degree: 100%
 
 Adobe Experience Manager（AEM）でサポートされる HTML テンプレート言語（HTL）は、セキュリティを強化する生産性の高いエンタープライズレベルの web フレームワークを提供することを目的としています。また、Java の知識を持たない HTML 開発者が AEM プロジェクトに参加しやすくなります。
 
-[AEM 6.0 で導入された](history.md) HTML テンプレート言語は、AEM での HTML 用にサーバーサイドで優先かつ推奨されるテンプレートシステムです。堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
+[AEM 6.0 で導入された](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history) HTML テンプレート言語は、AEM での HTML 用にサーバーサイドで優先かつ推奨されるテンプレートシステムです。堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
+
+<!--
+history.md
+-->
 
 ## セキュリティの向上 {#increased-security}
 
@@ -54,8 +58,16 @@ HTML テンプレート言語を使用して Adobe.com サイトを再実装す�
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-このビデオでは、HTL を[旧名称の Sightly](history.md) と呼んでいます。
+このビデオでは、HTL を[旧名称の Sightly](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history) と呼んでいます。
+
+<!--
+history.md
+-->
 
 ## 次の手順 {#next-steps}
 
-HTL の目的と利点を理解できたので、HTL 言語の使用を開始できます。詳しくは、[HTML テンプレート言語使用の手引き](getting-started.md)を参照してください。
+HTL の目的と利点を理解できたので、HTL 言語の使用を開始できます。詳しくは、[HTML テンプレート言語使用の手引き](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/getting-started)を参照してください。
+
+<!--
+getting-started.md
+-->

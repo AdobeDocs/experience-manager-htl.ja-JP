@@ -2,10 +2,10 @@
 title: HTL 使用の手引き
 description: AEM の HTML に適した、推奨されるサーバーサイドテンプレートシステムである HTL について学び、言語の主要概念とその基本構成を理解します。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '2077'
-ht-degree: 100%
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '2084'
+ht-degree: 97%
 
 ---
 
@@ -24,15 +24,19 @@ HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML
 
 >[!TIP]
 >
->このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定の構文について疑問がある場合は、[HTL の仕様](specification.md)を参照してください。
+>このドキュメントでは、HTL の目的と、HTL の基本的な構造および概念の概要について説明します。特定の構文について疑問がある場合は、[HTL の仕様](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)を参照してください。
+
+<!--
+specification.md
+-->
 
 ## HTL レイヤー {#layers}
 
 AEM では、複数のレイヤーによって HTL が定義されます。
 
-1. **[HTL の仕様](specification.md)** - HTL は、プラットフォームに依存しないオープンソースの仕様で、誰でも自由に実装できます。
-1. **[`Sling`HTL スクリプトエンジン](specification.md)** - `Sling` プロジェクトは、AEM で使用される HTL の参照実装を作成しました。
-1. **[AEM 拡張機能](specification.md)** - AEM は `Sling` HTL スクリプトエンジン上に構築され、AEM に固有の便利な機能を開発者に提供します。
+1. **[HTL の仕様 ](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL は、プラットフォームに依存しないオープンソースの仕様で、誰でも自由に実装できます。
+1. **[`Sling`HTL スクリプティングエンジン ](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - `Sling` プロジェクトは、AEMが使用する HTL の参照実装を作成しました。
+1. **[AEM Extensions](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - AEMは `Sling` HTL スクリプティングエンジン上に構築され、AEM固有の便利な機能を開発者に提供します。
 
 この HTL ドキュメントでは、HTL を使用した AEM ソリューションの開発に焦点を当てています。そのため、必要に応じて外部リソースをリンクし、3 つのレイヤーすべてに接触します。
 
@@ -59,7 +63,7 @@ HTML テンプレート言語は式言語を使用して、レンダリングさ
 * **ブロックステートメント** - `<h1>` 要素を条件付きで表示する場合は、`data-sly-test` HTML5 データ属性を使用します。HTL ではこのような属性が複数提供され、これらを使用して HTML 要素に動作を関連付けることができます。すべての属性には `data-sly` という接頭辞が付きます。
 * **式言語** - `${` と `}` 文字は HTL 式を区切ります。実行時にこれらの式が評価され、出力 HTML ストリームに値が挿入されます。
 
-両方の構文について詳しくは、[HTL の仕様](specification.md)を参照してください。
+両方の構文について詳しくは、[HTL の仕様](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)を参照してください。
 
 ### SLY 要素 {#the-sly-element}
 
@@ -187,7 +191,7 @@ HTL はデータ属性を使用してブロックステートメントを定義�
 
 HTML テンプレート言語（HTL）Java Use-API を使用すると、HTL ファイルから `data-sly-use` を介してカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。このプロセスにより、複雑なビジネスロジックをすべて Java コードでカプセル化し、HTL コードではマークアップの直接作成処理のみを行うことができます。
 
-詳しくは、[HTL Java Use-API](java-use-api.md) を参照してください。
+詳しくは、[HTL Java Use-API](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/java-use-api) を参照してください。
 
 ### 自動コンテキスト認識エスケープ {#automatic-context-aware-escaping}
 
@@ -304,7 +308,7 @@ HTL では、クライアントライブラリは AEM 提供のヘルパーテ�
 
 この例では、HTML の `head` 要素と `body` 要素が別のファイルにある場合、必要な各ファイルに `clientlib.html` テンプレートを読み込む必要があります。
 
-[HTL の仕様](specification.md)の template および call ステートメントに関する節では、テンプレートの宣言と呼び出しの仕組みについて詳しく記載しています。
+[HTL の仕様](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)の template および call ステートメントに関する節では、テンプレートの宣言と呼び出しの仕組みについて詳しく記載しています。
 
 ### データをクライアントに渡す {#passing-data-to-the-client}
 

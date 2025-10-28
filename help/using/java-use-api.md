@@ -3,10 +3,10 @@ title: HTL Java Use-API
 description: HTL Java Use-API を使用すると、HTL ファイルからカスタム Java クラスのヘルパーメソッドへのアクセスが可能になります。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '1132'
-ht-degree: 100%
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '1133'
+ht-degree: 99%
 
 ---
 
@@ -40,7 +40,7 @@ Use-API POJO は、次のシグネチャを持つ init と呼ばれるパブリ�
 
 >[!NOTE]
 >
->この例は、その使用方法を説明するために簡略化しています。実稼動環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用をお勧めします。
+>この例は、その使用方法を説明するために簡略化しています。本番環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用をお勧めします。
 
 まず、use クラスを持たない `info,` と呼ばれる HTL コンポーネントから始めます。これは単一のファイル、`/apps/my-example/components/info.html` で構成されています。
 
@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 [アクティベート](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)メソッドの通常の用途は、現在のコンテキスト（現在の要求やリソースなど）に基づいて HTL コードに必要な値を事前に計算し、（メンバー変数に）格納することです。
 
-`WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（ドキュメント[グローバルオブジェクト](global-objects.md)を参照）。
+`WCMUsePojo` クラスを使用すると、HTL ファイル内で使用可能なものと同じコンテキストオブジェクトにアクセスできます（ドキュメント[グローバルオブジェクト](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/global-objects)を参照）。
 
 `WCMUsePojo` を拡張するクラスでは、以下の名前を使用してコンテキストオブジェクトにアクセスできます。
 
@@ -300,7 +300,7 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->この例は、その使用方法を説明するために簡略化しています。実稼動環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用をお勧めします。
+>この例は、その使用方法を説明するために簡略化しています。本番環境では、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)の使用をお勧めします。
 
 ## 応用 {#beyond-the-basics}
 
