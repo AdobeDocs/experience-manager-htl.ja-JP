@@ -3,9 +3,9 @@ title: HTL グローバルオブジェクト
 description: HTL での列挙可能オブジェクトと Java ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '202'
 ht-degree: 100%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 100%
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
-何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/java-use-api) を利用した際に一緒に提供されます。
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を利用した際に一緒に提供されます。
 
 >[!NOTE]
 >
@@ -67,6 +67,6 @@ HTL ロジックを JavaScript でバックアップすることもできます�
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) は、AEM as a Cloud Service での使用が廃止されました。 代わりに、[Java Use API](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/java-use-api) を使用してください。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) は、AEM as a Cloud Service での使用が廃止されました。 代わりに、[Java Use API](java-use-api.md) を使用してください。
 >
 >非推奨（廃止予定）の機能および削除された機能について詳しくは、[AEM as a Cloud Service リリースノート](https://experienceleague.adobe.com/ja/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)を参照してください。

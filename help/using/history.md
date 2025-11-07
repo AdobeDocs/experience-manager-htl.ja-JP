@@ -3,9 +3,9 @@ title: HTL の履歴
 description: AEM を長年使用しているユーザー向けに、このドキュメントでは HTL の背景、HTL を JSP に置き換える方法、Sightly からの名前の変更について説明します。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 index: false
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '530'
 ht-degree: 100%
 
 ---
@@ -50,7 +50,7 @@ HTL には JSP と比べた場合に制限事項がありません。つまり�
 
 ### JSP と比べて HTL の最大のメリットは何ですか。 {#benefits}
 
-最大のメリットはセキュリティとプロジェクトの効率性です。これらについて詳しくはは、[概要](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/overview)を参照してください。
+最大のメリットはセキュリティとプロジェクトの効率性です。これらについて詳しくはは、[概要](overview.md)を参照してください。
 
 ### JavaServer Pages（JSP）は廃止されますか？ {#go-away}
 
@@ -64,4 +64,4 @@ AEM 6.0 および 6.1 では、HTL は **Sightly** と呼ばれていました�
 >
 >この名称変更はコードや API に関わるものではないので、互換性については影響はありません。
 
-HTL について詳しくは、[HTML テンプレート言語（HTL）使用の手引き](https://experienceleague.adobe.com/ja/docs/experience-manager-htl/content/overview)を参照してください。
+HTL について詳しくは、[HTML テンプレート言語（HTL）使用の手引き](overview.md)を参照してください。
