@@ -6,16 +6,16 @@ TQID: https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJ
 product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
 role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2: id: a732f735-539c-44c2-ad33-4aa4f7480b3aid: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
 workflow-type: tm+mt
 source-wordcount: 2077
-ht-degree: 100%
+ht-degree: 99%
 
 ---
 
 # HTL 使用の手引き {#getting-started-with-htl}
 
-HTML テンプレート言語（HTL）は、Adobe Experience Manager での HTML 用に、サーバーサイドで優先かつ推奨されるテンプレートシステムです。 すべての HTML サーバーサイドテンプレートシステムと同じように、HTL ファイルでも、HTML 本体、基本的なプレゼンテーションロジックおよび実行時に評価される変数を指定することで、ブラウザーに送信される出力を定義します。
+HTML Template Language （HTL）は、Adobe Experience ManagerのHTML用に、サーバーサイドで優先かつ推奨されるテンプレートシステムです。 すべての HTML サーバーサイドテンプレートシステムと同じように、HTL ファイルでも、HTML 本体、基本的なプレゼンテーションロジックおよび実行時に評価される変数を指定することで、ブラウザーに送信される出力を定義します。
 
 このドキュメントでは、HTL の目的の概要と、言語の基本的な概念および構造について説明します。
 
