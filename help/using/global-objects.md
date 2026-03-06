@@ -2,22 +2,20 @@
 title: HTL グローバルオブジェクト
 description: HTL での列挙可能オブジェクトと Java ベースのオブジェクトについて説明します。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/zhQ4NTPQXgqIUNL9TeYk7sHqVQ5x-xWjps3OylhPJL4
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 202
+source-wordcount: 277
 ht-degree: 100%
 
 ---
 
 # HTL グローバルオブジェクト {#htl-global-objects}
 
-何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。これらのオブジェクトは、[Use-API](java-use-api.md) を利用した際に一緒に提供されます。
+何も指定しなくても、HTL では開発者に役立つ多くのオブジェクトにアクセスできます。 これらのオブジェクトは、[Use-API](java-use-api.md) を利用した際に一緒に提供されます。
 
 >[!NOTE]
 >
@@ -25,7 +23,7 @@ ht-degree: 100%
 
 ## 列挙可能オブジェクト {#enumerable-objects}
 
-これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。コンテンツにはドット表記でアクセスでき、`data-sly-list` または `data-sly-repeat` を使用して反復処理できます。
+これらのオブジェクトを使用すると、よく使用する情報に便利にアクセスできます。 コンテンツにはドット表記でアクセスでき、`data-sly-list` または `data-sly-repeat` を使用して反復処理できます。
 
 | 変数名 | 説明 | ベース |
 |--- |--- |--- |
@@ -67,7 +65,7 @@ ht-degree: 100%
 
 ## JavaScript ベースのオブジェクト {#javascript-backed-objects}
 
-HTL ロジックを JavaScript でバックアップすることもできます。ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。
+HTL ロジックを JavaScript でバックアップすることもできます。 ただし、好ましい、推奨される方法は、[Sling モデル](https://sling.apache.org/documentation/bundles/models.html)を使用することです。
 
 >[!NOTE]
 >
