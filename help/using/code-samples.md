@@ -2,7 +2,7 @@
 title: コードサンプル
 description: WKND リファレンス実装やコアコンポーネントのような例を含めたコードサンプルを介して HTL を確認します。
 exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/foH8KtBMNd7NcXvlb72iKqZoBbQEjgkW3CeNdxv-rzI
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
@@ -11,9 +11,9 @@ role_v2:
 topic_v2:
   - id: c2bbb569-80c1-46a4-bbe4-60b91be32780
   - id: f1155164-f021-47c9-b8ee-5319200aa334
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 112
+source-wordcount: 143
 ht-degree: 100%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 100%
 
 WKND リファレンス実装やコアコンポーネントのような例を含めたコードサンプルを介して HTL を確認します。
 
-* [WKND チュートリアル](https://experienceleague.adobe.com/ja/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview) - このチュートリアルでは、WKND で架空のライフスタイルブランドへ AEM Sites を実装するための手順について説明します。HTL で実装される場合は、プロジェクトの設定、コアコンポーネント、編集可能テンプレート、クライアント側ライブラリおよび Adobe Experience Manager Sitesでのコンポーネント開発など、基本的なトピックが含まれます。
+* [WKND チュートリアル](https://experienceleague.adobe.com/ja/docs/experience-manager-learn/getting-started-wknd-tutorial-develop/overview) - このチュートリアルでは、WKND で架空のライフスタイルブランドへ AEM Sites を実装するための手順について説明します。 HTL で実装される場合は、プロジェクトの設定、コアコンポーネント、編集可能テンプレート、クライアント側ライブラリおよび Adobe Experience Manager Sitesでのコンポーネント開発など、基本的なトピックが含まれます。
 * [HTL TodoMVC の例](https://github.com/Adobe-Marketing-Cloud/aem-htl-sample-todomvc) - AEM + HTL 実装に関する有名な演習例。
 
 実際のプロジェクトで HTL を使用するベストプラクティスの例については、[AEM コアコンポーネント](https://experienceleague.adobe.com/ja/docs/experience-manager-core-components/using/introduction)を参照してください。
