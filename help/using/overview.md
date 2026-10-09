@@ -2,31 +2,29 @@
 title: HTL の概要
 description: AEM が HTL（HTML テンプレート言語）をサポートして、セキュリティを強化する生産的なエンタープライズレベルの web フレームワークを提供する方法について説明します。 このフレームワークにより、Java の知識を持たない HTML 開発者が AEM プロジェクトに参加しやすくなります。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-TQID: https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0
+TQID: 'https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
-workflow-type: ht
-source-wordcount: 716
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '716'
 ht-degree: 100%
-
 ---
-
 # 概要 {#overview}
 
 >[!TIP]
 >
->**AEM 向け Edge Delivery Services について検討したことはありますか？**
+>**AEM 向け Edge Delivery Servicesについて検討したことはありますか？**
 >
 >既存のプロジェクトでは、このドキュメントで説明されている方法を引き続き使用できます。 ただし、新規プロジェクトの場合は、[Edge Delivery Services](https://experienceleague.adobe.com/ja/docs/experience-manager-cloud-service/content/edge-delivery/overview) を利用することをお勧めします。
 
 Adobe Experience Manager（AEM）でサポートされる HTML テンプレート言語（HTL）は、セキュリティを強化する生産性の高いエンタープライズレベルの web フレームワークを提供することを目的としています。 また、Java の知識を持たない HTML 開発者が AEM プロジェクトに参加しやすくなります。
 
-[AEM 6.0 で導入された](history.md) HTML テンプレート言語は、AEM での HTML 用にサーバーサイドで優先かつ推奨されるテンプレートシステムです。 堅牢なエンタープライズ Web サイトを構築しなければならない Web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
+[AEM 6.0 で導入された](history.md) HTML テンプレート言語は、AEM での HTML 用にサーバーサイドで優先かつ推奨されるテンプレートシステムです。 堅牢なエンタープライズ web サイトを構築する必要がある web 開発者にとって、HTL は安全性と開発効率の向上に役立ちます。
 
 ## セキュリティの向上 {#increased-security}
 
@@ -36,19 +34,19 @@ JSP のようなテンプレート言語でもこれと同じ結果が得られ�
 
 ## 開発の簡略化 {#simplified-development}
 
-HTML テンプレート言語は学習が容易であり、機能が意図的に制限されているため、複雑さがなく常にシンプルです。 また、マークアップを構成してロジックを呼び出すための強力なメカニズムが用意されている一方で、マークアップとロジックの間で常に関心事の分離が厳密に行われています。 HTL は標準の HTML5 であり、式とデータ属性を使用して動的な動作でマークアップに注釈を付けます。 このアプローチにより、マークアップの有効性と読みやすさが維持されます。 式やデータ属性の評価はすべてサーバーサイドで実行され、クライアントサイドには表示されないため、目的の JavaScript フレームワークを干渉なしに使用できます。
+HTML テンプレート言語は学習が容易であり、機能が意図的に制限されているため、常にシンプルで分かりやすいものになっています。 また、マークアップを構成してロジックを呼び出すための強力なメカニズムが用意されている一方で、マークアップとロジックの間で常に関心事の分離が厳密に行われています。 HTL は標準の HTML5 をベースにしており、式とデータ属性を使用してマークアップに動的な動作を付与します。 このアプローチにより、マークアップの有効性と読みやすさが維持されます。 式やデータ属性の評価はすべてサーバーサイドで実行され、クライアントサイドには表示されないため、目的の JavaScript フレームワークを干渉なしに使用できます。
 
 これらの機能により、Java の知識がない HTML 開発者でも HTL テンプレートを編集し、開発チームに統合し、Java のフルスタック開発者とのコラボレーションを効率化できます。 その逆に、これにより Java 開発者は HTML について心配することなく、バックエンドのコードに集中できます。
 
 ## コストの削減 {#reduced-costs}
 
-セキュリティの向上、開発の簡略化、チームの共同作業を促進させ、AEM プロジェクトの負荷軽減、市場投入までの時間（TTM）短縮、総所有コスト（TCO）の削減を実現します。
+セキュリティの向上、開発の簡略化、チームの共同作業の改善により、AEM プロジェクトでは、作業負荷の軽減、市場投入までの時間（TTM）の短縮、総所有コスト（TCO）の削減が実現します。
 
 HTML テンプレート言語を使用して Adobe.com サイトを再実装すると、プロジェクトのコストと期間が最大約 25％削減されることがわかりました。
 
 ![効率的な増加とコスト削減](assets/chlimage_1.png)
 
-上の図は、次の言語が HTL で効率を改善できる可能性があることを示します。
+上の図は、HTL によって次のような効率の改善が可能になることを示しています。
 
 * **HTML／CSS／JS：** HTML 開発者は HTL テンプレートを直接編集できるので、フロントエンドデザインを AEM コンポーネントに直接実装でき、個別に実装する必要がなくなります。 このアプローチにより、Java のフルスタック開発者による反復作業の苦痛が軽減されます。
 * **JSP／HTL：** HTL 自体は Java の知識を必要とせず、記述も簡単であるので、開発者に HTML の専門知識があればテンプレートを編集できます。
